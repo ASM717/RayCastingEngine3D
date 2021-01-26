@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/01/26 16:58:05 by amuriel           #+#    #+#              #
+#    Updated: 2021/01/26 17:51:16 by amuriel          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME		= cub3D
 
 CC			= gcc
@@ -17,7 +29,7 @@ CFLAGS		= -Wall -Wextra -Werror
 $(NAME):	$(OBJS)
 			make -C libft
 			make -C minilibx_opengl
-			mv mlx/libmlx.dylib libmlx.dylib
+			mv minilibx_opengl/libmlx.a libmlx.a
 			$(CC) -Llibft -lft -L. -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
 clean:
