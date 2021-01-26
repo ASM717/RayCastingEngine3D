@@ -1,45 +1,46 @@
-CC = gcc
-
 NAME = cub3D
 
-CFLAGS = -Wall -Wextra -Werror
+SRCS = main.c
 
-MLXFLAGS = -framework OpenGL -framework AppKit
+OSRC = $(SRC:.c=.o)
 
-LIBFT = libft
-MLXLIB = minilibx_opengl
+FLAGS = -Wall -Wextra -Werror
 
-LIBS = $(LIBFT)/libft.a $(MLXLIB)/libmlx.a
+all: $(NAME) $(OSRC)
 
-SRC = main.c
+$(NAME): $(SRC)
+	@make -C libft bonus
+	@make -C minilibx_opengl
+	@cp libft/libft.a ./
+	@cp minilibx_opengl/libmlx.a ./
+	@gcc $(FLAGS) ./libft/libft.a ./minilibx_opengl/libmlx.a -framework OpenGl -framework AppKit $(SRCS) -o $(NAME)
 
-OBJS = $(SRC:.c=.o)
+bonus: all
 
-all: $(NAME)
-
-.c.o:
-	@$(CC) -I$(INCLUDES) -c $< -o $(<:.c=.o)
-
-$(NAME): $(OBJS)
-	@make bonus -C $(LIBFT)
-	@$(CC) $(FLAGS) $(MLXFLAGS) $(LIBS) $(OBJS) -o $(NAME)
-	@echo "Compile cub3d done!"
+%.o: %.c $(HEADER)
+	gcc $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
-	@make clean -C $(LIBFT)
-	@echo "Clean .o files done!"
+	@make -C libft clean
+	@rm -f $(OSRC)
 
 fclean: clean
+	@make -C libft fclean
+	@make -C mlx clean
+	@rm -f libft.a
+	@rm -f libmlx.a
 	@rm -f $(NAME)
-	@make fclean -C $(LIBFT)
-	@echo "Clean libftprintf.a done!"
-
-norme:
-	norminette $(LIBFT)
-	@echo
-	norminette $(INCLUDES)
-	@echo
-	norminette $(DIR_S)
 
 re: fclean all
+
+run : $(NAME)
+	./$(NAME) cub3d.cub
+
+norm :
+	@norminette *.c *.h ./libft/*.c ./libft/*.h
+
+screen : $(NAME)
+	./$(NAME) cub3d.cub --save
+	open screen.bmp
+
+.PHONY: all bonus clean fclean re norm run screen
