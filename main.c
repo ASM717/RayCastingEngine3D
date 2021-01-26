@@ -1,6 +1,6 @@
 #include "cub3d.h"
 
-int main(int argc, char **argv)
+int main()
 {
-
+		write(1, "hi", 3);
 }
