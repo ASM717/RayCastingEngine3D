@@ -6,29 +6,21 @@
 /*   By: amuriel <amuriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 17:08:51 by amuriel           #+#    #+#             */
-/*   Updated: 2021/01/26 17:40:05 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/01/27 14:49:53 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int main()
+int main(void)
 {
-	write(1, "hello", 7);
-		/*file fd;
-		char *line = NULL;
-		size_t len;
-		ssize_t read;
+	char	*line;
 
-		fd = open("/maps/map.cub", O_RDONLY);
-		if (fp == NULL)
-			exit(EXIT_FAILURE);
-
-		while ((read = get_next_line() != -1) {
-			printf("Retrieved line of length %zu :\n", read);
-			printf("%s", line);
-		}
-
+	int		fd = open("./maps/map.cub", O_RDONLY);
+	while (get_next_line(fd, &line) > 0)
+	{
+		printf("%s\n", line);
 		free(line);
-		exit(EXIT_SUCCESS);*/
+	}
+	free(line);
 }

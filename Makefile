@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/26 16:58:05 by amuriel           #+#    #+#              #
-#    Updated: 2021/01/26 17:51:16 by amuriel          ###   ########.fr        #
+#    Updated: 2021/01/27 14:21:20 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CC			= gcc
 AR			= ar rc
 RM			= rm -f
 
-_SRCS		= main.c
+_SRCS		= main.c \
+                gnl/get_next_line.c gnl/get_next_line_utils.c
+
 SRCS		= $(addprefix srcs/, $(_SRCS))
 
 OBJS		= $(SRCS:.c=.o)
@@ -24,7 +26,7 @@ OBJS		= $(SRCS:.c=.o)
 CFLAGS		= -Wall -Wextra -Werror
 
 %.o: %.c
-			$(CC) $(CFLAGS) -Iincludes -Ilibft -Imlx -c $< -o $@
+			$(CC) $(CFLAGS) -Iincludes -Ilibft -Iminilibx_opengl -c $< -o $@
 
 $(NAME):	$(OBJS)
 			make -C libft
