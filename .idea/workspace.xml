@@ -12,18 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4819ddeb-7b98-47f0-b02d-a5357e168c88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/libft/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/gnl/get_next_line.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/get_next_line.h" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/gnl/get_next_line.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/get_next_line_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/gnl/get_next_line_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libmlx.a" beforeDir="false" afterPath="$PROJECT_DIR$/libmlx.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map.cub" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map.cub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="4819ddeb-7b98-47f0-b02d-a5357e168c88" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +74,7 @@
       <workItem from="1611665238960" duration="773000" />
       <workItem from="1611668450675" duration="1009000" />
       <workItem from="1611669807995" duration="2194000" />
-      <workItem from="1611741782206" duration="5627000" />
+      <workItem from="1611741782206" duration="5885000" />
     </task>
     <servers />
   </component>
