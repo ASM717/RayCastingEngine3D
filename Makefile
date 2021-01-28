@@ -26,14 +26,12 @@ OBJS		= $(SRCS:.c=.o)
 CFLAGS		= -Wall -Wextra -Werror
 
 %.o: %.c
-			$(CC) $(CFLAGS) -Iincludes -Ilibft -Iminilibx_opengl -c $< -o $@
+			$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 $(NAME):	$(OBJS)
 			make -C libft
-			make -C minilibx_opengl
-			mv minilibx_opengl/libmlx.a libmlx.a
-			$(CC) -Llibft -lft -L. -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
+# $(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 clean:
 			$(RM) $(OBJS)
 
