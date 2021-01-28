@@ -17,7 +17,7 @@
 # include "libft/libft.h"
 # include "srcs/gnl/get_next_line.h"
 
-# include "minilibx_opengl/mlx.h"
+# include "minilibx-linux/mlx.h"
 
 # include <unistd.h>
 # include <stdlib.h>

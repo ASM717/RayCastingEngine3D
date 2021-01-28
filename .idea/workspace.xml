@@ -15,25 +15,26 @@
     <list default="true" id="4819ddeb-7b98-47f0-b02d-a5357e168c88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libmlx.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libmlx.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/font.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/interface.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/man/man3/mlx.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/man/man3/mlx_loop.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/man/man3/mlx_new_image.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/man/man3/mlx_new_window.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/man/man3/mlx_pixel_put.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx_image.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx_init.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx_png.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx_rgb.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx_string_put.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx_window.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx/mlx_xpm.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/._font.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/font.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/font.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_init_loop.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_int.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_int_str_to_wordtab.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_mouse.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_new_image.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_new_window.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_new_window.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_opengl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_opengl.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_png.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_png.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_rgb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_shaders.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_xpm.c" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <workItem from="1611669807995" duration="2194000" />
       <workItem from="1611741782206" duration="7321000" />
       <workItem from="1611824419331" duration="848000" />
-      <workItem from="1611827164902" duration="9014000" />
+      <workItem from="1611827164902" duration="15933000" />
     </task>
     <servers />
   </component>

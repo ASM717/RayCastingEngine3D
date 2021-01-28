@@ -10,41 +10,42 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= cub3D
+NAME        = cub3D
 
-CC			= gcc
-AR			= ar rc
-RM			= rm -f
-
-_SRCS		= main.c \
+SRC		    = main.c \
                 gnl/get_next_line.c gnl/get_next_line_utils.c
-
-SRCS		= $(addprefix srcs/, $(_SRCS))
+SRCS		= $(addprefix srcs/, $(SRC))
 
 OBJS		= $(SRCS:.c=.o)
 
-CFLAGS		= -Wall -Wextra -Werror
+INC         = -I ./ -I ./libft -I ./ft_printf -I ./gnl
 
-%.o: %.c
-			$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
+FLAGS       = -Wall -Wextra -Werror -g
 
-$(NAME):	$(OBJS)
-			make -C libft
+LIBFT       = -L libft -lft
 
-# $(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+MLX         = -I minilibx -L minilibx-linux -lmlx
+
+SYS         = -lXext -lX11 -lbsd -lm
+
+all:$(NAME)
+
+$(NAME):
+	@make -C ./libft
+	@make -C ./minilibx-linux
+	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLX} ${SYS} -o ${NAME}
+
 clean:
-			$(RM) $(OBJS)
+	@/bin/rm -f $(OBJ)
+	@make clean -C ./libft
 
-fclean:		clean
-			$(RM) $(NAME)
+fclean: clean
+	@/bin/rm -f $(NAME)
+	@/bin/rm -f cub3D.bmp
+	@make fclean -C ./libft
+	@make clean -C ./minilibx-linux
 
-re:			fclean all
-
-all:		$(NAME)
-
-
-run : $(NAME)
-	./$(NAME) cub3d.cub
+re: fclean all
 
 norm :
 	@norminette *.c *.h ./libft/*.c ./libft/*.h
@@ -53,4 +54,4 @@ screen : $(NAME)
 	./$(NAME) cub3d.cub --save
 	open screen.bmp
 
-.PHONY: all bonus clean fclean re norm run screen
+.PHONY: all clean fclean re norm run screen
