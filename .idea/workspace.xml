@@ -14,27 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4819ddeb-7b98-47f0-b02d-a5357e168c88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/._font.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/font.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/font.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_init_loop.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_int.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_int_str_to_wordtab.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_mouse.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_new_image.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_new_window.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_new_window.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_opengl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_opengl.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_png.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_png.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_rgb.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_shaders.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minilibx_opengl/mlx_xpm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +81,7 @@
       <workItem from="1611669807995" duration="2194000" />
       <workItem from="1611741782206" duration="7321000" />
       <workItem from="1611824419331" duration="848000" />
-      <workItem from="1611827164902" duration="15933000" />
+      <workItem from="1611827164902" duration="23036000" />
     </task>
     <servers />
   </component>
