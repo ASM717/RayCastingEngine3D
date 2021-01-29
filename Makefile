@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: amuriel <amuriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/26 16:58:05 by amuriel           #+#    #+#              #
-#    Updated: 2021/01/27 14:21:20 by amuriel          ###   ########.fr        #
+#    Updated: 2021/01/29 13:59:22 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = cub3D
 
-SRC		    = main.c \
+SRC		    = parser.c \
                 gnl/get_next_line.c gnl/get_next_line_utils.c
 SRCS		= $(addprefix srcs/, $(SRC))
 

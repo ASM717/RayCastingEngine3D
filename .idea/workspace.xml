@@ -14,8 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4819ddeb-7b98-47f0-b02d-a5357e168c88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +59,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -81,7 +79,8 @@
       <workItem from="1611669807995" duration="2194000" />
       <workItem from="1611741782206" duration="7321000" />
       <workItem from="1611824419331" duration="848000" />
-      <workItem from="1611827164902" duration="23036000" />
+      <workItem from="1611827164902" duration="23116000" />
+      <workItem from="1611914190815" duration="259000" />
     </task>
     <servers />
   </component>
