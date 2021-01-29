@@ -1,1 +1,8 @@
-.DS_Store
+# Object files
+*.o
+
+*.DS_Store
+
+# Path
+*.xml
+
