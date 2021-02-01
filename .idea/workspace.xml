@@ -48,7 +48,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -57,13 +57,6 @@
       <recent name="$PROJECT_DIR$/gnl" />
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,6 +74,9 @@
       <workItem from="1611824419331" duration="848000" />
       <workItem from="1611827164902" duration="23116000" />
       <workItem from="1611914190815" duration="259000" />
+      <workItem from="1611934677190" duration="706000" />
+      <workItem from="1612002413515" duration="978000" />
+      <workItem from="1612108274896" duration="486000" />
     </task>
     <servers />
   </component>

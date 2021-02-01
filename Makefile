@@ -34,7 +34,7 @@ $(NAME):
 	@make -C ./libft
 	@make -C ./minilibx-linux
 	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLX} ${SYS} -o ${NAME}
-
+# -lmlx -framework OpenGL -framework AppKit
 clean:
 	@/bin/rm -f $(OBJ)
 	@make clean -C ./libft
