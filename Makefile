@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/26 16:58:05 by amuriel           #+#    #+#              #
-#    Updated: 2021/01/29 18:29:06 by amuriel          ###   ########.fr        #
+#    Updated: 2021/02/02 11:29:19 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ $(NAME):
 	@make -C ./libft
 	@make -C ./minilibx-linux
 	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLX} ${SYS} -o ${NAME}
-# -lmlx -framework OpenGL -framework AppKit
+
 clean:
 	@/bin/rm -f $(OBJ)
 	@make clean -C ./libft
