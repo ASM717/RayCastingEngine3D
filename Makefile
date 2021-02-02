@@ -12,7 +12,7 @@
 
 NAME        = cub3D
 
-SRC		    = main.c \
+SRC		    = parser.c \
                 gnl/get_next_line.c gnl/get_next_line_utils.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
