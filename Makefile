@@ -24,16 +24,16 @@ FLAGS       = -Wall -Wextra -Werror -g
 
 LIBFT       = -L libft -lft
 
-# MLXLINUX    = -I minilibx -L minilibx-linux -lmlx -lXext -lX11 -lbsd -lm
-
-MLX         = -lmlx -framework OpenGL -framework AppKit
+MLXLINUX    = -I minilibx -L minilibx-linux -lmlx
+SYS         = -lXext -lX11 -lbsd -lm
+# MLX         = -lmlx -framework OpenGL -framework AppKit
 all:$(NAME)
 
 $(NAME):
 	@make -C ./libft
 	@make -C ./minilibx-linux
-	@make -C ./lmx
-	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLXLINUX} -o ${NAME}
+# @make -C ./lmx
+	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLXLINUX} ${SYS} -o ${NAME}
 	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLX} -o ${NAME}
 clean:
 	@/bin/rm -f $(OBJ)
