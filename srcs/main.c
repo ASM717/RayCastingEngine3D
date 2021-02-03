@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 17:08:51 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/03 15:57:02 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/03 16:34:13 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ void 	init_struct(t_engine *game)
 
 int		main(void)
 {
-	int		fd;
-	char	*line;
+	int			fd;
+	char		*line;
+	t_engine	*game;
 
 	fd = open("maps/map.cub", O_RDONLY);
-	init_struct();
+	init_struct(game);
 	while (get_next_line(fd, &line))
 	{
 
