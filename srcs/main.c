@@ -6,17 +6,32 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 17:08:51 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/02 12:33:56 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/03 15:57:02 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int		main(int argc, char **argv)
+void 	init_struct(t_engine *game)
 {
-	int fd;
+	game->side.east = NULL;
+	game->side.north = NULL;
+	game->side.south = NULL;
+	game->side.west = NULL;
 
-	fd = open(argv[1], O_RDONLY)
-	if (argc == 2)
-		ft_game_initialize();
+	game->screen.height = 0;
+	game->screen.width = 0;
+}
+
+int		main(void)
+{
+	int		fd;
+	char	*line;
+
+	fd = open("maps/map.cub", O_RDONLY);
+	init_struct();
+	while (get_next_line(fd, &line))
+	{
+
+	}
 }

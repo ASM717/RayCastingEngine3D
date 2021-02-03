@@ -6,13 +6,13 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/26 16:58:05 by amuriel           #+#    #+#              #
-#    Updated: 2021/02/02 11:52:24 by amuriel          ###   ########.fr        #
+#    Updated: 2021/02/03 11:50:06 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = cub3D
 
-SRC		    = parser.c \
+SRC		    = main.c \
                 gnl/get_next_line.c gnl/get_next_line_utils.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
@@ -24,15 +24,15 @@ FLAGS       = -Wall -Wextra -Werror -g
 
 LIBFT       = -L libft -lft
 
-MLXLINUX    = -I minilibx -L minilibx-linux -lmlx
-SYS         = -lXext -lX11 -lbsd -lm
-# MLX         = -lmlx -framework OpenGL -framework AppKit
+# MLXLINUX    = -I minilibx -L minilibx-linux -lmlx
+# SYS         = -lXext -lX11 -lbsd -lm
+MLX         = -Lmlx -lmlx -framework OpenGL -framework AppKit
 all:$(NAME)
 
 $(NAME):
 	@make -C ./libft
 	@make -C ./minilibx-linux
-# @make -C ./lmx
+	@make -C ./minilibx
 	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLXLINUX} ${SYS} -o ${NAME}
 	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLX} -o ${NAME}
 clean:
