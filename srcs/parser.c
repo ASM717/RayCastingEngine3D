@@ -12,7 +12,7 @@
 
 #include "../cub3d.h"
 
-int 	pressed_key(int key, t_keyb *keyb)
-{
-
-}
+//int 	pressed_key(int key, t_keyb *keyb)
+//{
+//
+//}

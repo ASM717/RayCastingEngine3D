@@ -6,53 +6,41 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/26 16:58:05 by amuriel           #+#    #+#              #
-#    Updated: 2021/02/03 11:50:06 by amuriel          ###   ########.fr        #
+#    Updated: 2021/02/08 11:49:26 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = cub3D
+NAME		= cub3D
 
-SRC		    = main.c \
+CC			= gcc
+AR			= ar rc
+RM			= rm -f
+
+_SRCS		= main.c \
                 gnl/get_next_line.c gnl/get_next_line_utils.c
-SRCS		= $(addprefix srcs/, $(SRC))
+SRCS		= $(addprefix srcs/, $(_SRCS))
 
 OBJS		= $(SRCS:.c=.o)
 
-INC         = -I ./ -I ./libft
+CFLAGS		= -Wall -Wextra -Werror
 
-FLAGS       = -Wall -Wextra -Werror -g
+%.o: %.c
+			$(CC) $(CFLAGS) -Iincludes -Ilibft -Imlx -c $< -o $@
 
-LIBFT       = -L libft -lft
+$(NAME):	$(OBJS)
+			make -C libft
+			make -C mlx
+			$(CC) -Llibft -lft -L. -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
-# MLXLINUX    = -I minilibx -L minilibx-linux -lmlx
-# SYS         = -lXext -lX11 -lbsd -lm
-MLX         = -Lmlx -lmlx -framework OpenGL -framework AppKit
-all:$(NAME)
-
-$(NAME):
-	@make -C ./libft
-	@make -C ./minilibx-linux
-	@make -C ./minilibx
-	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLXLINUX} ${SYS} -o ${NAME}
-	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLX} -o ${NAME}
 clean:
-	@/bin/rm -f $(OBJ)
-	@make clean -C ./libft
+			$(RM) $(OBJS)
 
-fclean: clean
-	@/bin/rm -f $(NAME)
-	@/bin/rm -f cub3D.bmp
-	@make fclean -C ./libft
-	@make clean -C ./mlx
-	@make clean -C ./minilibx-linux
+fclean:		clean
+			$(RM) $(NAME)
 
-re: fclean all
+re:			fclean all
 
-norm :
-	@norminette *.c *.h ./libft/*.c ./libft/*.h
+all:		$(NAME)
 
-screen : $(NAME)
-	./$(NAME) cub3d.cub --save
-	open screen.bmp
+.PHONY: clean fclean re all
 
-.PHONY: all clean fclean re norm run screen

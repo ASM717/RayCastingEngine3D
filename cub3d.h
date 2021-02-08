@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:45 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/03 16:23:56 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/08 12:47:44 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "libft/libft.h"
 # include "srcs/gnl/get_next_line.h"
-# include "minilibx-linux/mlx.h"
-//# include "minilibx/mlx.h"
+//# include "minilibx-linux/mlx.h"
+# include "mlx/mlx.h"
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -46,11 +46,6 @@ typedef struct 	s_side
 	char		*east;
 }				t_side;
 
-typedef struct	s_map
-{
-
-}				t_map;
-
 typedef struct	s_keyb
 {
 	int 		w;
@@ -63,6 +58,8 @@ typedef struct	s_keyb
 }				t_keyb;
 
 typedef struct  s_data {
+	void 		*mlx;
+	void 		*win;
 	void        *img;
 	char        *addr;
 	int         bits_per_pixel;
