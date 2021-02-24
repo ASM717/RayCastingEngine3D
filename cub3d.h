@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:45 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/24 18:32:23 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/24 19:27:26 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,11 +136,11 @@ typedef struct	s_engine
 
 int				ft_exist_screensave(char *s);
 int				ft_file_exist(char *s);
-void			ft_init_all_struct(t_engine *game);
+void			ft_init_all_struct(t_engine *engine);
 void			ft_err_print(char *s);
-int				ft_start_parser(int fd, t_parser *parser, t_engine *game);
+int				ft_start_parser(int fd, t_parser *parser, t_engine *engine);
 void			ft_init_start_parser(t_parser *parser);
-int				ft_parser2(t_engine *game);
+int				ft_parser2(t_parser *parser, t_engine *engine);
 void			ft_free_array_str(char **s);
 char			**ft_build_map(t_parser *parser);
 int				ft_map_verification(char **str, t_parser *parser);
