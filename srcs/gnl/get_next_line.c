@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amuriel <amuriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 11:55:04 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/02 11:29:24 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/24 11:54:29 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strchr(const char *s, int c)
 
 	str = (char*)s;
 	if (c == 0)
-		return ((char*)(s + ft_strlen(s)));
+		return ((char*)(s + ft_strlen_gnl(s)));
 	while (*(str))
 	{
 		if (*str == (char)c)

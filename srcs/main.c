@@ -6,173 +6,217 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 17:08:51 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/12 12:13:32 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/24 18:33:57 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-// void 	init_struct(t_engine *game)
-// {
-// 	game->side.east = NULL;
-// 	game->side.north = NULL;
-// 	game->side.south = NULL;
-// 	game->side.west = NULL;
+t_rgb	ft_rgb(int r, int g, int b)
+{
+	t_rgb	rgb;
 
-// 	game->screen.height = 0;
-// 	game->screen.width = 0;
-// }
+	rgb.r = r;
+	rgb.g = g;
+	rgb.b = b;
+	rgb.color = ((r * 256 * 256) + (g * 256) + b);
+	return (rgb);
+}
 
-void	ft_putstr(char *s)
+void	ft_init_all_struct(t_engine *game)
+{
+	game->side.east = NULL;
+	game->side.north = NULL;
+	game->side.south = NULL;
+	game->side.west = NULL;
+	game->screen.height = -1;
+	game->screen.width = -1;
+	game->keyb.w = 0;
+	game->keyb.s = 0;
+	game->keyb.d = 0;
+	game->keyb.a = 0;
+	game->keyb.escape = 0;
+	game->keyb.left = 0;
+	game->keyb.right = 0;
+	// game->data.addr = NULL;
+	// game->data.bits_per_pixel = 0;
+	// game->data.endian = 0;
+	// game->data.endian = 0;
+	// game->data.img = 0;
+	// game->data.win = 0;
+	// game->data.mlx = 0;
+	game->map = NULL;
+	game->sprite = NULL;
+	game->f_rgb = ft_rgb(-1, -1, -1);
+	game->c_rgb = ft_rgb(-1, -1, -1);
+}
+
+void	ft_init_start_parser(t_parser *parser)
+{
+	parser->flag = 0;
+	parser->size = 0;
+	parser->head = 0;
+	parser->line = 0;
+}
+
+int	ft_square(char c)
+{
+	if (c != ' ' || c != '1')
+		return (1);
+	return (0);
+}
+
+int		ft_indent(int i, int j, char **str)
+{
+	if (i == 0 || i == ft_str_array_map_len(str) - 1)
+		return (1);
+	if (j == 0 || j == ft_strlen(str[i]) - 1)
+		return (1);
+	if (str[i][j - 1] == ' ' || str[i][j + 1] == ' ')
+		return (1);
+	if (str[i - 1][j] == ' ' || str[i + 1][j] == ' ')
+		return (1);
+	if (j > (ft_strlen(str[i - 1]) - 1) || j > (ft_strlen(str[i + 1]) - 1))
+		return (1);
+	return (0);
+}
+
+int		ft_player_verification(char c, t_parser *parser) //*
+{
+	if (ft_strchr("WESN", c))
+	{
+		if (parser->flag_verif == 1) //* or &
+			return (1);
+		parser->flag_verif = 1;
+	}
+	return (0);
+}
+
+int		ft_str_array_map_len(char **str)
+{
+	int	length;
+
+	length = 0;
+	if (!str)
+		return (0);
+	while (str[length])
+		length++;
+	return (length);
+}
+
+int		ft_map_verification(char **str, t_parser *parser)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	parser->flag_verif = 0;
+	i = 0;
+	count = ft_str_array_map_len(str);
+	while (i < count)
+	{
+		j = 0;
+		while (j < ft_strlen(str[i]))
+		{
+			if (ft_square(str[i][j]) && ft_indent(i, j, str))
+				return (-1);
+			if (ft_player_verification(str[i][j], parser))
+				return (-1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+char	**ft_build_map(t_parser *parser)
+{
+	t_engine	game;
+	int			i;
+	t_list		*tmp;
+
+	i = 0;
+	game.map = ft_calloc((parser->size + 1), sizeof(char *));
+	tmp = parser->head;
+	while (tmp)
+	{
+		game.map[i] = ft_strdup(tmp->content);
+		i++;
+		tmp = tmp->next;
+	}
+	ft_lstclear(&parser->head, &free);
+	return (game.map);
+}
+
+void	ft_free_array_str(char **s)
 {
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
+	while (s[i])
+		free(s[i++]);
+	free(s);
 }
 
-char	**make_map(t_list **head, int size)
+int		ft_parser2(t_engine *game)
 {
-	int		i;
-	char	**map;
-	t_list	*tmp;
+	t_parser parser;
+
+	game->map = 0;
+	parser.size = 0;
+	game->map = ft_split(parser.line, ' ');
+	//parser->flag = ft_check_texture(game->map, game);
+	if (parser.flag == 1 && parser.line)
+	{
+		ft_lstadd_back(&(parser.head), ft_lstnew(parser.line));
+		parser.size++;
+		parser.line = NULL;
+	}
+	if (parser.flag)
+		ft_free_array_str(game->map);
+	game->map = NULL;
+	return (parser.size);
+}
+
+int		ft_start_parser(int fd, t_parser *parser, t_engine *game)
+{
+	ft_init_start_parser(parser);
+	ft_init_all_struct(game);
+	while (parser->flag != -1 && get_next_line(fd, &parser->line))
+		parser->size += ft_parser2(game);
+	ft_lstadd_back(&parser->head, ft_lstnew(parser->line));
+	parser->size++;
+	game->map = ft_build_map(parser);
+	if (ft_map_verification(game->map, parser))
+		parser->flag = -1;
+	return (parser->flag);
+}
+
+void	ft_err_print(char *s)
+{
+	write(2, s, ft_strlen(s));
+	exit(EXIT);
+}
+
+int		ft_file_exist(char *s)
+{
+	int i;
 
 	i = 0;
-	map = ft_calloc((size + 1), sizeof(char *));
-	tmp = *head;
-	while (tmp)
-	{
-		map[i] = ft_strdup(tmp->content);
+	while (s[i] != '.' && s[i])
 		i++;
-		tmp= tmp->next;
-	}
-	i = 0;
-	ft_lstclear(head, &free);
-	return (map);
-}
-
-char	**ft_read_map(char *av1)
-{
-	char	*str;
-	t_list	*head;
-	int		size;
-	int		fd;
-
-	str = 0;
-	head = 0;
-	size = 0;
-	fd = open(av1, O_RDONLY);
-	while (get_next_line(fd, &str))
+	if (ft_strncmp(&s[i], ".cub", ft_strlen(&s[i])) == 0)
 	{
-		ft_lstadd_back(&head, ft_lstnew(str));
-		size++;
-		str = NULL;
+		return (1);
 	}
-	close(fd);
-	ft_lstadd_back(&head, ft_lstnew(str));
-	size++;
-	return (make_map(&head, size));
-}
-
-
-void	ft_init_player(char **map, t_plr *plr)
-{
-	t_point pos;
-
-	ft_bzero(&pos, sizeof(t_point));
-	while (map[pos.y])
-	{
-		pos.x = 0;
-		while (map[pos.y][pos.x])
-		{
-			if (ft_strchr("NEWS", map[pos.y][pos.x]))
-			{
-				plr->x = pos.x * SCALE;
-				plr->y = pos.y * SCALE;
-			}
-			pos.x++;
-		}
-		pos.y++;
-	}
-}
-
-void ft_scale_img(t_win *win, t_point point)
-{
-	t_point end;
-
-	end.x = (point.x + 1) * SCALE;
-	end.y = (point.y + 1) * SCALE;
-	point.x *= SCALE;
-	point.y *= SCALE;
-	while (point.y < end.y)
-	{
-
-		while (point.x < end.x)
-		{
-			mlx_pixel_put(win->mlx, win->win, point.x++, point.y, 0xFFFFFF);
-		}
-		point.x -= SCALE;
-		point.y++;
-	}
-}
-
-void ft_draw_player(t_win *win, t_plr *pl)
-{
-	t_point end;
-	t_plr plr = *pl;
-
-	end.x = plr.x + SCALE;
-	end.y = plr.y + SCALE;
-	while (plr.y < end.y)
-	{
-		while (plr.x < end.x)
-		{
-			mlx_pixel_put(win->mlx, win->win, plr.x++, plr.y, 0x119911);
-		}
-		plr.x -= SCALE;
-		plr.y++;
-	}
-}
-
-void	draw_screen(t_all *all)
-{
-	t_point point;
-
-	ft_bzero(&point, sizeof(t_point));
-	while (all->map[point.y])
-	{
-		point.x = 0;
-		while (all->map[point.y][point.x])
-		{
-			if (all->map[point.y][point.x] == '1')
-				ft_scale_img(all->win, point);
-			point.x++;
-		}
-		point.y++;
-	}
-	ft_draw_player(all->win, all->plr);
-}
-
-int		ft_key_press(int key, t_all *all)
-{
-	mlx_clear_window(all->win->mlx, all->win->win);
-	if (key == 119)
-		all->plr->y -= 1;
-	if (key == 115)
-		all->plr->y += 1;
-	if (key == 97)
-		all->plr->x -= 1;
-	if (key == 100)
-		all->plr->x += 1;
-	if (key == ESC)
-		exit(0);
-	draw_screen(all);
 	return (0);
+}
+
+int		ft_exist_screensave(char *s)
+{
+	if (ft_strncmp(s, "--save", ft_strlen(s)))
+		return (0);
+	return (1);
 }
 
 // void    my_mlx_pixel_put(t_data *data, int x, int y, int color)
@@ -183,46 +227,26 @@ int		ft_key_press(int key, t_all *all)
 //     *(unsigned int*)dst = color;
 // }
 
-int		main(int argc, char **argv)
+int		main(int ac, char **av)
 {
-	t_win win;
-	t_plr plr;
-	t_all all;
+	int			fd;
+	t_engine	game;
+	t_parser	parser;
 
-	if (argc == 2)
-		all.map = ft_read_map(argv[1]);
-	else
-	{
-		ft_putendl_fd("Need a map !", 2);
-		return(-1);
-	}
-	ft_init_player(all.map, &plr);
-    win.mlx = mlx_init();
-    win.win = mlx_new_window(win.mlx, 640, 480, "cub3D");
-	// int i = 0;
-    // int j = 0;
-    // while (all.map[i][j])
-    // {
-    //     j = 0;
-    //     while (all.map[i][j] != '\0')
-    //     {
-	// 		if (all.map[i][j] == '1')
-	// 			mlx_pixel_put(win.mlx, win.win, i, j, 0x00FF0000);
-	// 		if (all.map[i][j] == '0')
-	// 			mlx_pixel_put(win.mlx, win.win, i, j, 0x0000FF00);
-	// 		if (all.map[i][j] == 'N')
-	// 			mlx_pixel_put(win.mlx, win.win, i, j, 0x00FFFFFF);
-    //         j++;
-    //     }
-	// 	j = 0;
-    //     i++;
-    // }
-    win.img = mlx_new_image(win.mlx, 1000, 800);
-    win.addr = mlx_get_data_addr(win.img, &win.bpp, &win.line_l, &win.en);
-	all.plr = &plr;
-	all.win = &win;
-	draw_screen(&all);
-	mlx_hook(win.win, 2, (1L << 0), &ft_key_press, &all);
-    mlx_loop(win.mlx);
-
+	if (ac < 2 || ac > 3)
+		ft_err_print("ERROR!\n");
+	if (!ft_file_exist(av[1]))
+		ft_err_print("ERROR!\n");
+	if (ac == 3 && !ft_exist_screensave(av[2]))
+		ft_err_print("ERROR!\n");
+	fd = open(av[1], O_RDONLY);
+	if (fd < 0)
+		ft_err_print("ERROR!\n");
+	if (ft_start_parser(fd, &parser, &game) == -1)
+		ft_err_print("ERROR!\n");
+	// if (ac == 2)
+	// 	ft_start_game(&game);
+	// else if (ac == 3)
+	// 	ft_screenshoting(&game);
+	return (0);
 }

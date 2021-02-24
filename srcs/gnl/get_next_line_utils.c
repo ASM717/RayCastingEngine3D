@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amuriel <amuriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 11:58:24 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/02 11:29:24 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/24 11:55:07 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_gnl(const char *s)
 {
 	size_t i;
 
@@ -58,7 +58,7 @@ char	*ft_strdup(const char *s1)
 	char	*str;
 	char	*i;
 
-	str = malloc(ft_strlen(s1) + 1);
+	str = malloc(ft_strlen_gnl(s1) + 1);
 	i = str;
 	if (str == NULL)
 		return (NULL);
@@ -76,7 +76,7 @@ char	*ft_strjoin_new(char *s1, char *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	if (!(str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	if (!(str = malloc(ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1)))
 		return (NULL);
 	i = 0;
 	j = 0;
