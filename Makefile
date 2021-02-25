@@ -1,25 +1,26 @@
-GAME        = cub3D
+GAME		= cub3D
 
 SRC		    = main.c \
-                gnl/get_next_line.c gnl/get_next_line_utils.c
+				facture.c screen.c \
+				gnl/get_next_line.c gnl/get_next_line_utils.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
 OBJS		= $(SRCS:.c=.o)
 
 # include
-INC         = -I ./ -I ./libft -I ./ft_printf -I ./gnl
+INC			= -I ./ -I ./libft -I ./ft_printf -I ./gnl
 
 # flags
-FLAGS       = -Wall -Wextra -Werror -g
+FLAGS		= -Wall -Wextra -Werror -g
 
 # libft library link
-LIBFT       = -L libft -lft
+LIBFT		= -L libft -lft
 
 # mlx library link
-MLX         = -I minilibx -L minilibx-linux -lmlx
+MLX			= -I minilibx -L minilibx-linux -lmlx
 
 # additional system libraries
-SYS         = -lXext -lX11 -lbsd -lm
+SYS			= -lXext -lX11 -lbsd -lm
 
 all:$(GAME)
 

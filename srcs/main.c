@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 17:08:51 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/24 19:27:39 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/25 20:55:48 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ int		ft_parser2(t_parser *parser, t_engine *engine)
 	sz = 0;
 	engine->map = 0;
 	engine->map = ft_split(parser->line, ' ');
-	//parser->flag = ft_check_texture(game->map, game);
+	parser->flag = ft_facture(engine->map, engine); //!!!!!
 	if (parser->flag == 1 && parser->line)
 	{
 		ft_lstadd_back(&(parser->head), ft_lstnew(parser->line));

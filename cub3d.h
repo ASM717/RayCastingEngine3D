@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:45 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/24 19:27:26 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/02/25 21:10:52 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
 
+# define R "R"
+# define NO "NO"
+# define SO "SO"
+# define WE "WE"
+# define EA "EA"
+# define S "S"
+# define F "F"
+# define C "C"
 # define SCALE 16
 # define EXIT -1
 
@@ -61,13 +69,6 @@
 // 	float		start;
 // 	float		end;
 // }				t_plr;
-
-// typedef struct	s_all // структура для всего вместе
-// {
-// 	t_win		*win;
-// 	t_plr		*plr;
-// 	char		**map;
-// }				t_all;
 
 typedef struct	s_screen
 {
@@ -148,5 +149,14 @@ int				ft_player_verification(char c, t_parser *parser);
 int				ft_str_array_map_len(char **str);
 int				ft_indent(int i, int j, char **str);
 int				ft_square(char c);
+int				ft_facture(char **s, t_engine *engine);
+int				ft_permission_window(char *r1, char *r2, t_engine *engine);
+int				ft_permission(char *r);
+void			ft_window(t_engine *engine);
+int				ft_settings_facture(char *facture, char **path_arr);
+int				ft_control_directoria(char *s);
+int				ft_settings_rgb(char *str, t_rgb *rgb);
+int				ft_control_rgb(char *s);
+
 
 #endif
