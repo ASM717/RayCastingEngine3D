@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 17:08:51 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/25 20:55:48 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/03/02 13:57:16 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,13 @@ void	ft_init_all_struct(t_engine *engine)
 	engine->side.west = NULL;
 	engine->screen.height = -1;
 	engine->screen.width = -1;
-	engine->keyb.w = 0;
-	engine->keyb.s = 0;
-	engine->keyb.d = 0;
-	engine->keyb.a = 0;
-	engine->keyb.escape = 0;
-	engine->keyb.left = 0;
-	engine->keyb.right = 0;
-	// game->data.addr = NULL;
-	// game->data.bits_per_pixel = 0;
-	// game->data.endian = 0;
-	// game->data.endian = 0;
-	// game->data.img = 0;
-	// game->data.win = 0;
-	// game->data.mlx = 0;
+	// engine->keyb.w = 0;
+	// engine->keyb.s = 0;
+	// engine->keyb.d = 0;
+	// engine->keyb.a = 0;
+	// engine->keyb.escape = 0;
+	// engine->keyb.left = 0;
+	// engine->keyb.right = 0;
 	engine->map = NULL;
 	engine->sprite = NULL;
 	engine->f_rgb = ft_rgb(-1, -1, -1);
@@ -200,7 +193,7 @@ int		ft_start_parser(int fd, t_parser *parser, t_engine *engine)
 void	ft_err_print(char *s)
 {
 	write(2, s, ft_strlen(s));
-	exit(EXIT);
+	exit(-1);
 }
 
 int		ft_file_exist(char *s)
@@ -238,26 +231,22 @@ int		main(int ac, char **av)
 	t_engine	engine;
 	t_parser	parser;
 
-
 	if (ac < 2 || ac > 3)
 		ft_err_print("ERROR! Need 2 or 3 argc\n");
-
 	if (!ft_file_exist(av[1]))
 		ft_err_print("ERROR! File not exist\n");
-
 	if (ac == 3 && !ft_exist_screensave(av[2]))
 		ft_err_print("ERROR!\n");
 	fd = open(av[1], O_RDONLY);
-
 	if (fd < 0)
 		ft_err_print("ERROR!\n");
-
 	if (ft_start_parser(fd, &parser, &engine) == -1)
 		ft_err_print("ERROR!\n");
-	printf("\nStepan %d\n", ac);
-
-	// if (ac == 2)
-	// 	ft_start_game(&game);
+	if (ac == 2)
+	{
+		init_game_start(engine);
+		ft_start_game(&engine);
+	}
 	// else if (ac == 3)
 	// 	ft_screenshoting(&game);
 	return (0);

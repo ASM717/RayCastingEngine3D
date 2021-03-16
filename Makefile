@@ -1,14 +1,16 @@
 GAME		= cub3D
 
-SRC		    = main.c \
-				facture.c screen.c \
+SRC		    = cub3dmain.c \
+              	keyboard.c \
+              	sprite.c \
+              	ceiling_floor.c \
 				gnl/get_next_line.c gnl/get_next_line_utils.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
 OBJS		= $(SRCS:.c=.o)
 
 # include
-INC			= -I ./ -I ./libft -I ./ft_printf -I ./gnl
+INC			= -I ./ -I ./libft -I ./gnl
 
 # flags
 FLAGS		= -Wall -Wextra -Werror -g

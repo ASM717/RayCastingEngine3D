@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:45 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/25 21:10:52 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/03/16 17:24:06 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,147 +16,176 @@
 # include "libft/libft.h"
 # include "srcs/gnl/get_next_line.h"
 # include "minilibx-linux/mlx.h"
-//# include "mlx/mlx.h"
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <math.h>
 
-# define ESC 53
-# define W 13
-# define S 1
-# define A 0
-# define D 2
-# define Q 12
-# define E 14
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
+# include <stdio.h>
 
-# define R "R"
-# define NO "NO"
-# define SO "SO"
-# define WE "WE"
-# define EA "EA"
-# define S "S"
-# define F "F"
-# define C "C"
-# define SCALE 16
-# define EXIT -1
+# define ESC			65307
+# define W				119
+# define S				115
+# define A				97
+# define D				100
+# define KEY_LEFT		65361
+# define KEY_RIGHT		65363
 
-// typedef struct	s_win //структура для окна
-// {
-// 	void		*mlx;
-// 	void		*win;
-// 	void		*img;
-// 	void		*addr;
-// 	int			line_l;
-// 	int			bpp;
-// 	int			en;
-// }				t_win;
+# define mapWidth		24
+# define mapHeight		24
 
-// typedef struct	s_point // структура для точки
-// {
-// 	int			x;
-// 	int			y;
-// }				t_point;
+# define SCR_WIDTH		1920
+# define SCR_HEIGHT		1080
 
-// typedef struct	s_plr //структура для игрока и луча
-// {
-// 	float		x;
-// 	float		y;
-// 	float		dir;
-// 	float		start;
-// 	float		end;
-// }				t_plr;
+# define TEX_WIDTH		64
+# define TEX_HEIGHT		64
 
-typedef struct	s_screen
+# define MOVESPEED		0.2
+# define ROTSPEED		0.05
+
+# define NO "textures/marbface.xpm"
+# define SO "textures/mountains.xpm"
+# define WE "textures/metal.xpm"
+# define EA "textures/brick.xpm"
+# define SP "textures/barrel.xpm"
+
+char					worldMap[mapWidth][mapHeight];
+
+typedef struct			s_data
 {
-	int			width;
-	int			height;
-}				t_screen;
+	void				*img;
+	void				*mlx;
+	void				*win;
+	char				*addr;
+	int					bitsPerPixel;
+	int					sizeLine;
+	int					endian;
+}						t_data;
 
-typedef struct	s_side
+typedef struct			s_rgb
 {
-	char 		*north;
-	char		*south;
-	char		*west;
-	char		*east;
-}				t_side;
+	int 				colR;
+	int 				colG;
+	int 				colB;
+	unsigned int 		rgbColor;
+}						t_rgb;
 
-typedef struct	s_keyb
+
+typedef struct			s_sprite
 {
-	int 		w;
-	int 		s;
-	int 		a;
-	int 		d;
-	int 		escape;
-	int 		right;
-	int 		left;
-}				t_keyb;
+	double				xStr;
+	double				yStr;
+}						t_sprite;
 
-typedef struct	s_data {
-	void 		*mlx;
-	void 		*win;
-	void		*img;
-	char		*addr;
-	int			bits_per_pixel;
-	int			line_length;
-	int			endian;
-}				t_data;
-
-typedef struct	s_rgb
+typedef struct			s_engine
 {
-	int			r;
-	int			g;
-	int			b;
-	int			color;
-}				t_rgb;
+	t_data				data;
+	t_data				dataNO;
+	t_data				dataSO;
+	t_data				dataWE;
+	t_data				dataEA;
+	t_data				dataSPR;
+	t_sprite			*strSpr;
+	t_rgb				rgbFloor;
+	t_rgb				rgbCeiling;
 
-typedef struct	s_parser
-{
-	int			flag;
-	int			size;
-	char		*line;
-	t_list		*head;
-	int			flag_verif;
-}				t_parser;
+	int 				scrHeight;
+	int 				scrWidth;
 
-typedef struct	s_engine
-{
-	char		**map;
-	char		*sprite;
-	t_screen	screen;
-	t_side		side;
-	t_keyb		keyb;
-	t_data		data;
-	t_rgb		rgb;
-	t_rgb		f_rgb;
-	t_rgb		c_rgb;
-}				t_engine;
 
-int				ft_exist_screensave(char *s);
-int				ft_file_exist(char *s);
-void			ft_init_all_struct(t_engine *engine);
-void			ft_err_print(char *s);
-int				ft_start_parser(int fd, t_parser *parser, t_engine *engine);
-void			ft_init_start_parser(t_parser *parser);
-int				ft_parser2(t_parser *parser, t_engine *engine);
-void			ft_free_array_str(char **s);
-char			**ft_build_map(t_parser *parser);
-int				ft_map_verification(char **str, t_parser *parser);
-int				ft_player_verification(char c, t_parser *parser);
-int				ft_str_array_map_len(char **str);
-int				ft_indent(int i, int j, char **str);
-int				ft_square(char c);
-int				ft_facture(char **s, t_engine *engine);
-int				ft_permission_window(char *r1, char *r2, t_engine *engine);
-int				ft_permission(char *r);
-void			ft_window(t_engine *engine);
-int				ft_settings_facture(char *facture, char **path_arr);
-int				ft_control_directoria(char *s);
-int				ft_settings_rgb(char *str, t_rgb *rgb);
-int				ft_control_rgb(char *s);
+	int 				x;
+	int 				y;
+	double				posX;
+	double				posY;
+	double				dirX;
+	double				dirY;
+	double				planeX;
+	double				planeY;
+	double				rayDirX;
+	double				rayDirY;
+	int					mapX;
+	int					mapY;
+	double				sideDistX;
+	double				sideDistY;
+	double				deltaDistX;
+	double				deltaDistY;
+	int					stepX;
+	int					stepY;
+	int					side;
+	int					drawStart;
+	int					drawEnd;
+	double				perpWallDist;
+	int 				lineHeight;
 
+	int 				keycodeW;
+	int 				keycodeS;
+	int 				keycodeA;
+	int 				keycodeD;
+	int					keycodeLeft;
+	int					keycodeRight;
+
+	double				wallX;
+	int 				textureX;
+	int					textureY;
+	char 				wallRoute;
+	double				step;
+	double				texPos;
+	int					color;
+
+	char 				*texNorth;
+	char 				*texSouth;
+	char 				*texWest;
+	char 				*texEast;
+	char 				*texSprite;
+
+	double				*zBuff;
+
+	int 				spriteNum;
+	int 				*spriteOrder;
+	double				*spriteDist;
+
+	double				sortSpriteX;
+	double				sortSpriteY;
+
+	double				spriteX;
+	double				spriteY;
+	double				invDet;
+	double				transformX;
+	double 				transformY;
+	int 				spriteScrX;
+	int 				spriteH;
+	int 				drawStartY;
+	int 				drawEndY;
+	int 				spriteW;
+	int 				drawStartX;
+	int					drawEndX;
+	int					stripe;
+	int					sprTextX;
+	int 				sprTextY;
+	int 				tmpSprY;
+	int					tmpSprD;
+	int 				sprCol;
+
+
+}						t_engine;
+
+int		check_movement(int x, int y);
+void	ft_keycode_handle(t_engine *engine);
+int		ft_keycode_used(int keycode, t_engine *engine);
+int		ft_keycode_unused(int keycode, t_engine *engine);
+int		ft_exit(t_engine *engine);
+
+unsigned	int	get_pixel(t_data *data, int x, int y);
+void			my_mlx_pixel_put(t_data *data, int x, int y, int color);
+
+void 	ft_main_sprites(t_engine *engine);
+void	ft_sort_swap(t_engine *engine);
+t_sprite			*ft_get_sprites(t_engine *engine);
+int		ft_number_sprites();
+
+int 	ft_init_color_rgb(t_engine *engine);
+int 	ft_get_rgb_color_ceiling(t_engine *engine);
+int 	ft_get_rgb_color_floor(t_engine *engine);
 
 #endif
