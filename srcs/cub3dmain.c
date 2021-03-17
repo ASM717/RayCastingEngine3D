@@ -149,17 +149,17 @@ void	ft_ray_walldist_calculation2(t_engine *engine)
 		engine->textureX = TEX_WIDTH - engine->textureX - 1;
 	engine->step = (1.0 * TEX_HEIGHT) / engine->lineHeight;
 	engine->texPos = (engine->drawStart - engine->scrHeight / 2 +
-									engine->lineHeight / 2) * engine->step;
+			engine->lineHeight / 2) * engine->step;
 }
 
 void	ft_ray_walldist_calculation(t_engine *engine)
 {
 	if (engine->side == 0)
 		engine->perpWallDist = (engine->mapX - engine->posX +
-								(1 - engine->stepX) / 2) / engine->rayDirX;
+				(1 - engine->stepX) / 2) / engine->rayDirX;
 	else
 		engine->perpWallDist = (engine->mapY - engine->posY +
-								(1 - engine->stepY) / 2) / engine->rayDirY;
+				(1 - engine->stepY) / 2) / engine->rayDirY;
 }
 
 void	ft_ray_hit(t_engine *engine)
@@ -192,25 +192,25 @@ void	ft_ray_position(t_engine *engine)
 	{
 		engine->stepX = -1;
 		engine->sideDistX = (engine->posX - engine->mapX) *
-													engine->deltaDistX;
+				engine->deltaDistX;
 	}
 	else
 	{
 		engine->stepX = 1;
 		engine->sideDistX = (engine->mapX + 1.0 - engine->posX) *
-													engine->deltaDistX;
+				engine->deltaDistX;
 	}
 	if (engine->rayDirY < 0)
 	{
 		engine->stepY = -1;
 		engine->sideDistY = (engine->posY - engine->mapY) *
-													engine->deltaDistY;
+				engine->deltaDistY;
 	}
 	else
 	{
 		engine->stepY = 1;
 		engine->sideDistY = (engine->mapY + 1.0 - engine->posY) *
-													engine->deltaDistY;
+				engine->deltaDistY;
 	}
 }
 
@@ -247,7 +247,7 @@ int		ft_raycast(t_engine *engine)
 			//потолок
 			if (engine->y < engine->drawStart)
 				my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-						ft_get_rgb_color_ceiling(engine));
+					 ft_get_rgb_color_ceiling(engine));
 			//cтены
 			if (engine->y >= engine->drawStart && engine->y <= engine->drawEnd)
 			{
@@ -257,25 +257,25 @@ int		ft_raycast(t_engine *engine)
 				{
 					if (engine->stepX > 0)
 						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-										 get_pixel(&engine->dataSO, engine->textureX, engine->textureY));
+					   get_pixel(&engine->dataSO, engine->textureX, engine->textureY));
 					else
 						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-										 get_pixel(&engine->dataNO, engine->textureX, engine->textureY));
+					   get_pixel(&engine->dataNO, engine->textureX, engine->textureY));
 				}
 				else
 				{
 					if (engine->stepY > 0)
 						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-										 get_pixel(&engine->dataEA, engine->textureX, engine->textureY));
+					   get_pixel(&engine->dataEA, engine->textureX, engine->textureY));
 					else
 						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-										 get_pixel(&engine->dataWE, engine->textureX, engine->textureY));
+					   get_pixel(&engine->dataWE, engine->textureX, engine->textureY));
 				}
 			}
 			//пол
 			if (engine->y > engine->drawEnd && engine->y < engine->scrHeight)
 				my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-								 ft_get_rgb_color_floor(engine));
+					 ft_get_rgb_color_floor(engine));
 			engine->y++;
 		}
 		engine->x++;
@@ -283,7 +283,7 @@ int		ft_raycast(t_engine *engine)
 	}
 	ft_main_sprites(engine);
 	mlx_put_image_to_window(engine->data.mlx, engine->data.win,
-							engine->data.img, 0, 0);
+						 engine->data.img, 0, 0);
 	return (0);
 }
 
@@ -293,35 +293,45 @@ int 	ft_restart(t_engine *engine)
 	engine->zBuff = malloc(sizeof(double) * engine->scrWidth);
 	ft_raycast(engine);
 	free(engine->zBuff);
+	//if (engine->screenFlag == 1)
+	some_func(engine); //вызов скриншота
 	return (0);
 }
 
-int 	main(void)
+int 	main(int argc, char **argv)
 {
+	if (argc == 2 && argv[1])
+	{
+		t_engine *engine;
+		engine = malloc(sizeof(t_engine));
 
-	t_engine *engine;
-	engine = malloc(sizeof(t_engine));
-
-	if (init_engine(engine) != 0)
-		return (-1);
-	if (ft_init_color_rgb(engine) != 0)
-		return (-1);
-	engine->data.mlx = mlx_init();
-	engine->data.win = mlx_new_window(engine->data.mlx,
-										engine->scrWidth,
-										engine->scrHeight, "Cub3D");
-	ft_init_texture(engine);
-	engine->data.img = mlx_new_image(engine->data.mlx,
-										engine->scrWidth, engine->scrHeight);
-	engine->data.addr = mlx_get_data_addr(engine->data.img,
+		if (init_engine(engine) != 0)
+			return (-1);
+		if (ft_init_color_rgb(engine) != 0)
+			return (-1);
+		engine->data.mlx = mlx_init();
+		engine->data.win = mlx_new_window(engine->data.mlx,
+									engine->scrWidth,
+									engine->scrHeight, "Cub3D");
+		ft_init_texture(engine);
+		engine->data.img = mlx_new_image(engine->data.mlx,
+								   engine->scrWidth, engine->scrHeight);
+		engine->data.addr = mlx_get_data_addr(engine->data.img,
 										&engine->data.bitsPerPixel,
 										&engine->data.sizeLine,
 										&engine->data.endian);
 
-	mlx_hook(engine->data.win, 2, (1L << 0), ft_keycode_used, engine);
-	mlx_hook(engine->data.win, 3, (1L << 1), ft_keycode_unused, engine);
-	mlx_hook(engine->data.win, 33, (1L << 0), ft_exit, engine);
-	mlx_loop_hook(engine->data.mlx, ft_restart, engine);
-	mlx_loop(engine->data.mlx);
-	free(engine);
+		//engine->screenFlag = save;
+
+		mlx_hook(engine->data.win, 2, (1L << 0),
+				 ft_keycode_used, engine);
+		mlx_hook(engine->data.win, 3, (1L << 1),
+				 ft_keycode_unused, engine);
+		mlx_hook(engine->data.win, 33, (1L << 0),
+				 ft_exit, engine);
+		mlx_loop_hook(engine->data.mlx, ft_restart, engine);
+		mlx_loop(engine->data.mlx);
+		free(engine);
+	}
+
 }

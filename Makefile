@@ -4,6 +4,7 @@ SRC		    = cub3dmain.c \
               	keyboard.c \
               	sprite.c \
               	ceiling_floor.c \
+              	screenshot_bmp.c \
 				gnl/get_next_line.c gnl/get_next_line_utils.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
