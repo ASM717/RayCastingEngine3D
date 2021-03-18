@@ -96,7 +96,7 @@ int		init_engine(t_engine *engine)
 	engine->scrWidth = SCR_WIDTH;
 
 	engine->posX = 20;
-	engine->posY = 10;
+	engine->posY = 12;
 	engine->dirX = -1;
 	engine->dirY = 0;
 	engine->planeX = 0;
@@ -294,7 +294,7 @@ int 	ft_restart(t_engine *engine)
 	ft_raycast(engine);
 	free(engine->zBuff);
 	//if (engine->screenFlag == 1)
-	some_func(engine); //вызов скриншота
+	ft_screenshot_make(engine); //вызов скриншота
 	return (0);
 }
 

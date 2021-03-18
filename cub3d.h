@@ -72,42 +72,18 @@ typedef struct			s_rgb
 	unsigned int 		rgbColor;
 }						t_rgb;
 
-typedef struct			s_shot
+typedef struct			s_headshot
 {
-	int32_t				scrWidth;
-	int32_t				scrHeight;
-	uint16_t			bitCount;
-	int 				widthInBytes;
-	uint32_t			imageSize;
-	uint32_t			bmpSize;
-	uint16_t			bmpPlanes;
-	unsigned char 		*buffS;
-
-}						t_shot;
-
-typedef struct			s_bmpFileHeader
-{
-	uint16_t			bmpType;
-	uint32_t			bmpSize;
-	uint16_t			bmpReserved1;
-	uint16_t			bmpReserved2;
-	uint32_t			bmpOffBits;
-}						t_bmpFileHeader;
-
-typedef struct			s_bmpInfoHeader
-{
-	uint32_t			bmpSize;
-	int32_t				bmpWidth;
-	int32_t				bmpHeight;
-	uint16_t			bmpPlanes;
-	uint16_t			bmpBitCount;
-	uint32_t			bmpCompression;
-	uint32_t			bmpSizeImage;
-	int32_t				bmpXPelsPerMeter;
-	int32_t				bmpYPelsPerMeter;
-	uint32_t			bmpClrUsed;
-	uint32_t			bmpClrImportant;
-}						t_bmpInfoHeader;
+	int 				fd;
+	int 				bmpPlane;
+	int 				scrSize;
+	int 				bmpSize;
+	int 				bmpOffBits;
+	int 				zero;
+	int 				colorTable;
+	int 				range;
+	int 				col;
+}						t_headshot;
 
 typedef struct			s_sprite
 {
@@ -126,7 +102,7 @@ typedef struct			s_engine
 	t_sprite			*strSpr;
 	t_rgb				rgbFloor;
 	t_rgb				rgbCeiling;
-	t_shot				shot;
+	t_headshot			shot;
 	int 				screenFlag;
 	int 				scrHeight;
 	int 				scrWidth;
@@ -228,7 +204,6 @@ int 	ft_get_rgb_color_floor(t_engine *engine);
 
 
 
-void 	ft_init_shot(t_engine *engine);
-void	some_func(t_engine *engine);
+void		ft_screenshot_make(t_engine *engine);
 
 #endif
