@@ -5,11 +5,13 @@ SRC		    = cub3dmain.c \
               	sprite.c \
               	ceiling_floor.c \
               	screenshot_bmp.c \
+              	texture_wall.c \
 				gnl/get_next_line.c gnl/get_next_line_utils.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
 OBJS		= $(SRCS:.c=.o)
 
+GNL			= srcs/gnl/
 # include
 INC			= -I ./ -I ./libft -I ./gnl
 

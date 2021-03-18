@@ -190,9 +190,9 @@ int		ft_keycode_used(int keycode, t_engine *engine);
 int		ft_keycode_unused(int keycode, t_engine *engine);
 int		ft_exit(t_engine *engine);
 
-unsigned	int	get_pixel(t_data *data, int x, int y);
+unsigned	int	ft_get_pixel(t_data *data, int x, int y);
 void			my_mlx_pixel_put(t_data *data, int x, int y, int color);
-
+void 	ft_print_wall(t_engine *engine);
 void 	ft_main_sprites(t_engine *engine);
 void	ft_sort_swap(t_engine *engine);
 t_sprite			*ft_get_sprites(t_engine *engine);

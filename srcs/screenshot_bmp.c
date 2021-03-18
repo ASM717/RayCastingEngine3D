@@ -8,7 +8,7 @@ void 	ft_screen_pack(t_engine *engine)
 		engine->shot.col = 0;
 		while (engine->shot.col < engine->scrWidth)
 		{
-			engine->shot.colorTable = get_pixel(&engine->data,
+			engine->shot.colorTable = ft_get_pixel(&engine->data,
 									   engine->shot.col,
 									   engine->shot.range);
 			write(engine->shot.fd, &engine->shot.colorTable, 4);

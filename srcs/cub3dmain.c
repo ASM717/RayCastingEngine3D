@@ -118,13 +118,13 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dest = color;
 }
 
-unsigned	int	get_pixel(t_data *data, int x, int y)
+unsigned	int	ft_get_pixel(t_data *data, int x, int y)
 {
 	unsigned int	color;
-	char			*dst;
+	char			*dest;
 
-	dst = data->addr + (y * data->sizeLine+ x * (data->bitsPerPixel / 8));
-	color = *(unsigned int*)dst;
+	dest = data->addr + (y * data->sizeLine+ x * (data->bitsPerPixel / 8));
+	color = *(unsigned int*)dest;
 	return (color);
 }
 
@@ -250,28 +250,7 @@ int		ft_raycast(t_engine *engine)
 					 ft_get_rgb_color_ceiling(engine));
 			//cтены
 			if (engine->y >= engine->drawStart && engine->y <= engine->drawEnd)
-			{
-				engine->textureY = (int) engine->texPos & (TEX_HEIGHT - 1);
-				engine->texPos += engine->step;
-				if (engine->side == 0)
-				{
-					if (engine->stepX > 0)
-						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-					   get_pixel(&engine->dataSO, engine->textureX, engine->textureY));
-					else
-						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-					   get_pixel(&engine->dataNO, engine->textureX, engine->textureY));
-				}
-				else
-				{
-					if (engine->stepY > 0)
-						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-					   get_pixel(&engine->dataEA, engine->textureX, engine->textureY));
-					else
-						my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-					   get_pixel(&engine->dataWE, engine->textureX, engine->textureY));
-				}
-			}
+				ft_print_wall(engine);
 			//пол
 			if (engine->y > engine->drawEnd && engine->y < engine->scrHeight)
 				my_mlx_pixel_put(&engine->data, engine->x, engine->y,
@@ -282,8 +261,6 @@ int		ft_raycast(t_engine *engine)
 		engine->zBuff[engine->x] = engine->perpWallDist;
 	}
 	ft_main_sprites(engine);
-	mlx_put_image_to_window(engine->data.mlx, engine->data.win,
-						 engine->data.img, 0, 0);
 	return (0);
 }
 
@@ -292,37 +269,52 @@ int 	ft_restart(t_engine *engine)
 	ft_keycode_handle(engine);
 	engine->zBuff = malloc(sizeof(double) * engine->scrWidth);
 	ft_raycast(engine);
+	mlx_put_image_to_window(engine->data.mlx, engine->data.win,
+							engine->data.img, 0, 0);
 	free(engine->zBuff);
-	//if (engine->screenFlag == 1)
-	ft_screenshot_make(engine); //вызов скриншота
+	if (engine->screenFlag == 1)
+		ft_screenshot_make(engine); //вызов скриншота
 	return (0);
 }
 
 int 	main(int argc, char **argv)
 {
-	if (argc == 2 && argv[1])
+	t_engine *engine;
+	engine = malloc(sizeof(t_engine));
+
+	if (init_engine(engine) != 0)
+		return (-1);
+	if (ft_init_color_rgb(engine) != 0)
+		return (-1);
+	engine->data.mlx = mlx_init();
+	engine->data.win = mlx_new_window(engine->data.mlx,
+									  engine->scrWidth,
+									  engine->scrHeight, "Cub3D");
+	ft_init_texture(engine);
+	engine->data.img = mlx_new_image(engine->data.mlx,
+									 engine->scrWidth, engine->scrHeight);
+	engine->data.addr = mlx_get_data_addr(engine->data.img,
+										  &engine->data.bitsPerPixel,
+										  &engine->data.sizeLine,
+										  &engine->data.endian);
+
+	if (argc == 1 && argv[0])
 	{
-		t_engine *engine;
-		engine = malloc(sizeof(t_engine));
 
-		if (init_engine(engine) != 0)
-			return (-1);
-		if (ft_init_color_rgb(engine) != 0)
-			return (-1);
-		engine->data.mlx = mlx_init();
-		engine->data.win = mlx_new_window(engine->data.mlx,
-									engine->scrWidth,
-									engine->scrHeight, "Cub3D");
-		ft_init_texture(engine);
-		engine->data.img = mlx_new_image(engine->data.mlx,
-								   engine->scrWidth, engine->scrHeight);
-		engine->data.addr = mlx_get_data_addr(engine->data.img,
-										&engine->data.bitsPerPixel,
-										&engine->data.sizeLine,
-										&engine->data.endian);
-
-		//engine->screenFlag = save;
-
+		engine->screenFlag = 0;
+		mlx_hook(engine->data.win, 2, (1L << 0),
+				 ft_keycode_used, engine);
+		mlx_hook(engine->data.win, 3, (1L << 1),
+				 ft_keycode_unused, engine);
+		mlx_hook(engine->data.win, 33, (1L << 0),
+				 ft_exit, engine);
+		mlx_loop_hook(engine->data.mlx, ft_restart, engine);
+		mlx_loop(engine->data.mlx);
+		free(engine);
+	}
+	else if (argc == 2 && argv[1])
+	{
+		engine->screenFlag = 1;
 		mlx_hook(engine->data.win, 2, (1L << 0),
 				 ft_keycode_used, engine);
 		mlx_hook(engine->data.win, 3, (1L << 1),

@@ -149,7 +149,7 @@ void 	ft_main_sprites(t_engine *engine)
 							engine->spriteH * 128;
 					engine->sprTextY = ((engine->tmpSprD * TEX_HEIGHT) /
 							engine->spriteH) / 256;
-					engine->sprCol = get_pixel(&engine->dataSPR, engine->sprTextX, engine->sprTextY);
+					engine->sprCol = ft_get_pixel(&engine->dataSPR, engine->sprTextX, engine->sprTextY);
 					if (engine->sprCol != 0)
 						my_mlx_pixel_put(&engine->data, engine->stripe, engine->tmpSprY, engine->sprCol);
 					engine->tmpSprY++;
