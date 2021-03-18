@@ -1,4 +1,6 @@
 #include "../cub3d.h"
+
+void 	ft_print_wall(t_engine *engine)
 {
 	engine->textureY = (int) engine->texPos & (TEX_HEIGHT - 1);
 	engine->texPos += engine->step;
