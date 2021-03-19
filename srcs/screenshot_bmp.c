@@ -1,6 +1,6 @@
 #include "../cub3d.h"
 
-void 	ft_screen_pack(t_engine *engine)
+static void	ft_screen_pack(t_engine *engine)
 {
 	engine->shot.range = engine->scrHeight - 1;
 	while (engine->shot.range >= 0)
@@ -18,7 +18,7 @@ void 	ft_screen_pack(t_engine *engine)
 	}
 }
 
-void 	ft_init_shot_header(t_engine *engine)
+static void	ft_init_shot_header(t_engine *engine)
 {
 	engine->shot.zero = 0;
 	write(engine->shot.fd, &engine->shot.zero, 4);

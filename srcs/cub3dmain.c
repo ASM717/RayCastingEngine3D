@@ -229,6 +229,15 @@ void	ft_camera_calculation(t_engine *engine)
 //		engine->deltaDistY = sqrt(1 + pow(engine->rayDirX, 2) / pow(engine->rayDirY, 2));
 }
 
+void 	ft_all_calculation(t_engine *engine)
+{
+	ft_camera_calculation(engine);
+	ft_ray_position(engine);
+	ft_ray_hit(engine);
+	ft_ray_walldist_calculation(engine);
+	ft_ray_walldist_calculation2(engine);
+}
+
 int		ft_raycast(t_engine *engine)
 {
 	engine->strSpr = ft_get_sprites(engine);
@@ -236,11 +245,7 @@ int		ft_raycast(t_engine *engine)
 
 	while (engine->x < engine->scrWidth)
 	{
-		ft_camera_calculation(engine);
-		ft_ray_position(engine);
-		ft_ray_hit(engine);
-		ft_ray_walldist_calculation(engine);
-		ft_ray_walldist_calculation2(engine);
+		ft_all_calculation(engine);
 		engine->y = 0;
 		while (engine->y < engine->scrHeight)
 		{
@@ -273,13 +278,14 @@ int 	ft_restart(t_engine *engine)
 							engine->data.img, 0, 0);
 	free(engine->zBuff);
 	if (engine->screenFlag == 1)
-		ft_screenshot_make(engine); //вызов скриншота
+		ft_screenshot_make(engine);
 	return (0);
 }
 
 int 	main(int argc, char **argv)
 {
-	t_engine *engine;
+	t_engine	*engine;
+
 	engine = malloc(sizeof(t_engine));
 
 	if (init_engine(engine) != 0)
@@ -288,19 +294,17 @@ int 	main(int argc, char **argv)
 		return (-1);
 	engine->data.mlx = mlx_init();
 	engine->data.win = mlx_new_window(engine->data.mlx,
-									  engine->scrWidth,
-									  engine->scrHeight, "Cub3D");
+								   engine->scrWidth,
+								   engine->scrHeight, "Cub3D");
 	ft_init_texture(engine);
 	engine->data.img = mlx_new_image(engine->data.mlx,
-									 engine->scrWidth, engine->scrHeight);
+								  engine->scrWidth, engine->scrHeight);
 	engine->data.addr = mlx_get_data_addr(engine->data.img,
-										  &engine->data.bitsPerPixel,
-										  &engine->data.sizeLine,
-										  &engine->data.endian);
-
+									   &engine->data.bitsPerPixel,
+									   &engine->data.sizeLine,
+									   &engine->data.endian);
 	if (argc == 1 && argv[0])
 	{
-
 		engine->screenFlag = 0;
 		mlx_hook(engine->data.win, 2, (1L << 0),
 				 ft_keycode_used, engine);
@@ -325,5 +329,4 @@ int 	main(int argc, char **argv)
 		mlx_loop(engine->data.mlx);
 		free(engine);
 	}
-
 }

@@ -36,8 +36,8 @@
 # define mapWidth		24
 # define mapHeight		24
 
-# define SCR_WIDTH		1920
-# define SCR_HEIGHT		1080
+# define SCR_WIDTH		640
+# define SCR_HEIGHT		480
 
 # define TEX_WIDTH		64
 # define TEX_HEIGHT		64
@@ -91,6 +91,12 @@ typedef struct			s_sprite
 	double				yStr;
 }						t_sprite;
 
+typedef struct			s_pm
+{
+	int 				fd;
+	char 				*line;
+}						t_pm;
+
 typedef struct			s_engine
 {
 	t_data				data;
@@ -103,6 +109,7 @@ typedef struct			s_engine
 	t_rgb				rgbFloor;
 	t_rgb				rgbCeiling;
 	t_headshot			shot;
+	t_pm				pm;
 	int 				screenFlag;
 	int 				scrHeight;
 	int 				scrWidth;
@@ -159,8 +166,8 @@ typedef struct			s_engine
 	int 				*spriteOrder;
 	double				*spriteDist;
 
-	double				sortSpriteX;
-	double				sortSpriteY;
+//	double				sortSpriteX;
+//	double				sortSpriteY;
 
 	double				spriteX;
 	double				spriteY;
@@ -180,6 +187,8 @@ typedef struct			s_engine
 	int 				tmpSprY;
 	int					tmpSprD;
 	int 				sprCol;
+	int 				s;
+
 
 
 }						t_engine;

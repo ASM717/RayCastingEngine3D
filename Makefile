@@ -11,6 +11,8 @@ SRCS		= $(addprefix srcs/, $(SRC))
 
 OBJS		= $(SRCS:.c=.o)
 
+CC			= gcc
+
 GNL			= srcs/gnl/
 # include
 INC			= -I ./ -I ./libft -I ./gnl
@@ -32,7 +34,7 @@ all:$(GAME)
 $(GAME):
 	@make -C ./libft
 	@make -C ./minilibx-linux
-	gcc ${FLAGS} ${SRCS} ${LIBFT} ${MLX} ${SYS} -o ${GAME}
+	@$(CC) ${FLAGS} ${SRCS} ${LIBFT} ${MLX} ${SYS} -o ${GAME}
 
 # mlx does not have a clean equivalent
 # mlx clean behaves similar to fclean
