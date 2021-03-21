@@ -59,36 +59,36 @@ typedef struct			s_data
 	void				*mlx;
 	void				*win;
 	char				*addr;
-	int					bitsPerPixel;
-	int					sizeLine;
+	int					bits_per_pixel;
+	int					size_line;
 	int					endian;
 }						t_data;
 
 typedef struct			s_rgb
 {
-	int 				colR;
-	int 				colG;
-	int 				colB;
-	unsigned int 		rgbColor;
+	int 				col_r;
+	int 				col_g;
+	int 				col_b;
+	unsigned int 		rgb_color;
 }						t_rgb;
 
 typedef struct			s_headshot
 {
 	int 				fd;
-	int 				bmpPlane;
-	int 				scrSize;
-	int 				bmpSize;
-	int 				bmpOffBits;
+	int 				bmp_plane;
+	int 				scr_size;
+	int 				bmp_size;
+	int 				bmp_off_bits;
 	int 				zero;
-	int 				colorTable;
+	int 				color_table;
 	int 				range;
 	int 				col;
 }						t_headshot;
 
 typedef struct			s_sprite
 {
-	double				xStr;
-	double				yStr;
+	double				x_str;
+	double				y_str;
 }						t_sprite;
 
 typedef struct			s_pm
@@ -100,93 +100,93 @@ typedef struct			s_pm
 typedef struct			s_engine
 {
 	t_data				data;
-	t_data				dataNO;
-	t_data				dataSO;
-	t_data				dataWE;
-	t_data				dataEA;
-	t_data				dataSPR;
-	t_sprite			*strSpr;
-	t_rgb				rgbFloor;
-	t_rgb				rgbCeiling;
+	t_data				data_no;
+	t_data				data_so;
+	t_data				data_we;
+	t_data				data_ea;
+	t_data				data_spr;
+	t_sprite			*str_spr;
+	t_rgb				rgb_floor;
+	t_rgb				rgb_ceiling;
 	t_headshot			shot;
 	t_pm				pm;
-	int 				screenFlag;
-	int 				scrHeight;
-	int 				scrWidth;
+	int 				screen_flag;
+	int 				scr_height;
+	int 				scr_width;
 
 
 	int 				x;
 	int 				y;
-	double				posX;
-	double				posY;
-	double				dirX;
-	double				dirY;
-	double				planeX;
-	double				planeY;
-	double				rayDirX;
-	double				rayDirY;
-	int					mapX;
-	int					mapY;
-	double				sideDistX;
-	double				sideDistY;
-	double				deltaDistX;
-	double				deltaDistY;
-	int					stepX;
-	int					stepY;
+	double				pos_x;
+	double				pos_y;
+	double				dir_x;
+	double				dir_y;
+	double				plane_x;
+	double				plane_y;
+	double				ray_dir_x;
+	double				ray_dir_y;
+	int					map_x;
+	int					map_y;
+	double				side_dist_x;
+	double				side_dist_y;
+	double				delta_dist_x;
+	double				delta_dist_y;
+	int					step_x;
+	int					step_y;
 	int					side;
-	int					drawStart;
-	int					drawEnd;
-	double				perpWallDist;
-	int 				lineHeight;
+	int					draw_start;
+	int					draw_end;
+	double				perp_wall_dist;
+	int 				line_height;
 
-	int 				keycodeW;
-	int 				keycodeS;
-	int 				keycodeA;
-	int 				keycodeD;
-	int					keycodeLeft;
-	int					keycodeRight;
+	int 				keycode_w;
+	int 				keycode_s;
+	int 				keycode_a;
+	int 				keycode_d;
+	int					keycode_left;
+	int					keycode_right;
 
-	double				wallX;
-	int 				textureX;
-	int					textureY;
-	char 				wallRoute;
+	double				wall_x;
+	int 				texture_x;
+	int					texture_y;
+	char 				wall_route;
 	double				step;
-	double				texPos;
+	double				tex_pos;
 	int					color;
 
-	char 				*texNorth;
-	char 				*texSouth;
-	char 				*texWest;
-	char 				*texEast;
-	char 				*texSprite;
+	char 				*tex_north;
+	char 				*tex_south;
+	char 				*tex_west;
+	char 				*tex_east;
+	char 				*tex_sprite;
 
 	double				*zBuff;
 
-	int 				spriteNum;
-	int 				*spriteOrder;
-	double				*spriteDist;
+	int 				sprite_num;
+	int 				*sprite_order;
+	double				*sprite_dist;
 
 //	double				sortSpriteX;
 //	double				sortSpriteY;
 
-	double				spriteX;
-	double				spriteY;
-	double				invDet;
-	double				transformX;
-	double 				transformY;
-	int 				spriteScrX;
-	int 				spriteH;
-	int 				drawStartY;
-	int 				drawEndY;
-	int 				spriteW;
-	int 				drawStartX;
-	int					drawEndX;
+	double				sprite_x;
+	double				sprite_y;
+	double				inv_det;
+	double				transform_x;
+	double 				transform_y;
+	int 				sprite_scr_x;
+	int 				sprite_h;
+	int 				draw_start_y;
+	int 				draw_end_y;
+	int 				sprite_w;
+	int 				draw_start_x;
+	int					draw_end_x;
 	int					stripe;
-	int					sprTextX;
-	int 				sprTextY;
-	int 				tmpSprY;
-	int					tmpSprD;
-	int 				sprCol;
+	int					spr_text_x;
+	int 				spr_text_y;
+	int 				tmp_spr_y;
+	int					tmp_spr_d;
+	int 				spr_col;
 	int 				s;
 
 

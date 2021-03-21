@@ -2,24 +2,24 @@
 
 void 	ft_print_wall(t_engine *engine)
 {
-	engine->textureY = (int) engine->texPos & (TEX_HEIGHT - 1);
-	engine->texPos += engine->step;
+	engine->texture_y = (int) engine->tex_pos & (TEX_HEIGHT - 1);
+	engine->tex_pos += engine->step;
 	if (engine->side == 0)
 	{
-		if (engine->stepX > 0)
+		if (engine->step_x > 0)
 			my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-							 ft_get_pixel(&engine->dataSO, engine->textureX, engine->textureY));
+							 ft_get_pixel(&engine->data_so, engine->texture_x, engine->texture_y));
 		else
 			my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-							 ft_get_pixel(&engine->dataNO, engine->textureX, engine->textureY));
+							 ft_get_pixel(&engine->data_no, engine->texture_x, engine->texture_y));
 	}
 	else
 	{
-		if (engine->stepY > 0)
+		if (engine->step_y > 0)
 			my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-							 ft_get_pixel(&engine->dataEA, engine->textureX, engine->textureY));
+							 ft_get_pixel(&engine->data_ea, engine->texture_x, engine->texture_y));
 		else
 			my_mlx_pixel_put(&engine->data, engine->x, engine->y,
-							 ft_get_pixel(&engine->dataWE, engine->textureX, engine->textureY));
+							 ft_get_pixel(&engine->data_we, engine->texture_x, engine->texture_y));
 	}
 }

@@ -14,13 +14,13 @@
 
 int 	ft_init_color_rgb(t_engine *engine)
 {
-	engine->rgbCeiling.colR = 51;
-	engine->rgbCeiling.colG = 0;
-	engine->rgbCeiling.colB = 0;
+	engine->rgb_ceiling.col_r = 51;
+	engine->rgb_ceiling.col_g = 0;
+	engine->rgb_ceiling.col_b = 0;
 
-	engine->rgbFloor.colR = 51;
-	engine->rgbFloor.colG = 51;
-	engine->rgbFloor.colB = 26;
+	engine->rgb_floor.col_r = 51;
+	engine->rgb_floor.col_g = 51;
+	engine->rgb_floor.col_b = 26;
 
 	return (0);
 }
@@ -28,18 +28,18 @@ int 	ft_init_color_rgb(t_engine *engine)
 
 int 	ft_get_rgb_color_ceiling(t_engine *engine)
 {
-	engine->rgbCeiling.rgbColor =
-			(256 * 256 * engine->rgbCeiling.colR) +
-					(256 * engine->rgbCeiling.colG) +
-					engine->rgbCeiling.colB;
-	return (engine->rgbCeiling.rgbColor);
+	engine->rgb_ceiling.rgb_color =
+			(256 * 256 * engine->rgb_ceiling.col_r) +
+					(256 * engine->rgb_ceiling.col_g) +
+					engine->rgb_ceiling.col_b;
+	return (engine->rgb_ceiling.rgb_color);
 }
 
 int 	ft_get_rgb_color_floor(t_engine *engine)
 {
-	engine->rgbFloor.rgbColor =
-			(256 * 256 * engine->rgbFloor.colR) +
-			(256 * engine->rgbFloor.colG) +
-			engine->rgbFloor.colB;
-	return (engine->rgbFloor.rgbColor);
+	engine->rgb_floor.rgb_color =
+			(256 * 256 * engine->rgb_floor.col_r) +
+			(256 * engine->rgb_floor.col_g) +
+			engine->rgb_floor.col_b;
+	return (engine->rgb_floor.rgb_color);
 }
