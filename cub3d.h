@@ -145,6 +145,8 @@ typedef struct			s_engine
 	int 				keycode_d;
 	int					keycode_left;
 	int					keycode_right;
+	double				old_dir_x;
+	double				old_plane_x;
 
 	double				wall_x;
 	int 				texture_x;
@@ -194,7 +196,7 @@ typedef struct			s_engine
 }						t_engine;
 
 int		check_movement(int x, int y);
-void	ft_keycode_handle(t_engine *engine);
+void	ft_keycode_movement(t_engine *engine);
 int		ft_keycode_used(int keycode, t_engine *engine);
 int		ft_keycode_unused(int keycode, t_engine *engine);
 int		ft_exit(t_engine *engine);

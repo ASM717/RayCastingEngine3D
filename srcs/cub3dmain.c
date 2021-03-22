@@ -39,6 +39,11 @@ char		worldMap[mapWidth][mapHeight] =
 				{'1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'}
 		};
 
+//void	ft_init_texture2(t_engine *engine)
+//{
+//
+//}
+
 void 	ft_init_texture(t_engine *engine)
 {
 	int		width = TEX_WIDTH;
@@ -50,35 +55,30 @@ void 	ft_init_texture(t_engine *engine)
 	engine->tex_east = EA;
 	engine->tex_sprite = SP;
 
-
 	engine->data_no.img = mlx_xpm_file_to_image(engine->data.mlx,
 										engine->tex_north, &width, &height);
 	engine->data_no.addr = mlx_get_data_addr(engine->data_no.img,
 										 &engine->data_no.bits_per_pixel,
 										 &engine->data_no.size_line,
 										 &engine->data_no.endian);
-
 	engine->data_so.img = mlx_xpm_file_to_image(engine->data.mlx,
 										engine->tex_south, &width, &height);
 	engine->data_so.addr = mlx_get_data_addr(engine->data_so.img,
 										&engine->data_so.bits_per_pixel,
 										&engine->data_so.size_line,
 										&engine->data_so.endian);
-
 	engine->data_we.img = mlx_xpm_file_to_image(engine->data.mlx,
 										engine->tex_west, &width, &height);
 	engine->data_we.addr = mlx_get_data_addr(engine->data_we.img,
 										&engine->data_we.bits_per_pixel,
 										&engine->data_we.size_line,
 										&engine->data_we.endian);
-
 	engine->data_ea.img = mlx_xpm_file_to_image(engine->data.mlx,
 										engine->tex_east, &width, &height);
 	engine->data_ea.addr = mlx_get_data_addr(engine->data_ea.img,
 										&engine->data_ea.bits_per_pixel,
 										&engine->data_ea.size_line,
 										&engine->data_ea.endian);
-
 	engine->data_spr.img = mlx_xpm_file_to_image(engine->data.mlx,
 										engine->tex_sprite, &width, &height);
 	engine->data_spr.addr = mlx_get_data_addr(engine->data_spr.img,
@@ -225,8 +225,6 @@ void	ft_camera_calculation(t_engine *engine)
 	engine->map_y = (int) (engine->pos_y);
 	engine->delta_dist_x = fabs(1 / engine->ray_dir_x);
 	engine->delta_dist_y = fabs(1 / engine->ray_dir_y);
-//		engine->deltaDistX = sqrt(1 + pow(engine->rayDirY, 2) / pow(engine->rayDirX, 2));
-//		engine->deltaDistY = sqrt(1 + pow(engine->rayDirX, 2) / pow(engine->rayDirY, 2));
 }
 
 void 	ft_all_calculation(t_engine *engine)
@@ -271,7 +269,7 @@ int		ft_raycast(t_engine *engine)
 
 int 	ft_restart(t_engine *engine)
 {
-	ft_keycode_handle(engine);
+	ft_keycode_movement(engine);
 	engine->zBuff = malloc(sizeof(double) * engine->scr_width);
 	ft_raycast(engine);
 	mlx_put_image_to_window(engine->data.mlx, engine->data.win,
@@ -280,6 +278,34 @@ int 	ft_restart(t_engine *engine)
 	if (engine->screen_flag == 1)
 		ft_screenshot_make(engine);
 	return (0);
+}
+
+void 	ft_mlx_data_continue(t_engine *engine)
+{
+	mlx_hook(engine->data.win, 2, (1L << 0),
+			 ft_keycode_used, engine);
+	mlx_hook(engine->data.win, 3, (1L << 1),
+			 ft_keycode_unused, engine);
+	mlx_hook(engine->data.win, 33, (1L << 0),
+			 ft_exit, engine);
+	mlx_loop_hook(engine->data.mlx, ft_restart, engine);
+	mlx_loop(engine->data.mlx);
+	free(engine);
+}
+
+void 	ft_mlx_data_start(t_engine *engine)
+{
+	engine->data.mlx = mlx_init();
+	engine->data.win = mlx_new_window(engine->data.mlx,
+									  engine->scr_width,
+									  engine->scr_height, "Cub3D");
+	ft_init_texture(engine);
+	engine->data.img = mlx_new_image(engine->data.mlx,
+									 engine->scr_width, engine->scr_height);
+	engine->data.addr = mlx_get_data_addr(engine->data.img,
+										  &engine->data.bits_per_pixel,
+										  &engine->data.size_line,
+										  &engine->data.endian);
 }
 
 int 	main(int argc, char **argv)
@@ -292,41 +318,15 @@ int 	main(int argc, char **argv)
 		return (-1);
 	if (ft_init_color_rgb(engine) != 0)
 		return (-1);
-	engine->data.mlx = mlx_init();
-	engine->data.win = mlx_new_window(engine->data.mlx,
-								   engine->scr_width,
-								   engine->scr_height, "Cub3D");
-	ft_init_texture(engine);
-	engine->data.img = mlx_new_image(engine->data.mlx,
-								  engine->scr_width, engine->scr_height);
-	engine->data.addr = mlx_get_data_addr(engine->data.img,
-									   &engine->data.bits_per_pixel,
-									   &engine->data.size_line,
-									   &engine->data.endian);
+	ft_mlx_data_start(engine);
 	if (argc == 1 && argv[0])
 	{
 		engine->screen_flag = 0;
-		mlx_hook(engine->data.win, 2, (1L << 0),
-				 ft_keycode_used, engine);
-		mlx_hook(engine->data.win, 3, (1L << 1),
-				 ft_keycode_unused, engine);
-		mlx_hook(engine->data.win, 33, (1L << 0),
-				 ft_exit, engine);
-		mlx_loop_hook(engine->data.mlx, ft_restart, engine);
-		mlx_loop(engine->data.mlx);
-		free(engine);
+		ft_mlx_data_continue(engine);
 	}
 	else if (argc == 2 && argv[1])
 	{
 		engine->screen_flag = 1;
-		mlx_hook(engine->data.win, 2, (1L << 0),
-				 ft_keycode_used, engine);
-		mlx_hook(engine->data.win, 3, (1L << 1),
-				 ft_keycode_unused, engine);
-		mlx_hook(engine->data.win, 33, (1L << 0),
-				 ft_exit, engine);
-		mlx_loop_hook(engine->data.mlx, ft_restart, engine);
-		mlx_loop(engine->data.mlx);
-		free(engine);
+		ft_mlx_data_continue(engine);
 	}
 }

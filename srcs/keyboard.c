@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keyboard.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/22 02:54:49 by amuriel           #+#    #+#             */
+/*   Updated: 2021/03/22 02:54:50 by amuriel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "../cub3d.h"
 
 int		check_movement(int x, int y)
@@ -7,70 +21,84 @@ int		check_movement(int x, int y)
 	return (0);
 }
 
-void	ft_keycode_handle(t_engine *engine)
+void 	ft_keycode_movement_ad(t_engine *engine)
 {
-	double oldDirX;
-	double oldPlaneX;
-
-	// if (keycode == W || keycode == S || keycode == KEY_LEFT || keycode == KEY_RIGHT
-	// 	|| keycode == A || keycode == D)
-	// {
-	if (engine->keycode_w == 1)
-	{
-		if (check_movement((int)(engine->pos_x + engine->dir_x * MOVESPEED),(int)(engine->pos_y)))
-			engine->pos_x += engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x), (int)(engine->pos_y + engine->dir_y * MOVESPEED)))
-			engine->pos_y += engine->dir_y * MOVESPEED;
-	}
-	if (engine->keycode_s == 1)
-	{
-		if (check_movement((int)(engine->pos_x - engine->dir_x * MOVESPEED), (int)(engine->pos_y)))
-			engine->pos_x -= engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x), (int)(engine->pos_y - engine->dir_y * MOVESPEED)))
-			engine->pos_y -= engine->dir_y * MOVESPEED;
-	}
-	if (engine->keycode_left == 1)
-	{
-		oldDirX = engine->dir_x;
-		engine->dir_x = (engine->dir_x * cos(ROTSPEED)) - (engine->dir_y * sin(ROTSPEED));
-		engine->dir_y = (oldDirX * sin(ROTSPEED)) + (engine->dir_y * cos(ROTSPEED));
-		oldPlaneX = engine->plane_x;
-		engine->plane_x = (engine->plane_x * cos(ROTSPEED)) - (engine->plane_y * sin(ROTSPEED));
-		engine->plane_y = (oldPlaneX * sin(ROTSPEED)) + (engine->plane_y * cos(ROTSPEED));
-	}
-	if (engine->keycode_right == 1)
-	{
-		oldDirX = engine->dir_x;
-		engine->dir_x = engine->dir_x * cos(-ROTSPEED) - (engine->dir_y * sin(-ROTSPEED));
-		engine->dir_y = (oldDirX * sin(-ROTSPEED)) + (engine->dir_y * cos(-ROTSPEED));
-		oldPlaneX = engine->plane_x;
-		engine->plane_x = (engine->plane_x * cos(-ROTSPEED)) - (engine->plane_y * sin(-ROTSPEED));
-		engine->plane_y = (oldPlaneX * sin(-ROTSPEED)) + (engine->plane_y * cos(-ROTSPEED));
-	}
 	if (engine->keycode_a == 1)
 	{
-		// if (check_movement((int)(engine->posY - engine->planeY * MOVESPEED), (int)(engine->posX)))
-		// 	engine->posY -= engine->planeY * MOVESPEED;
-		// if (check_movement((int)(engine->posY), (int)(engine->posX - engine->planeX)))
-		// 	engine->posX -= engine->planeX * MOVESPEED;
-
-		if (check_movement((int)(engine->pos_x), (int)(engine->pos_y + engine->dir_x * MOVESPEED)))
+		if (check_movement((int)(engine->pos_x),
+						   (int)(engine->pos_y + engine->dir_x * MOVESPEED)))
 			engine->pos_y += engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x - engine->dir_y * MOVESPEED), (int)(engine->pos_y)))
+		if (check_movement((int)(engine->pos_x - engine->dir_y * MOVESPEED),
+						   (int)(engine->pos_y)))
 			engine->pos_x -= engine->dir_y * MOVESPEED;
 	}
 	if (engine->keycode_d == 1)
 	{
-		// if (check_movement((int)(engine->posY + engine->planeY * MOVESPEED), (int)(engine->posX)))
-		// 	engine->posY += engine->planeY * MOVESPEED;
-		// if (check_movement((int)(engine->posY), (int)(engine->posX + engine->planeX * MOVESPEED)))
-		// 	engine->posX += engine->planeX * MOVESPEED;
-
-		if (check_movement((int)(engine->pos_x), (int)(engine->pos_y - engine->dir_x * MOVESPEED)))
+		if (check_movement((int)(engine->pos_x),
+						   (int)(engine->pos_y - engine->dir_x * MOVESPEED)))
 			engine->pos_y -= engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x + engine->dir_y * MOVESPEED), (int)(engine->pos_y)))
+		if (check_movement((int)(engine->pos_x + engine->dir_y * MOVESPEED),
+						   (int)(engine->pos_y)))
 			engine->pos_x += engine->dir_y * MOVESPEED;
 	}
+}
+
+void 	ft_keycode_movement_rot(t_engine *engine)
+{
+	if (engine->keycode_left == 1)
+	{
+		engine->old_dir_x = engine->dir_x;
+		engine->dir_x = (engine->dir_x * cos(ROTSPEED)) -
+				(engine->dir_y *sin(ROTSPEED));
+		engine->dir_y = (engine->old_dir_x * sin(ROTSPEED)) +
+				(engine->dir_y * cos(ROTSPEED));
+		engine->old_plane_x = engine->plane_x;
+		engine->plane_x = (engine->plane_x * cos(ROTSPEED)) -
+				(engine->plane_y * sin(ROTSPEED));
+		engine->plane_y = (engine->old_plane_x * sin(ROTSPEED)) +
+				(engine->plane_y * cos(ROTSPEED));
+	}
+	if (engine->keycode_right == 1)
+	{
+		engine->old_dir_x = engine->dir_x;
+		engine->dir_x = engine->dir_x * cos(-ROTSPEED) -
+				(engine->dir_y * sin(-ROTSPEED));
+		engine->dir_y = (engine->old_dir_x * sin(-ROTSPEED)) +
+				(engine->dir_y * cos(-ROTSPEED));
+		engine->old_plane_x = engine->plane_x;
+		engine->plane_x = (engine->plane_x * cos(-ROTSPEED)) -
+				(engine->plane_y * sin(-ROTSPEED));
+		engine->plane_y = (engine->old_plane_x * sin(-ROTSPEED)) +
+				(engine->plane_y * cos(-ROTSPEED));
+	}
+}
+
+void 	ft_keycode_movement_ws(t_engine *engine)
+{
+	if (engine->keycode_w == 1)
+	{
+		if (check_movement((int)(engine->pos_x +
+		engine->dir_x * MOVESPEED),(int)(engine->pos_y)))
+			engine->pos_x += engine->dir_x * MOVESPEED;
+		if (check_movement((int)(engine->pos_x),
+					 (int)(engine->pos_y + engine->dir_y * MOVESPEED)))
+			engine->pos_y += engine->dir_y * MOVESPEED;
+	}
+	if (engine->keycode_s == 1)
+	{
+		if (check_movement((int)(engine->pos_x - engine->dir_x * MOVESPEED),
+					 (int)(engine->pos_y)))
+			engine->pos_x -= engine->dir_x * MOVESPEED;
+		if (check_movement((int)(engine->pos_x),
+					 (int)(engine->pos_y - engine->dir_y * MOVESPEED)))
+			engine->pos_y -= engine->dir_y * MOVESPEED;
+	}
+}
+void	ft_keycode_movement(t_engine *engine)
+{
+	ft_keycode_movement_ws(engine);
+	ft_keycode_movement_ad(engine);
+	ft_keycode_movement_rot(engine);
 }
 
 int		ft_keycode_used(int keycode, t_engine *engine)
@@ -110,7 +138,6 @@ int		ft_keycode_unused(int keycode, t_engine *engine)
 		engine->keycode_left = 0;
 	if (keycode == KEY_RIGHT)
 		engine->keycode_right = 0;
-
 	if (keycode == ESC)
 	{
 		mlx_destroy_window(engine->data.mlx, engine->data.win);
