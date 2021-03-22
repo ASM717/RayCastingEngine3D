@@ -48,7 +48,7 @@ static void	ft_init_shot_header(t_engine *engine)
 
 void		ft_screenshot_make(t_engine *engine)
 {
-	if (!(engine->shot.fd = open("Cub3D.bmp", O_CREAT |
+	if (!(engine->shot.fd = open("cub3D.bmp", O_CREAT |
 	O_WRONLY | O_TRUNC, S_IRWXU)))
 		write(1, "Error ", 11);
 	write(engine->shot.fd, "BM", 2);

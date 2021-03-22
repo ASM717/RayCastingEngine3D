@@ -1091,31 +1091,31 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/minilibx-linux/mlx_xpm.c -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.s
 
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o: CMakeFiles/cub3D.dir/flags.make
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o: ../srcs/gnl/get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o   -c /home/stepan/Desktop/cub3D/srcs/gnl/get_next_line.c
+CMakeFiles/cub3D.dir/gnl/get_next_line.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/gnl/get_next_line.c.o: ../gnl/get_next_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/gnl/get_next_line.c.o   -c /home/stepan/Desktop/cub3D/gnl/get_next_line.c
 
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/gnl/get_next_line.c > CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.i
+CMakeFiles/cub3D.dir/gnl/get_next_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/gnl/get_next_line.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/gnl/get_next_line.c > CMakeFiles/cub3D.dir/gnl/get_next_line.c.i
 
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/gnl/get_next_line.c -o CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.s
+CMakeFiles/cub3D.dir/gnl/get_next_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/gnl/get_next_line.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/gnl/get_next_line.c -o CMakeFiles/cub3D.dir/gnl/get_next_line.c.s
 
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o: CMakeFiles/cub3D.dir/flags.make
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o: ../srcs/gnl/get_next_line_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o   -c /home/stepan/Desktop/cub3D/srcs/gnl/get_next_line_utils.c
+CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o: ../gnl/get_next_line_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o   -c /home/stepan/Desktop/cub3D/gnl/get_next_line_utils.c
 
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/gnl/get_next_line_utils.c > CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.i
+CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/gnl/get_next_line_utils.c > CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.i
 
-CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/gnl/get_next_line_utils.c -o CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.s
+CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/gnl/get_next_line_utils.c -o CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.s
 
 CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o: ../srcs/ceiling_floor.c
@@ -1168,6 +1168,32 @@ CMakeFiles/cub3D.dir/srcs/sprite.c.i: cmake_force
 CMakeFiles/cub3D.dir/srcs/sprite.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/sprite.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/sprite.c -o CMakeFiles/cub3D.dir/srcs/sprite.c.s
+
+CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o: ../srcs/screenshot_bmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o   -c /home/stepan/Desktop/cub3D/srcs/screenshot_bmp.c
+
+CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/screenshot_bmp.c > CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.i
+
+CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/screenshot_bmp.c -o CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.s
+
+CMakeFiles/cub3D.dir/srcs/texture_wall.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/srcs/texture_wall.c.o: ../srcs/texture_wall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/cub3D.dir/srcs/texture_wall.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/texture_wall.c.o   -c /home/stepan/Desktop/cub3D/srcs/texture_wall.c
+
+CMakeFiles/cub3D.dir/srcs/texture_wall.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/texture_wall.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/texture_wall.c > CMakeFiles/cub3D.dir/srcs/texture_wall.c.i
+
+CMakeFiles/cub3D.dir/srcs/texture_wall.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/texture_wall.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/texture_wall.c -o CMakeFiles/cub3D.dir/srcs/texture_wall.c.s
 
 # Object files for target cub3D
 cub3D_OBJECTS = \
@@ -1249,12 +1275,14 @@ cub3D_OBJECTS = \
 "CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.o" \
 "CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.o" \
 "CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.o" \
-"CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o" \
-"CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o" \
+"CMakeFiles/cub3D.dir/gnl/get_next_line.c.o" \
+"CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o" \
 "CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o" \
 "CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o" \
 "CMakeFiles/cub3D.dir/srcs/keyboard.c.o" \
-"CMakeFiles/cub3D.dir/srcs/sprite.c.o"
+"CMakeFiles/cub3D.dir/srcs/sprite.c.o" \
+"CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o" \
+"CMakeFiles/cub3D.dir/srcs/texture_wall.c.o"
 
 # External object files for target cub3D
 cub3D_EXTERNAL_OBJECTS =
@@ -1337,15 +1365,17 @@ cub3D: CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.o
 cub3D: CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.o
 cub3D: CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.o
 cub3D: CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.o
-cub3D: CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o
-cub3D: CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o
+cub3D: CMakeFiles/cub3D.dir/gnl/get_next_line.c.o
+cub3D: CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o
 cub3D: CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o
 cub3D: CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o
 cub3D: CMakeFiles/cub3D.dir/srcs/keyboard.c.o
 cub3D: CMakeFiles/cub3D.dir/srcs/sprite.c.o
+cub3D: CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o
+cub3D: CMakeFiles/cub3D.dir/srcs/texture_wall.c.o
 cub3D: CMakeFiles/cub3D.dir/build.make
 cub3D: CMakeFiles/cub3D.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Linking C executable cub3D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Linking C executable cub3D"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cub3D.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

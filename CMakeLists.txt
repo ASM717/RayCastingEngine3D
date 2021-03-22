@@ -8,9 +8,7 @@ set(CMAKE_C_FLAGS "-Wall -Werror -Wextra")
 include_directories(.)
 include_directories(libft)
 include_directories(minilibx-linux)
-#include_directories(mlx)
-#include_directories(srcccccccccccc)
-include_directories(srcs/gnl)
+include_directories(gnl)
 
 add_executable(cub3D
         libft/ft_atoi.c
@@ -94,22 +92,18 @@ add_executable(cub3D
         minilibx-linux/mlx_set_font.c
         minilibx-linux/mlx_string_put.c
         minilibx-linux/mlx_xpm.c
-#        mlx/font.c
-#        mlx/mlx.h
-#        mlx/mlx_png.c
-#        mlx/mlx_rgb.c
-#        mlx/mlx_string_put.c
-#        mlx/mlx_xpm.c
 #        srcccccccccccc/cub3dold.h
 #        srcccccccccccc/facture.c
 #        srcccccccccccc/main.c
 #        srcccccccccccc/parser.c
 #        srcccccccccccc/screen.c
-        srcs/gnl/get_next_line.c
-        srcs/gnl/get_next_line.h
-        srcs/gnl/get_next_line_utils.c
+        gnl/get_next_line.c
+        gnl/get_next_line.h
+        gnl/get_next_line_utils.c
         srcs/ceiling_floor.c
         srcs/cub3dmain.c
         srcs/keyboard.c
         srcs/sprite.c
+        srcs/screenshot_bmp.c
+        srcs/texture_wall.c
         cub3d.h)

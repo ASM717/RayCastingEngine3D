@@ -143,6 +143,60 @@ cub3D/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/build
 .PHONY : cub3D/fast
 
+gnl/get_next_line.o: gnl/get_next_line.c.o
+
+.PHONY : gnl/get_next_line.o
+
+# target to build an object file
+gnl/get_next_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line.c.o
+.PHONY : gnl/get_next_line.c.o
+
+gnl/get_next_line.i: gnl/get_next_line.c.i
+
+.PHONY : gnl/get_next_line.i
+
+# target to preprocess a source file
+gnl/get_next_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line.c.i
+.PHONY : gnl/get_next_line.c.i
+
+gnl/get_next_line.s: gnl/get_next_line.c.s
+
+.PHONY : gnl/get_next_line.s
+
+# target to generate assembly for a file
+gnl/get_next_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line.c.s
+.PHONY : gnl/get_next_line.c.s
+
+gnl/get_next_line_utils.o: gnl/get_next_line_utils.c.o
+
+.PHONY : gnl/get_next_line_utils.o
+
+# target to build an object file
+gnl/get_next_line_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o
+.PHONY : gnl/get_next_line_utils.c.o
+
+gnl/get_next_line_utils.i: gnl/get_next_line_utils.c.i
+
+.PHONY : gnl/get_next_line_utils.i
+
+# target to preprocess a source file
+gnl/get_next_line_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.i
+.PHONY : gnl/get_next_line_utils.c.i
+
+gnl/get_next_line_utils.s: gnl/get_next_line_utils.c.s
+
+.PHONY : gnl/get_next_line_utils.s
+
+# target to generate assembly for a file
+gnl/get_next_line_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.s
+.PHONY : gnl/get_next_line_utils.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2303,60 +2357,6 @@ srcs/cub3dmain.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/cub3dmain.c.s
 .PHONY : srcs/cub3dmain.c.s
 
-srcs/gnl/get_next_line.o: srcs/gnl/get_next_line.c.o
-
-.PHONY : srcs/gnl/get_next_line.o
-
-# target to build an object file
-srcs/gnl/get_next_line.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o
-.PHONY : srcs/gnl/get_next_line.c.o
-
-srcs/gnl/get_next_line.i: srcs/gnl/get_next_line.c.i
-
-.PHONY : srcs/gnl/get_next_line.i
-
-# target to preprocess a source file
-srcs/gnl/get_next_line.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.i
-.PHONY : srcs/gnl/get_next_line.c.i
-
-srcs/gnl/get_next_line.s: srcs/gnl/get_next_line.c.s
-
-.PHONY : srcs/gnl/get_next_line.s
-
-# target to generate assembly for a file
-srcs/gnl/get_next_line.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.s
-.PHONY : srcs/gnl/get_next_line.c.s
-
-srcs/gnl/get_next_line_utils.o: srcs/gnl/get_next_line_utils.c.o
-
-.PHONY : srcs/gnl/get_next_line_utils.o
-
-# target to build an object file
-srcs/gnl/get_next_line_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o
-.PHONY : srcs/gnl/get_next_line_utils.c.o
-
-srcs/gnl/get_next_line_utils.i: srcs/gnl/get_next_line_utils.c.i
-
-.PHONY : srcs/gnl/get_next_line_utils.i
-
-# target to preprocess a source file
-srcs/gnl/get_next_line_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.i
-.PHONY : srcs/gnl/get_next_line_utils.c.i
-
-srcs/gnl/get_next_line_utils.s: srcs/gnl/get_next_line_utils.c.s
-
-.PHONY : srcs/gnl/get_next_line_utils.s
-
-# target to generate assembly for a file
-srcs/gnl/get_next_line_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.s
-.PHONY : srcs/gnl/get_next_line_utils.c.s
-
 srcs/keyboard.o: srcs/keyboard.c.o
 
 .PHONY : srcs/keyboard.o
@@ -2383,6 +2383,33 @@ srcs/keyboard.s: srcs/keyboard.c.s
 srcs/keyboard.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/keyboard.c.s
 .PHONY : srcs/keyboard.c.s
+
+srcs/screenshot_bmp.o: srcs/screenshot_bmp.c.o
+
+.PHONY : srcs/screenshot_bmp.o
+
+# target to build an object file
+srcs/screenshot_bmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o
+.PHONY : srcs/screenshot_bmp.c.o
+
+srcs/screenshot_bmp.i: srcs/screenshot_bmp.c.i
+
+.PHONY : srcs/screenshot_bmp.i
+
+# target to preprocess a source file
+srcs/screenshot_bmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.i
+.PHONY : srcs/screenshot_bmp.c.i
+
+srcs/screenshot_bmp.s: srcs/screenshot_bmp.c.s
+
+.PHONY : srcs/screenshot_bmp.s
+
+# target to generate assembly for a file
+srcs/screenshot_bmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.s
+.PHONY : srcs/screenshot_bmp.c.s
 
 srcs/sprite.o: srcs/sprite.c.o
 
@@ -2411,6 +2438,33 @@ srcs/sprite.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/sprite.c.s
 .PHONY : srcs/sprite.c.s
 
+srcs/texture_wall.o: srcs/texture_wall.c.o
+
+.PHONY : srcs/texture_wall.o
+
+# target to build an object file
+srcs/texture_wall.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/texture_wall.c.o
+.PHONY : srcs/texture_wall.c.o
+
+srcs/texture_wall.i: srcs/texture_wall.c.i
+
+.PHONY : srcs/texture_wall.i
+
+# target to preprocess a source file
+srcs/texture_wall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/texture_wall.c.i
+.PHONY : srcs/texture_wall.c.i
+
+srcs/texture_wall.s: srcs/texture_wall.c.s
+
+.PHONY : srcs/texture_wall.s
+
+# target to generate assembly for a file
+srcs/texture_wall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/texture_wall.c.s
+.PHONY : srcs/texture_wall.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2420,6 +2474,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cub3D"
+	@echo "... gnl/get_next_line.o"
+	@echo "... gnl/get_next_line.i"
+	@echo "... gnl/get_next_line.s"
+	@echo "... gnl/get_next_line_utils.o"
+	@echo "... gnl/get_next_line_utils.i"
+	@echo "... gnl/get_next_line_utils.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2660,18 +2720,18 @@ help:
 	@echo "... srcs/cub3dmain.o"
 	@echo "... srcs/cub3dmain.i"
 	@echo "... srcs/cub3dmain.s"
-	@echo "... srcs/gnl/get_next_line.o"
-	@echo "... srcs/gnl/get_next_line.i"
-	@echo "... srcs/gnl/get_next_line.s"
-	@echo "... srcs/gnl/get_next_line_utils.o"
-	@echo "... srcs/gnl/get_next_line_utils.i"
-	@echo "... srcs/gnl/get_next_line_utils.s"
 	@echo "... srcs/keyboard.o"
 	@echo "... srcs/keyboard.i"
 	@echo "... srcs/keyboard.s"
+	@echo "... srcs/screenshot_bmp.o"
+	@echo "... srcs/screenshot_bmp.i"
+	@echo "... srcs/screenshot_bmp.s"
 	@echo "... srcs/sprite.o"
 	@echo "... srcs/sprite.i"
 	@echo "... srcs/sprite.s"
+	@echo "... srcs/texture_wall.o"
+	@echo "... srcs/texture_wall.i"
+	@echo "... srcs/texture_wall.s"
 .PHONY : help
 
 

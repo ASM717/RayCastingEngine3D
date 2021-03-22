@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/stepan/Desktop/cub3D/gnl/get_next_line.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
+  "/home/stepan/Desktop/cub3D/gnl/get_next_line_utils.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
   "/home/stepan/Desktop/cub3D/libft/ft_atoi.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/ft_atoi.c.o"
   "/home/stepan/Desktop/cub3D/libft/ft_bzero.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/ft_bzero.c.o"
   "/home/stepan/Desktop/cub3D/libft/ft_calloc.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/ft_calloc.c.o"
@@ -84,10 +86,10 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/stepan/Desktop/cub3D/minilibx-linux/test/new_win.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o"
   "/home/stepan/Desktop/cub3D/srcs/ceiling_floor.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o"
   "/home/stepan/Desktop/cub3D/srcs/cub3dmain.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o"
-  "/home/stepan/Desktop/cub3D/srcs/gnl/get_next_line.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o"
-  "/home/stepan/Desktop/cub3D/srcs/gnl/get_next_line_utils.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o"
   "/home/stepan/Desktop/cub3D/srcs/keyboard.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/keyboard.c.o"
+  "/home/stepan/Desktop/cub3D/srcs/screenshot_bmp.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o"
   "/home/stepan/Desktop/cub3D/srcs/sprite.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/sprite.c.o"
+  "/home/stepan/Desktop/cub3D/srcs/texture_wall.c" "/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/srcs/texture_wall.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -96,7 +98,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../."
   "../libft"
   "../minilibx-linux"
-  "../srcs/gnl"
+  "../gnl"
   )
 
 # Targets to which this target links.

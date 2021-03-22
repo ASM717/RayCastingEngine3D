@@ -1,58 +1,55 @@
-GAME		= cub3D
+NAME		= cub3D
 
 SRC		    = cub3dmain.c \
               	keyboard.c \
               	sprite.c \
               	ceiling_floor.c \
               	screenshot_bmp.c \
-              	texture_wall.c \
-				gnl/get_next_line.c gnl/get_next_line_utils.c
+              	texture_wall.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
 OBJS		= $(SRCS:.c=.o)
 
 CC			= gcc
 
-GNL			= srcs/gnl/
-# include
 INC			= -I ./ -I ./libft -I ./gnl
 
-# flags
 FLAGS		= -Wall -Wextra -Werror -g
 
-# libft library link
 LIBFT		= -L libft -lft
 
-# mlx library link
 MLX			= -I minilibx -L minilibx-linux -lmlx
 
-# additional system libraries
 SYS			= -lXext -lX11 -lbsd -lm
 
-all:$(GAME)
+all:$(NAME)
 
-$(GAME):
+$(NAME):
 	@make -C ./libft
+	@make -C ./gnl
 	@make -C ./minilibx-linux
-	@$(CC) ${FLAGS} ${SRCS} ${LIBFT} ${MLX} ${SYS} -o ${GAME}
+	@$(CC) ${FLAGS} ${SRCS} ${LIBFT} ${MLX} ${SYS} -o ${NAME}
+	@echo "\n\033[0;33mCompile cub3D done!"
 
-# mlx does not have a clean equivalent
-# mlx clean behaves similar to fclean
 clean:
 	@/bin/rm -f $(OBJ)
 	@make clean -C ./libft
+	@make clean -C ./gnl
+	@echo "\n\033[0;33mClean .o files done!"
 
-# mlx clean behaves similar to fclean
 fclean: clean
-	@/bin/rm -f $(GAME)
+	@/bin/rm -f $(NAME)
 	@/bin/rm -f cub3D.bmp
 	@make fclean -C ./libft
+	@make fclean -C ./gnl
 	@make clean -C ./minilibx-linux
+	@echo "\n\033[0;33mScreenshot clean done!"
+	@echo "\033[0;33mClean all files done!"
 
 re: fclean all
 
 norm :
-	@norminette *.c *.h ./libft/*.c ./libft/*.h
+	norminette *.c *.h ./libft/*.c ./libft/*.h ./gnl/*.c ./gnl/*.h
 
 screen : $(NAME)
 	./$(NAME) cub3d.cub --save

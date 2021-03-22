@@ -14,7 +14,7 @@
 # define CUB3D_H
 
 # include "libft/libft.h"
-# include "srcs/gnl/get_next_line.h"
+# include "gnl/get_next_line.h"
 # include "minilibx-linux/mlx.h"
 
 # include <unistd.h>
@@ -33,8 +33,8 @@
 # define KEY_LEFT		65361
 # define KEY_RIGHT		65363
 
-# define mapWidth		24
-# define mapHeight		24
+# define MAP_WIDTH		24
+# define MAP_HEIGHT		24
 
 # define SCR_WIDTH		640
 # define SCR_HEIGHT		480
@@ -51,7 +51,7 @@
 # define EA "textures/brick.xpm"
 # define SP "textures/barrel.xpm"
 
-char					worldMap[mapWidth][mapHeight];
+char					worldMap[MAP_WIDTH][MAP_HEIGHT];
 
 typedef struct			s_data
 {
@@ -114,7 +114,6 @@ typedef struct			s_engine
 	int 				scr_height;
 	int 				scr_width;
 
-
 	int 				x;
 	int 				y;
 	double				pos_x;
@@ -147,30 +146,20 @@ typedef struct			s_engine
 	int					keycode_right;
 	double				old_dir_x;
 	double				old_plane_x;
-
 	double				wall_x;
 	int 				texture_x;
 	int					texture_y;
-	char 				wall_route;
 	double				step;
 	double				tex_pos;
-	int					color;
-
 	char 				*tex_north;
 	char 				*tex_south;
 	char 				*tex_west;
 	char 				*tex_east;
 	char 				*tex_sprite;
-
 	double				*zBuff;
-
 	int 				sprite_num;
 	int 				*sprite_order;
 	double				*sprite_dist;
-
-//	double				sortSpriteX;
-//	double				sortSpriteY;
-
 	double				sprite_x;
 	double				sprite_y;
 	double				inv_det;
@@ -190,9 +179,6 @@ typedef struct			s_engine
 	int					tmp_spr_d;
 	int 				spr_col;
 	int 				s;
-
-
-
 }						t_engine;
 
 int		check_movement(int x, int y);

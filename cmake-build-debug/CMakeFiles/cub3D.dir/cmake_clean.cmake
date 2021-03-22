@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
+  "CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
   "CMakeFiles/cub3D.dir/libft/ft_atoi.c.o"
   "CMakeFiles/cub3D.dir/libft/ft_bzero.c.o"
   "CMakeFiles/cub3D.dir/libft/ft_calloc.c.o"
@@ -79,10 +81,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o"
   "CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o"
   "CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o"
-  "CMakeFiles/cub3D.dir/srcs/gnl/get_next_line.c.o"
-  "CMakeFiles/cub3D.dir/srcs/gnl/get_next_line_utils.c.o"
   "CMakeFiles/cub3D.dir/srcs/keyboard.c.o"
+  "CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o"
   "CMakeFiles/cub3D.dir/srcs/sprite.c.o"
+  "CMakeFiles/cub3D.dir/srcs/texture_wall.c.o"
   "cub3D"
   "cub3D.pdb"
 )

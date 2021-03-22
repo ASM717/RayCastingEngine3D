@@ -21,10 +21,10 @@ int		ft_number_sprites()
 
 	x = 0;
 	count = 0;
-	while (x < mapWidth)
+	while (x < MAP_WIDTH)
 	{
 		y = 0;
-		while (y < mapHeight)
+		while (y < MAP_HEIGHT)
 		{
 			if (worldMap[x][y] == '2')
 				count++;
@@ -47,10 +47,10 @@ t_sprite	*ft_get_sprites(t_engine *engine)
 	engine->sprite_num = ft_number_sprites();
 	str_spr = malloc(sizeof(t_sprite) * engine->sprite_num);
 	engine->sprite_order = malloc(sizeof(int) * engine->sprite_num);
-	while (x < mapWidth)
+	while (x < MAP_WIDTH)
 	{
 		y = 0;
-		while (y < mapHeight)
+		while (y < MAP_HEIGHT)
 		{
 			if (worldMap[x][y] == '2')
 			{

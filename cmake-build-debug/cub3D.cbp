@@ -47,7 +47,7 @@
 					<Add directory="/home/stepan/Desktop/cub3D/."/>
 					<Add directory="/home/stepan/Desktop/cub3D/libft"/>
 					<Add directory="/home/stepan/Desktop/cub3D/minilibx-linux"/>
-					<Add directory="/home/stepan/Desktop/cub3D/srcs/gnl"/>
+					<Add directory="/home/stepan/Desktop/cub3D/gnl"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
@@ -70,7 +70,7 @@
 					<Add directory="/home/stepan/Desktop/cub3D/."/>
 					<Add directory="/home/stepan/Desktop/cub3D/libft"/>
 					<Add directory="/home/stepan/Desktop/cub3D/minilibx-linux"/>
-					<Add directory="/home/stepan/Desktop/cub3D/srcs/gnl"/>
+					<Add directory="/home/stepan/Desktop/cub3D/gnl"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
@@ -85,6 +85,15 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/stepan/Desktop/cub3D/cub3d.h">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/gnl/get_next_line.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/gnl/get_next_line.h">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/gnl/get_next_line_utils.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/home/stepan/Desktop/cub3D/libft/ft_atoi.c">
@@ -336,19 +345,16 @@
 		<Unit filename="/home/stepan/Desktop/cub3D/srcs/cub3dmain.c">
 			<Option target="cub3D"/>
 		</Unit>
-		<Unit filename="/home/stepan/Desktop/cub3D/srcs/gnl/get_next_line.c">
-			<Option target="cub3D"/>
-		</Unit>
-		<Unit filename="/home/stepan/Desktop/cub3D/srcs/gnl/get_next_line.h">
-			<Option target="cub3D"/>
-		</Unit>
-		<Unit filename="/home/stepan/Desktop/cub3D/srcs/gnl/get_next_line_utils.c">
-			<Option target="cub3D"/>
-		</Unit>
 		<Unit filename="/home/stepan/Desktop/cub3D/srcs/keyboard.c">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/srcs/screenshot_bmp.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/home/stepan/Desktop/cub3D/srcs/sprite.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/srcs/texture_wall.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/home/stepan/Desktop/cub3D/CMakeLists.txt">
