@@ -160,7 +160,7 @@ void	ft_ray_hit(t_engine *engine)
 			engine->map_y += engine->step_y;
 			engine->side = 1;
 		}
-		if (engine->world_map[engine->map_x][engine->map_y] != '0')
+		if (engine->world_map[engine->map_x][engine->map_y] == '1')
 			hit = 1;
 		}
 }
