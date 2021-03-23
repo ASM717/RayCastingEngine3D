@@ -14,7 +14,6 @@
 # define CUB3D_H
 
 # include "libft/libft.h"
-# include "gnl/get_next_line.h"
 # include "minilibx-linux/mlx.h"
 
 # include <unistd.h>
@@ -45,13 +44,8 @@
 # define MOVESPEED		0.2
 # define ROTSPEED		0.05
 
-# define NO "textures/marbface.xpm"
-# define SO "textures/mountains.xpm"
-# define WE "textures/metal.xpm"
-# define EA "textures/brick.xpm"
-# define SP "textures/barrel.xpm"
 
-char					worldMap[MAP_WIDTH][MAP_HEIGHT];
+//char					worldMap[MAP_WIDTH][MAP_HEIGHT];
 
 typedef struct			s_data
 {
@@ -95,6 +89,11 @@ typedef struct			s_pm
 {
 	int 				fd;
 	char 				*line;
+	char 				*tmp;
+	char 				**tmp2;
+	int 				param;
+	int					countlines;
+	int 				flag_pos_pl;
 }						t_pm;
 
 typedef struct			s_engine
@@ -113,7 +112,7 @@ typedef struct			s_engine
 	int 				screen_flag;
 	int 				scr_height;
 	int 				scr_width;
-
+	char 				**world_map;
 	int 				x;
 	int 				y;
 	double				pos_x;
@@ -181,26 +180,56 @@ typedef struct			s_engine
 	int 				s;
 }						t_engine;
 
-int		check_movement(int x, int y);
-void	ft_keycode_movement(t_engine *engine);
-int		ft_keycode_used(int keycode, t_engine *engine);
+void 	ft_mlx_data_start(t_engine *engine);
+void 	ft_mlx_data_continue(t_engine *engine);
+int 	ft_restart(t_engine *engine);
+int		ft_raycast(t_engine *engine);
+void 	ft_all_calculation(t_engine *engine);
+void	ft_camera_calculation(t_engine *engine);
+void	ft_ray_position(t_engine *engine);
+void	ft_ray_hit(t_engine *engine);
+void	ft_ray_walldist_calculation(t_engine *engine);
+void	ft_ray_walldist_calculation2(t_engine *engine);
+unsigned	int	ft_get_pixel(t_data *data, int x, int y);
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+
+int 	ft_get_rgb_color_floor(t_engine *engine);
+int 	ft_get_rgb_color_ceiling(t_engine *engine);
+
 int		ft_keycode_unused(int keycode, t_engine *engine);
 int		ft_exit(t_engine *engine);
+int		ft_keycode_used(int keycode, t_engine *engine);
+void	ft_keycode_movement(t_engine *engine);
+void 	ft_keycode_movement_ws(t_engine *engine);
+void 	ft_keycode_movement_rot(t_engine *engine);
+void 	ft_keycode_movement_ad(t_engine *engine);
+int		check_movement(t_engine *engine, int x, int y);
+void	ft_screenshot_make(t_engine *engine);
+void	ft_init_shot_header(t_engine *engine);
+void	ft_screen_pack(t_engine *engine);
 
-unsigned	int	ft_get_pixel(t_data *data, int x, int y);
-void			my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void 	ft_print_wall(t_engine *engine);
+
 void 	ft_main_sprites(t_engine *engine);
+void 	ft_sprite_calculation1(t_engine *engine);
+void 	ft_sprite_calculation2(t_engine *engine);
+void 	ft_sprite_calculation3(t_engine *engine);
 void	ft_sort_swap(t_engine *engine);
-t_sprite			*ft_get_sprites(t_engine *engine);
-int		ft_number_sprites();
+void 	ft_swap_sprites(t_engine *engine);
 
-int 	ft_init_color_rgb(t_engine *engine);
-int 	ft_get_rgb_color_ceiling(t_engine *engine);
-int 	ft_get_rgb_color_floor(t_engine *engine);
+t_sprite	*ft_get_sprites(t_engine *engine);
+int		ft_number_sprites(t_engine *engine);
 
-
-
-void		ft_screenshot_make(t_engine *engine);
+void 	ft_var_zero(t_engine *engine);
+void	ft_print_error(char *s);
+void	ft_get_resolution(t_engine *engine);
+int		ft_isdigit_pm(char *s);
+int		ft_get_texture_parse(t_engine *engine);
+int		ft_checker_space_tx(char *str);
+int		ft_check_fd_texture(char *tmp2);
+int		ft_get_rgb_color(t_engine *engine);
+int		ft_check_rgb(char *s);
+int		ft_arr_string_len(char **map);
+int 	ft_start_parse(char **argv, t_engine *engine);
 
 #endif

@@ -54,6 +54,8 @@ add_executable(cub3D
         libft/ft_substr.c
         libft/ft_tolower.c
         libft/ft_toupper.c
+        libft/get_next_line_utils.c
+        libft/get_next_line.c
         libft/libft.h
         minilibx-linux/test/main.c
         minilibx-linux/test/new_win.c
@@ -106,4 +108,8 @@ add_executable(cub3D
         srcs/sprite.c
         srcs/screenshot_bmp.c
         srcs/texture_wall.c
+        srcs/parse_cub.c
+        srcs/pm_resolution.c
+        srcs/pm_texture.c
+        srcs/pm_rgb_color.c
         cub3d.h)

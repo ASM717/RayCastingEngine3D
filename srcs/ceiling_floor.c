@@ -12,20 +12,6 @@
 
 #include "../cub3d.h"
 
-int 	ft_init_color_rgb(t_engine *engine)
-{
-	engine->rgb_ceiling.col_r = 51;
-	engine->rgb_ceiling.col_g = 0;
-	engine->rgb_ceiling.col_b = 0;
-
-	engine->rgb_floor.col_r = 51;
-	engine->rgb_floor.col_g = 51;
-	engine->rgb_floor.col_b = 26;
-
-	return (0);
-}
-
-
 int 	ft_get_rgb_color_ceiling(t_engine *engine)
 {
 	engine->rgb_ceiling.rgb_color =

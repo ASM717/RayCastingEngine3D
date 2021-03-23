@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 size_t	ft_strlen_gnl(const char *s)
 {
@@ -24,7 +24,7 @@ size_t	ft_strlen_gnl(const char *s)
 	return (i);
 }
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy_gnl(char *dst, const char *src)
 {
 	int i;
 
@@ -38,7 +38,7 @@ char	*ft_strcpy(char *dst, const char *src)
 	return (dst);
 }
 
-char	*ft_strnew(unsigned int buf_size)
+char	*ft_strnew_gnl(unsigned int buf_size)
 {
 	char	*s;
 
@@ -53,7 +53,7 @@ char	*ft_strnew(unsigned int buf_size)
 	return (s);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup_gnl(const char *s1)
 {
 	char	*str;
 	char	*i;
@@ -68,7 +68,7 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
-char	*ft_strjoin_new(char *s1, char *s2)
+char	*ft_strjoin_new_gnl(char *s1, char *s2)
 {
 	char	*str;
 	int		i;

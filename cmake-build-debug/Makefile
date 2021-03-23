@@ -1358,6 +1358,60 @@ libft/ft_toupper.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
+libft/get_next_line.o: libft/get_next_line.c.o
+
+.PHONY : libft/get_next_line.o
+
+# target to build an object file
+libft/get_next_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line.c.o
+.PHONY : libft/get_next_line.c.o
+
+libft/get_next_line.i: libft/get_next_line.c.i
+
+.PHONY : libft/get_next_line.i
+
+# target to preprocess a source file
+libft/get_next_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line.c.i
+.PHONY : libft/get_next_line.c.i
+
+libft/get_next_line.s: libft/get_next_line.c.s
+
+.PHONY : libft/get_next_line.s
+
+# target to generate assembly for a file
+libft/get_next_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line.c.s
+.PHONY : libft/get_next_line.c.s
+
+libft/get_next_line_utils.o: libft/get_next_line_utils.c.o
+
+.PHONY : libft/get_next_line_utils.o
+
+# target to build an object file
+libft/get_next_line_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o
+.PHONY : libft/get_next_line_utils.c.o
+
+libft/get_next_line_utils.i: libft/get_next_line_utils.c.i
+
+.PHONY : libft/get_next_line_utils.i
+
+# target to preprocess a source file
+libft/get_next_line_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.i
+.PHONY : libft/get_next_line_utils.c.i
+
+libft/get_next_line_utils.s: libft/get_next_line_utils.c.s
+
+.PHONY : libft/get_next_line_utils.s
+
+# target to generate assembly for a file
+libft/get_next_line_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.s
+.PHONY : libft/get_next_line_utils.c.s
+
 minilibx-linux/mlx_clear_window.o: minilibx-linux/mlx_clear_window.c.o
 
 .PHONY : minilibx-linux/mlx_clear_window.o
@@ -2384,6 +2438,114 @@ srcs/keyboard.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/keyboard.c.s
 .PHONY : srcs/keyboard.c.s
 
+srcs/parse_cub.o: srcs/parse_cub.c.o
+
+.PHONY : srcs/parse_cub.o
+
+# target to build an object file
+srcs/parse_cub.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/parse_cub.c.o
+.PHONY : srcs/parse_cub.c.o
+
+srcs/parse_cub.i: srcs/parse_cub.c.i
+
+.PHONY : srcs/parse_cub.i
+
+# target to preprocess a source file
+srcs/parse_cub.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/parse_cub.c.i
+.PHONY : srcs/parse_cub.c.i
+
+srcs/parse_cub.s: srcs/parse_cub.c.s
+
+.PHONY : srcs/parse_cub.s
+
+# target to generate assembly for a file
+srcs/parse_cub.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/parse_cub.c.s
+.PHONY : srcs/parse_cub.c.s
+
+srcs/pm_resolution.o: srcs/pm_resolution.c.o
+
+.PHONY : srcs/pm_resolution.o
+
+# target to build an object file
+srcs/pm_resolution.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_resolution.c.o
+.PHONY : srcs/pm_resolution.c.o
+
+srcs/pm_resolution.i: srcs/pm_resolution.c.i
+
+.PHONY : srcs/pm_resolution.i
+
+# target to preprocess a source file
+srcs/pm_resolution.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_resolution.c.i
+.PHONY : srcs/pm_resolution.c.i
+
+srcs/pm_resolution.s: srcs/pm_resolution.c.s
+
+.PHONY : srcs/pm_resolution.s
+
+# target to generate assembly for a file
+srcs/pm_resolution.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_resolution.c.s
+.PHONY : srcs/pm_resolution.c.s
+
+srcs/pm_rgb_color.o: srcs/pm_rgb_color.c.o
+
+.PHONY : srcs/pm_rgb_color.o
+
+# target to build an object file
+srcs/pm_rgb_color.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.o
+.PHONY : srcs/pm_rgb_color.c.o
+
+srcs/pm_rgb_color.i: srcs/pm_rgb_color.c.i
+
+.PHONY : srcs/pm_rgb_color.i
+
+# target to preprocess a source file
+srcs/pm_rgb_color.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.i
+.PHONY : srcs/pm_rgb_color.c.i
+
+srcs/pm_rgb_color.s: srcs/pm_rgb_color.c.s
+
+.PHONY : srcs/pm_rgb_color.s
+
+# target to generate assembly for a file
+srcs/pm_rgb_color.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.s
+.PHONY : srcs/pm_rgb_color.c.s
+
+srcs/pm_texture.o: srcs/pm_texture.c.o
+
+.PHONY : srcs/pm_texture.o
+
+# target to build an object file
+srcs/pm_texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_texture.c.o
+.PHONY : srcs/pm_texture.c.o
+
+srcs/pm_texture.i: srcs/pm_texture.c.i
+
+.PHONY : srcs/pm_texture.i
+
+# target to preprocess a source file
+srcs/pm_texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_texture.c.i
+.PHONY : srcs/pm_texture.c.i
+
+srcs/pm_texture.s: srcs/pm_texture.c.s
+
+.PHONY : srcs/pm_texture.s
+
+# target to generate assembly for a file
+srcs/pm_texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/srcs/pm_texture.c.s
+.PHONY : srcs/pm_texture.c.s
+
 srcs/screenshot_bmp.o: srcs/screenshot_bmp.c.o
 
 .PHONY : srcs/screenshot_bmp.o
@@ -2609,6 +2771,12 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
+	@echo "... libft/get_next_line.o"
+	@echo "... libft/get_next_line.i"
+	@echo "... libft/get_next_line.s"
+	@echo "... libft/get_next_line_utils.o"
+	@echo "... libft/get_next_line_utils.i"
+	@echo "... libft/get_next_line_utils.s"
 	@echo "... minilibx-linux/mlx_clear_window.o"
 	@echo "... minilibx-linux/mlx_clear_window.i"
 	@echo "... minilibx-linux/mlx_clear_window.s"
@@ -2723,6 +2891,18 @@ help:
 	@echo "... srcs/keyboard.o"
 	@echo "... srcs/keyboard.i"
 	@echo "... srcs/keyboard.s"
+	@echo "... srcs/parse_cub.o"
+	@echo "... srcs/parse_cub.i"
+	@echo "... srcs/parse_cub.s"
+	@echo "... srcs/pm_resolution.o"
+	@echo "... srcs/pm_resolution.i"
+	@echo "... srcs/pm_resolution.s"
+	@echo "... srcs/pm_rgb_color.o"
+	@echo "... srcs/pm_rgb_color.i"
+	@echo "... srcs/pm_rgb_color.s"
+	@echo "... srcs/pm_texture.o"
+	@echo "... srcs/pm_texture.i"
+	@echo "... srcs/pm_texture.s"
 	@echo "... srcs/screenshot_bmp.o"
 	@echo "... srcs/screenshot_bmp.i"
 	@echo "... srcs/screenshot_bmp.s"

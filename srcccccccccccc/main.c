@@ -190,7 +190,7 @@ int		ft_start_parser(int fd, t_parser *parser, t_engine *engine)
 	return (parser->flag);
 }
 
-void	ft_err_print(char *s)
+void	ft_print_error(char *s)
 {
 	write(2, s, ft_strlen(s));
 	exit(-1);

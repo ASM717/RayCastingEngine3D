@@ -225,6 +225,12 @@
 		<Unit filename="/home/stepan/Desktop/cub3D/libft/ft_toupper.c">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/libft/get_next_line.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/libft/get_next_line_utils.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/home/stepan/Desktop/cub3D/libft/libft.h">
 			<Option target="cub3D"/>
 		</Unit>
@@ -346,6 +352,18 @@
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/home/stepan/Desktop/cub3D/srcs/keyboard.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/srcs/parse_cub.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/srcs/pm_resolution.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/srcs/pm_rgb_color.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/home/stepan/Desktop/cub3D/srcs/pm_texture.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/home/stepan/Desktop/cub3D/srcs/screenshot_bmp.c">

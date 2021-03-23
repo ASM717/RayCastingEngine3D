@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../cub3d.h"
 
-int		check_movement(int x, int y)
+int		check_movement(t_engine *engine, int x, int y)
 {
-	if (worldMap[x][y] != '1' && worldMap[x][y] != '2')
+	if (engine->world_map[x][y] != '1' && engine->world_map[x][y] != '2')
 		return (1);
 	return (0);
 }
@@ -25,19 +23,19 @@ void 	ft_keycode_movement_ad(t_engine *engine)
 {
 	if (engine->keycode_a == 1)
 	{
-		if (check_movement((int)(engine->pos_x),
-						   (int)(engine->pos_y + engine->dir_x * MOVESPEED)))
+		if (check_movement(engine, (int)(engine->pos_x),
+					 (int)(engine->pos_y + engine->dir_x * MOVESPEED)))
 			engine->pos_y += engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x - engine->dir_y * MOVESPEED),
-						   (int)(engine->pos_y)))
+		if (check_movement(engine, (int)(engine->pos_x - engine->dir_y * MOVESPEED),
+					 (int)(engine->pos_y)))
 			engine->pos_x -= engine->dir_y * MOVESPEED;
 	}
 	if (engine->keycode_d == 1)
 	{
-		if (check_movement((int)(engine->pos_x),
+		if (check_movement(engine, (int)(engine->pos_x),
 						   (int)(engine->pos_y - engine->dir_x * MOVESPEED)))
 			engine->pos_y -= engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x + engine->dir_y * MOVESPEED),
+		if (check_movement(engine, (int)(engine->pos_x + engine->dir_y * MOVESPEED),
 						   (int)(engine->pos_y)))
 			engine->pos_x += engine->dir_y * MOVESPEED;
 	}
@@ -77,19 +75,19 @@ void 	ft_keycode_movement_ws(t_engine *engine)
 {
 	if (engine->keycode_w == 1)
 	{
-		if (check_movement((int)(engine->pos_x +
+		if (check_movement(engine, (int)(engine->pos_x +
 		engine->dir_x * MOVESPEED),(int)(engine->pos_y)))
 			engine->pos_x += engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x),
+		if (check_movement(engine, (int)(engine->pos_x),
 					 (int)(engine->pos_y + engine->dir_y * MOVESPEED)))
 			engine->pos_y += engine->dir_y * MOVESPEED;
 	}
 	if (engine->keycode_s == 1)
 	{
-		if (check_movement((int)(engine->pos_x - engine->dir_x * MOVESPEED),
+		if (check_movement(engine, (int)(engine->pos_x - engine->dir_x * MOVESPEED),
 					 (int)(engine->pos_y)))
 			engine->pos_x -= engine->dir_x * MOVESPEED;
-		if (check_movement((int)(engine->pos_x),
+		if (check_movement(engine, (int)(engine->pos_x),
 					 (int)(engine->pos_y - engine->dir_y * MOVESPEED)))
 			engine->pos_y -= engine->dir_y * MOVESPEED;
 	}

@@ -636,9 +636,35 @@ CMakeFiles/cub3D.dir/libft/ft_toupper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/libft/ft_toupper.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/libft/ft_toupper.c -o CMakeFiles/cub3D.dir/libft/ft_toupper.c.s
 
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o: ../libft/get_next_line_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o   -c /home/stepan/Desktop/cub3D/libft/get_next_line_utils.c
+
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/libft/get_next_line_utils.c > CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.i
+
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/libft/get_next_line_utils.c -o CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.s
+
+CMakeFiles/cub3D.dir/libft/get_next_line.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/cub3D.dir/libft/get_next_line.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/libft/get_next_line.c.o   -c /home/stepan/Desktop/cub3D/libft/get_next_line.c
+
+CMakeFiles/cub3D.dir/libft/get_next_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/libft/get_next_line.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/libft/get_next_line.c > CMakeFiles/cub3D.dir/libft/get_next_line.c.i
+
+CMakeFiles/cub3D.dir/libft/get_next_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/libft/get_next_line.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/libft/get_next_line.c -o CMakeFiles/cub3D.dir/libft/get_next_line.c.s
+
 CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.o: ../minilibx-linux/test/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/test/main.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.i: cmake_force
@@ -651,7 +677,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o: ../minilibx-linux/test/new_win.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/test/new_win.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.i: cmake_force
@@ -664,7 +690,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.o: ../minilibx-linux/mlx_clear_window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_clear_window.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.i: cmake_force
@@ -677,7 +703,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_display.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_display.c.o: ../minilibx-linux/mlx_destroy_display.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_display.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_display.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_display.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_destroy_display.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_display.c.i: cmake_force
@@ -690,7 +716,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_display.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_image.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_image.c.o: ../minilibx-linux/mlx_destroy_image.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_image.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_image.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_image.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_destroy_image.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_image.c.i: cmake_force
@@ -703,7 +729,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_image.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_window.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_window.c.o: ../minilibx-linux/mlx_destroy_window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_window.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_window.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_window.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_destroy_window.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_window.c.i: cmake_force
@@ -716,7 +742,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_destroy_window.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_expose_hook.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_expose_hook.c.o: ../minilibx-linux/mlx_expose_hook.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_expose_hook.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_expose_hook.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_expose_hook.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_expose_hook.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_expose_hook.c.i: cmake_force
@@ -729,7 +755,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_expose_hook.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_ext_randr.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_ext_randr.c.o: ../minilibx-linux/mlx_ext_randr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_ext_randr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_ext_randr.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_ext_randr.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_ext_randr.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_ext_randr.c.i: cmake_force
@@ -742,7 +768,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_ext_randr.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_flush_event.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_flush_event.c.o: ../minilibx-linux/mlx_flush_event.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_flush_event.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_flush_event.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_flush_event.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_flush_event.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_flush_event.c.i: cmake_force
@@ -755,7 +781,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_flush_event.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_color_value.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_color_value.c.o: ../minilibx-linux/mlx_get_color_value.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_color_value.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_color_value.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_color_value.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_get_color_value.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_color_value.c.i: cmake_force
@@ -768,7 +794,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_color_value.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_data_addr.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_data_addr.c.o: ../minilibx-linux/mlx_get_data_addr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_data_addr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_data_addr.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_data_addr.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_get_data_addr.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_data_addr.c.i: cmake_force
@@ -781,7 +807,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_get_data_addr.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_hook.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_hook.c.o: ../minilibx-linux/mlx_hook.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_hook.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_hook.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_hook.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_hook.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_hook.c.i: cmake_force
@@ -794,7 +820,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_hook.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_init.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_init.c.o: ../minilibx-linux/mlx_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_init.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_init.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_init.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_init.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_init.c.i: cmake_force
@@ -807,7 +833,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_init.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_anti_resize_win.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_anti_resize_win.c.o: ../minilibx-linux/mlx_int_anti_resize_win.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_anti_resize_win.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_anti_resize_win.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_anti_resize_win.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_int_anti_resize_win.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_anti_resize_win.c.i: cmake_force
@@ -820,7 +846,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_anti_resize_win.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_do_nothing.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_do_nothing.c.o: ../minilibx-linux/mlx_int_do_nothing.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_do_nothing.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_do_nothing.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_do_nothing.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_int_do_nothing.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_do_nothing.c.i: cmake_force
@@ -833,7 +859,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_do_nothing.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_get_visual.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_get_visual.c.o: ../minilibx-linux/mlx_int_get_visual.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_get_visual.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_get_visual.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_get_visual.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_int_get_visual.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_get_visual.c.i: cmake_force
@@ -846,7 +872,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_get_visual.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_param_event.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_param_event.c.o: ../minilibx-linux/mlx_int_param_event.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_param_event.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_param_event.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_param_event.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_int_param_event.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_param_event.c.i: cmake_force
@@ -859,7 +885,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_param_event.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_set_win_event_mask.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_set_win_event_mask.c.o: ../minilibx-linux/mlx_int_set_win_event_mask.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_set_win_event_mask.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_set_win_event_mask.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_set_win_event_mask.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_int_set_win_event_mask.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_set_win_event_mask.c.i: cmake_force
@@ -872,7 +898,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_set_win_event_mask.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_str_to_wordtab.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_str_to_wordtab.c.o: ../minilibx-linux/mlx_int_str_to_wordtab.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_str_to_wordtab.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_str_to_wordtab.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_str_to_wordtab.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_int_str_to_wordtab.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_str_to_wordtab.c.i: cmake_force
@@ -885,7 +911,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_str_to_wordtab.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_wait_first_expose.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_wait_first_expose.c.o: ../minilibx-linux/mlx_int_wait_first_expose.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_wait_first_expose.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_wait_first_expose.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_wait_first_expose.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_int_wait_first_expose.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_wait_first_expose.c.i: cmake_force
@@ -898,7 +924,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_int_wait_first_expose.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_key_hook.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_key_hook.c.o: ../minilibx-linux/mlx_key_hook.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_key_hook.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_key_hook.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_key_hook.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_key_hook.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_key_hook.c.i: cmake_force
@@ -911,7 +937,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_key_hook.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_lib_xpm.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_lib_xpm.c.o: ../minilibx-linux/mlx_lib_xpm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_lib_xpm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_lib_xpm.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_lib_xpm.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_lib_xpm.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_lib_xpm.c.i: cmake_force
@@ -924,7 +950,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_lib_xpm.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop.c.o: ../minilibx-linux/mlx_loop.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_loop.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop.c.i: cmake_force
@@ -937,7 +963,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop_hook.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop_hook.c.o: ../minilibx-linux/mlx_loop_hook.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop_hook.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop_hook.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop_hook.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_loop_hook.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop_hook.c.i: cmake_force
@@ -950,7 +976,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_loop_hook.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse.c.o: ../minilibx-linux/mlx_mouse.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_mouse.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse.c.i: cmake_force
@@ -963,7 +989,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse_hook.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse_hook.c.o: ../minilibx-linux/mlx_mouse_hook.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse_hook.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse_hook.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse_hook.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_mouse_hook.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse_hook.c.i: cmake_force
@@ -976,7 +1002,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_mouse_hook.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_image.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_image.c.o: ../minilibx-linux/mlx_new_image.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_image.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_image.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_image.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_new_image.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_image.c.i: cmake_force
@@ -989,7 +1015,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_image.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_window.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_window.c.o: ../minilibx-linux/mlx_new_window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_window.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_window.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_window.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_new_window.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_window.c.i: cmake_force
@@ -1002,7 +1028,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_new_window.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_pixel_put.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_pixel_put.c.o: ../minilibx-linux/mlx_pixel_put.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_pixel_put.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_pixel_put.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_pixel_put.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_pixel_put.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_pixel_put.c.i: cmake_force
@@ -1015,7 +1041,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_pixel_put.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_put_image_to_window.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_put_image_to_window.c.o: ../minilibx-linux/mlx_put_image_to_window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_put_image_to_window.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_put_image_to_window.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_put_image_to_window.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_put_image_to_window.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_put_image_to_window.c.i: cmake_force
@@ -1028,7 +1054,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_put_image_to_window.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_rgb.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_rgb.c.o: ../minilibx-linux/mlx_rgb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_rgb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_rgb.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_rgb.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_rgb.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_rgb.c.i: cmake_force
@@ -1041,7 +1067,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_rgb.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.o: ../minilibx-linux/mlx_screen_size.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_screen_size.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.i: cmake_force
@@ -1054,7 +1080,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_screen_size.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.o: ../minilibx-linux/mlx_set_font.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_set_font.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.i: cmake_force
@@ -1067,7 +1093,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_set_font.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.o: ../minilibx-linux/mlx_string_put.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_string_put.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.i: cmake_force
@@ -1080,7 +1106,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_string_put.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.o: ../minilibx-linux/mlx_xpm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.o   -c /home/stepan/Desktop/cub3D/minilibx-linux/mlx_xpm.c
 
 CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.i: cmake_force
@@ -1093,7 +1119,7 @@ CMakeFiles/cub3D.dir/minilibx-linux/mlx_xpm.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/gnl/get_next_line.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/gnl/get_next_line.c.o: ../gnl/get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/gnl/get_next_line.c.o   -c /home/stepan/Desktop/cub3D/gnl/get_next_line.c
 
 CMakeFiles/cub3D.dir/gnl/get_next_line.c.i: cmake_force
@@ -1106,7 +1132,7 @@ CMakeFiles/cub3D.dir/gnl/get_next_line.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o: ../gnl/get_next_line_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o   -c /home/stepan/Desktop/cub3D/gnl/get_next_line_utils.c
 
 CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.i: cmake_force
@@ -1119,7 +1145,7 @@ CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o: ../srcs/ceiling_floor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.o   -c /home/stepan/Desktop/cub3D/srcs/ceiling_floor.c
 
 CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.i: cmake_force
@@ -1132,7 +1158,7 @@ CMakeFiles/cub3D.dir/srcs/ceiling_floor.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o: ../srcs/cub3dmain.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/cub3dmain.c.o   -c /home/stepan/Desktop/cub3D/srcs/cub3dmain.c
 
 CMakeFiles/cub3D.dir/srcs/cub3dmain.c.i: cmake_force
@@ -1145,7 +1171,7 @@ CMakeFiles/cub3D.dir/srcs/cub3dmain.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/srcs/keyboard.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/srcs/keyboard.c.o: ../srcs/keyboard.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/cub3D.dir/srcs/keyboard.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/cub3D.dir/srcs/keyboard.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/keyboard.c.o   -c /home/stepan/Desktop/cub3D/srcs/keyboard.c
 
 CMakeFiles/cub3D.dir/srcs/keyboard.c.i: cmake_force
@@ -1158,7 +1184,7 @@ CMakeFiles/cub3D.dir/srcs/keyboard.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/srcs/sprite.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/srcs/sprite.c.o: ../srcs/sprite.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/cub3D.dir/srcs/sprite.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/cub3D.dir/srcs/sprite.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/sprite.c.o   -c /home/stepan/Desktop/cub3D/srcs/sprite.c
 
 CMakeFiles/cub3D.dir/srcs/sprite.c.i: cmake_force
@@ -1171,7 +1197,7 @@ CMakeFiles/cub3D.dir/srcs/sprite.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o: ../srcs/screenshot_bmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o   -c /home/stepan/Desktop/cub3D/srcs/screenshot_bmp.c
 
 CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.i: cmake_force
@@ -1184,7 +1210,7 @@ CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.s: cmake_force
 
 CMakeFiles/cub3D.dir/srcs/texture_wall.c.o: CMakeFiles/cub3D.dir/flags.make
 CMakeFiles/cub3D.dir/srcs/texture_wall.c.o: ../srcs/texture_wall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/cub3D.dir/srcs/texture_wall.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/cub3D.dir/srcs/texture_wall.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/texture_wall.c.o   -c /home/stepan/Desktop/cub3D/srcs/texture_wall.c
 
 CMakeFiles/cub3D.dir/srcs/texture_wall.c.i: cmake_force
@@ -1194,6 +1220,58 @@ CMakeFiles/cub3D.dir/srcs/texture_wall.c.i: cmake_force
 CMakeFiles/cub3D.dir/srcs/texture_wall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/texture_wall.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/texture_wall.c -o CMakeFiles/cub3D.dir/srcs/texture_wall.c.s
+
+CMakeFiles/cub3D.dir/srcs/parse_cub.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/srcs/parse_cub.c.o: ../srcs/parse_cub.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/cub3D.dir/srcs/parse_cub.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/parse_cub.c.o   -c /home/stepan/Desktop/cub3D/srcs/parse_cub.c
+
+CMakeFiles/cub3D.dir/srcs/parse_cub.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/parse_cub.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/parse_cub.c > CMakeFiles/cub3D.dir/srcs/parse_cub.c.i
+
+CMakeFiles/cub3D.dir/srcs/parse_cub.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/parse_cub.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/parse_cub.c -o CMakeFiles/cub3D.dir/srcs/parse_cub.c.s
+
+CMakeFiles/cub3D.dir/srcs/pm_resolution.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/srcs/pm_resolution.c.o: ../srcs/pm_resolution.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/cub3D.dir/srcs/pm_resolution.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/pm_resolution.c.o   -c /home/stepan/Desktop/cub3D/srcs/pm_resolution.c
+
+CMakeFiles/cub3D.dir/srcs/pm_resolution.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/pm_resolution.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/pm_resolution.c > CMakeFiles/cub3D.dir/srcs/pm_resolution.c.i
+
+CMakeFiles/cub3D.dir/srcs/pm_resolution.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/pm_resolution.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/pm_resolution.c -o CMakeFiles/cub3D.dir/srcs/pm_resolution.c.s
+
+CMakeFiles/cub3D.dir/srcs/pm_texture.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/srcs/pm_texture.c.o: ../srcs/pm_texture.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/cub3D.dir/srcs/pm_texture.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/pm_texture.c.o   -c /home/stepan/Desktop/cub3D/srcs/pm_texture.c
+
+CMakeFiles/cub3D.dir/srcs/pm_texture.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/pm_texture.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/pm_texture.c > CMakeFiles/cub3D.dir/srcs/pm_texture.c.i
+
+CMakeFiles/cub3D.dir/srcs/pm_texture.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/pm_texture.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/pm_texture.c -o CMakeFiles/cub3D.dir/srcs/pm_texture.c.s
+
+CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.o: CMakeFiles/cub3D.dir/flags.make
+CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.o: ../srcs/pm_rgb_color.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.o   -c /home/stepan/Desktop/cub3D/srcs/pm_rgb_color.c
+
+CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Desktop/cub3D/srcs/pm_rgb_color.c > CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.i
+
+CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Desktop/cub3D/srcs/pm_rgb_color.c -o CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.s
 
 # Object files for target cub3D
 cub3D_OBJECTS = \
@@ -1240,6 +1318,8 @@ cub3D_OBJECTS = \
 "CMakeFiles/cub3D.dir/libft/ft_substr.c.o" \
 "CMakeFiles/cub3D.dir/libft/ft_tolower.c.o" \
 "CMakeFiles/cub3D.dir/libft/ft_toupper.c.o" \
+"CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o" \
+"CMakeFiles/cub3D.dir/libft/get_next_line.c.o" \
 "CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.o" \
 "CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o" \
 "CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.o" \
@@ -1282,7 +1362,11 @@ cub3D_OBJECTS = \
 "CMakeFiles/cub3D.dir/srcs/keyboard.c.o" \
 "CMakeFiles/cub3D.dir/srcs/sprite.c.o" \
 "CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o" \
-"CMakeFiles/cub3D.dir/srcs/texture_wall.c.o"
+"CMakeFiles/cub3D.dir/srcs/texture_wall.c.o" \
+"CMakeFiles/cub3D.dir/srcs/parse_cub.c.o" \
+"CMakeFiles/cub3D.dir/srcs/pm_resolution.c.o" \
+"CMakeFiles/cub3D.dir/srcs/pm_texture.c.o" \
+"CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.o"
 
 # External object files for target cub3D
 cub3D_EXTERNAL_OBJECTS =
@@ -1330,6 +1414,8 @@ cub3D: CMakeFiles/cub3D.dir/libft/ft_strtrim.c.o
 cub3D: CMakeFiles/cub3D.dir/libft/ft_substr.c.o
 cub3D: CMakeFiles/cub3D.dir/libft/ft_tolower.c.o
 cub3D: CMakeFiles/cub3D.dir/libft/ft_toupper.c.o
+cub3D: CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o
+cub3D: CMakeFiles/cub3D.dir/libft/get_next_line.c.o
 cub3D: CMakeFiles/cub3D.dir/minilibx-linux/test/main.c.o
 cub3D: CMakeFiles/cub3D.dir/minilibx-linux/test/new_win.c.o
 cub3D: CMakeFiles/cub3D.dir/minilibx-linux/mlx_clear_window.c.o
@@ -1373,9 +1459,13 @@ cub3D: CMakeFiles/cub3D.dir/srcs/keyboard.c.o
 cub3D: CMakeFiles/cub3D.dir/srcs/sprite.c.o
 cub3D: CMakeFiles/cub3D.dir/srcs/screenshot_bmp.c.o
 cub3D: CMakeFiles/cub3D.dir/srcs/texture_wall.c.o
+cub3D: CMakeFiles/cub3D.dir/srcs/parse_cub.c.o
+cub3D: CMakeFiles/cub3D.dir/srcs/pm_resolution.c.o
+cub3D: CMakeFiles/cub3D.dir/srcs/pm_texture.c.o
+cub3D: CMakeFiles/cub3D.dir/srcs/pm_rgb_color.c.o
 cub3D: CMakeFiles/cub3D.dir/build.make
 cub3D: CMakeFiles/cub3D.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Linking C executable cub3D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Linking C executable cub3D"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cub3D.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

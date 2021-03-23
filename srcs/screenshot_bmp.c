@@ -12,7 +12,7 @@
 
 #include "../cub3d.h"
 
-static void	ft_screen_pack(t_engine *engine)
+void	ft_screen_pack(t_engine *engine)
 {
 	engine->shot.range = engine->scr_height - 1;
 	while (engine->shot.range >= 0)
@@ -30,7 +30,7 @@ static void	ft_screen_pack(t_engine *engine)
 	}
 }
 
-static void	ft_init_shot_header(t_engine *engine)
+void	ft_init_shot_header(t_engine *engine)
 {
 	engine->shot.zero = 0;
 	write(engine->shot.fd, &engine->shot.zero, 4);
@@ -46,7 +46,7 @@ static void	ft_init_shot_header(t_engine *engine)
 	write(engine->shot.fd, &engine->shot.zero, 24);
 }
 
-void		ft_screenshot_make(t_engine *engine)
+void	ft_screenshot_make(t_engine *engine)
 {
 	if (!(engine->shot.fd = open("cub3D.bmp", O_CREAT |
 	O_WRONLY | O_TRUNC, S_IRWXU)))

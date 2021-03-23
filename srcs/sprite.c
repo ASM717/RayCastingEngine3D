@@ -10,23 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../cub3d.h"
 
-int		ft_number_sprites()
+int		ft_number_sprites(t_engine *engine)
 {
 	int		count;
 	int		x;
 	int		y;
+	int 		count_l;
+	int i;
 
+	i = 0;
 	x = 0;
 	count = 0;
-	while (x < MAP_WIDTH)
+	count_l = ft_arr_string_len(engine->world_map);
+	while (x < count_l)
 	{
 		y = 0;
-		while (y < MAP_HEIGHT)
+		while (y < (int)ft_strlen(engine->world_map[i]))
 		{
-			if (worldMap[x][y] == '2')
+			if (engine->world_map[x][y] == '2')
 				count++;
 			y++;
 		}
@@ -41,18 +44,20 @@ t_sprite	*ft_get_sprites(t_engine *engine)
 	int			y;
 	int			i;
 	t_sprite	*str_spr;
+	int 		count_l;
 
 	x = 0;
 	i = 0;
-	engine->sprite_num = ft_number_sprites();
+	count_l = ft_arr_string_len(engine->world_map);
+	engine->sprite_num = ft_number_sprites(engine);
 	str_spr = malloc(sizeof(t_sprite) * engine->sprite_num);
 	engine->sprite_order = malloc(sizeof(int) * engine->sprite_num);
-	while (x < MAP_WIDTH)
+	while (x < count_l)
 	{
 		y = 0;
-		while (y < MAP_HEIGHT)
+		while (y < (int)ft_strlen(engine->world_map[i]))
 		{
-			if (worldMap[x][y] == '2')
+			if (engine->world_map[x][y] == '2')
 			{
 				str_spr[i].x_str = x + 0.5;
 				str_spr[i++].y_str = y + 0.5;
