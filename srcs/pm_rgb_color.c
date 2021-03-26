@@ -14,7 +14,7 @@ int		ft_check_rgb(char *s)
 	return (color);
 }
 
-int		ft_get_rgb_color(t_engine *engine)
+int		ft_get_rgb_color(t_engine *engine, char *line)
 {
 	char **var;
 
@@ -24,7 +24,7 @@ int		ft_get_rgb_color(t_engine *engine)
 	if ((ft_isdigit_pm(var[0]) && ft_isdigit_pm(var[1]) &&
 	ft_isdigit_pm(var[2])) && !var[3])
 	{
-		if (*engine->pm.line == 'F' && *(engine->pm.line + 1) == ' ')
+		if (*line == 'F' && *(line + 1) == ' ')
 		{
 			engine->rgb_floor.col_r = ft_check_rgb(var[0]);
 			printf("%d\n", engine->rgb_floor.col_r);
@@ -35,7 +35,7 @@ int		ft_get_rgb_color(t_engine *engine)
 			engine->rgb_floor.col_b = ft_check_rgb(var[2]);
 			printf("%d\n", engine->rgb_floor.col_b);
 		}
-		else if (*engine->pm.line == 'C' && *(engine->pm.line + 1) == ' ')
+		else if (*line == 'C' && *(line + 1) == ' ')
 		{
 			engine->rgb_ceiling.col_r = ft_check_rgb(var[0]);
 			printf("%d\n", engine->rgb_ceiling.col_r);
@@ -49,5 +49,6 @@ int		ft_get_rgb_color(t_engine *engine)
 	}
 	else
 		ft_print_error("Error input color!\n");
+	ft_free_array(&var);
 	return (0);
 }

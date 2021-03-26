@@ -30,43 +30,44 @@ int		ft_checker_space_tx(char *str)
 	return (count);
 }
 
-int		ft_get_texture_parse(t_engine *engine)
+int		ft_get_texture_parse(t_engine *engine, char *line)
 {
 	char	**var;
 
-	var = ft_split(engine->pm.line, ' ');
-	if (ft_checker_space_tx(engine->pm.line) !=
+	var = ft_split(line, ' ');
+	if (ft_checker_space_tx(line) !=
 	((int)ft_strlen(var[0]) + (int)ft_strlen(var[1])))
 		ft_print_error("Map Error! Texture undefined\n");
 	ft_check_fd_texture(var[1]);
-	if (*engine->pm.line == 'N' && *(engine->pm.line + 1) == 'O'
-	&& *(engine->pm.line + 2) == ' ')
+	if (*line == 'N' && *(line + 1) == 'O'
+	&& *(line + 2) == ' ')
 	{
 		engine->tex_north = ft_strdup(var[1]);
 		printf("%s\n", engine->tex_north);
 	}
-	else if (*engine->pm.line == 'S' && *(engine->pm.line + 1) == 'O'
-	&& *(engine->pm.line + 2) == ' ')
+	else if (*line == 'S' && *(line + 1) == 'O'
+	&& *(line + 2) == ' ')
 	{
 		engine->tex_south = ft_strdup(var[1]);
 		printf("%s\n", engine->tex_south);
 	}
-	else if (*engine->pm.line == 'W' && *(engine->pm.line + 1) == 'E'
-	&& *(engine->pm.line + 2) == ' ')
+	else if (*line == 'W' && *(line + 1) == 'E'
+	&& *(line + 2) == ' ')
 	{
 		engine->tex_west = ft_strdup(var[1]);
 		printf("%s\n", engine->tex_west);
 	}
-	else if (*engine->pm.line == 'E' && *(engine->pm.line + 1) == 'A'
-	&& *(engine->pm.line + 2) == ' ')
+	else if (*line == 'E' && *(line + 1) == 'A'
+	&& *(line + 2) == ' ')
 	{
 		engine->tex_east = ft_strdup(var[1]);
 		printf("%s\n", engine->tex_east);
 	}
-	else if (*engine->pm.line == 'S' && *(engine->pm.line + 1) == ' ')
+	else if (*line == 'S' && *(line + 1) == ' ')
 	{
 		engine->tex_sprite = ft_strdup(var[1]);
 		printf("%s\n", engine->tex_sprite);
 	}
+	ft_free_array(&var);
 	return (0);
 }

@@ -56,15 +56,18 @@ char	*ft_strnew_gnl(unsigned int buf_size)
 char	*ft_strdup_gnl(const char *s1)
 {
 	char	*str;
-	char	*i;
+	int 	i;
 
 	str = malloc(ft_strlen_gnl(s1) + 1);
-	i = str;
+	i = 0;
 	if (str == NULL)
 		return (NULL);
-	while (*s1)
-		*i++ = *s1++;
-	*i = '\0';
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = '\0';
 	return (str);
 }
 

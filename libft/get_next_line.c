@@ -44,6 +44,7 @@ char	*line_checker_gnl(char **str, char **line, int *read_end)
 	point_ent = 0;
 	*read_end = 1;
 	if (*str)
+	{
 		if ((point_ent = ft_strchr_gnl(*str, '\n')))
 		{
 			*point_ent++ = '\0';
@@ -60,6 +61,7 @@ char	*line_checker_gnl(char **str, char **line, int *read_end)
 				*read_end = 2;
 			ft_strclr_gnl(&(*str));
 		}
+	}
 	else
 		*line = ft_strnew_gnl(0);
 	return (point_ent);

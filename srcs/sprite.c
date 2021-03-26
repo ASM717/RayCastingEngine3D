@@ -14,17 +14,16 @@
 
 int		ft_number_sprites(t_engine *engine)
 {
-	int		count;
-	int		x;
-	int		y;
-	int 		count_l;
-	int i;
+	int	count;
+	int	x;
+	int	y;
+	int	i;
 
 	i = 0;
 	x = 0;
 	count = 0;
-	count_l = ft_arr_string_len(engine->world_map);
-	while (x < count_l)
+	engine->pm.count_lines2 = ft_arr_string_len(engine->world_map);
+	while (x < engine->pm.count_lines2)
 	{
 		y = 0;
 		while (y < (int)ft_strlen(engine->world_map[i]))
@@ -40,19 +39,18 @@ int		ft_number_sprites(t_engine *engine)
 
 t_sprite	*ft_get_sprites(t_engine *engine)
 {
+	t_sprite	*str_spr;
 	int			x;
 	int			y;
 	int			i;
-	t_sprite	*str_spr;
-	int 		count_l;
 
-	x = 0;
 	i = 0;
-	count_l = ft_arr_string_len(engine->world_map);
+	engine->pm.count_lines1 = ft_arr_string_len(engine->world_map);
 	engine->sprite_num = ft_number_sprites(engine);
 	str_spr = malloc(sizeof(t_sprite) * engine->sprite_num);
 	engine->sprite_order = malloc(sizeof(int) * engine->sprite_num);
-	while (x < count_l)
+	x = 0;
+	while (x < engine->pm.count_lines1)
 	{
 		y = 0;
 		while (y < (int)ft_strlen(engine->world_map[i]))
@@ -72,7 +70,6 @@ t_sprite	*ft_get_sprites(t_engine *engine)
 void 	ft_swap_sprites(t_engine *engine)
 {
 	int i;
-	int tmpDist;
 	int var;
 
 	i = 0;
@@ -80,9 +77,9 @@ void 	ft_swap_sprites(t_engine *engine)
 	{
 		if (engine->sprite_dist[i] < engine->sprite_dist[i + 1])
 		{
-			tmpDist = engine->sprite_dist[i];
+			engine->tmp_dist = engine->sprite_dist[i];
 			engine->sprite_dist[i] = engine->sprite_dist[i + 1];
-			engine->sprite_dist[i + 1] = tmpDist;
+			engine->sprite_dist[i + 1] = engine->tmp_dist;
 			var = engine->sprite_order[i];
 			engine->sprite_order[i] = engine->sprite_order[i + 1];
 			engine->sprite_order[i + 1] = var;

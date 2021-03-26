@@ -55,6 +55,12 @@ void 	ft_init_texture(t_engine *engine)
 										  &engine->data_we.size_line,
 										  &engine->data_we.endian);
 	ft_init_texture2(engine, width, height);
+
+//	free(engine->tex_sprite);
+//	free(engine->tex_east);
+//	free(engine->tex_south);
+//	free(engine->tex_north);
+//	free(engine->tex_west);
 }
 
 void	ft_init_keycode(t_engine *engine)
@@ -86,6 +92,12 @@ int		ft_init_engine(t_engine *engine)
 	engine->rgb_floor.col_b = -1;
 	engine->rgb_ceiling.rgb_color = -1;
 	engine->rgb_floor.rgb_color = -1;
+	engine->pos_x = 0;
+	engine->pos_y = 0;
+	engine->plane_x = 0;
+	engine->plane_y = 0;
+	engine->dir_x = 0;
+	engine->dir_y = 0;
 	return (0);
 }
 
@@ -265,7 +277,6 @@ void 	ft_mlx_data_continue(t_engine *engine)
 			 ft_exit, engine);
 	mlx_loop_hook(engine->data.mlx, ft_restart, engine);
 	mlx_loop(engine->data.mlx);
-	free(engine);
 }
 
 void 	ft_mlx_data_start(t_engine *engine)
@@ -286,24 +297,23 @@ void 	ft_mlx_data_start(t_engine *engine)
 
 int 	main(int argc, char **argv)
 {
-	t_engine	*engine;
+	t_engine	engine;
 
-	engine = malloc(sizeof(t_engine));
-	if (ft_init_engine(engine) != 0)
+	if (ft_init_engine(&engine) != 0)
 		return (-1);
 	if (argc == 2 && argv[1])
 	{
-		engine->screen_flag = 0;
-		ft_start_parse(argv, engine);
-		ft_mlx_data_start(engine);
-		ft_mlx_data_continue(engine);
+		engine.screen_flag = 0;
+		ft_start_parse(argv, &engine);
+		ft_mlx_data_start(&engine);
+		ft_mlx_data_continue(&engine);
 	}
 	else if (argc == 3 && argv[2])
 	{
-		engine->screen_flag = 1;
-		ft_start_parse(argv, engine);
-		ft_mlx_data_start(engine);
-		ft_mlx_data_continue(engine);
+		engine.screen_flag = 1;
+		ft_start_parse(argv, &engine);
+		ft_mlx_data_start(&engine);
+		ft_mlx_data_continue(&engine);
 	}
 	else
 		ft_print_error("Write correct arguments!\n");

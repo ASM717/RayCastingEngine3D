@@ -31,21 +31,10 @@
 # define D				100
 # define KEY_LEFT		65361
 # define KEY_RIGHT		65363
-
-# define MAP_WIDTH		24
-# define MAP_HEIGHT		24
-
-# define SCR_WIDTH		640
-# define SCR_HEIGHT		480
-
 # define TEX_WIDTH		64
 # define TEX_HEIGHT		64
-
 # define MOVESPEED		0.2
 # define ROTSPEED		0.05
-
-
-//char					worldMap[MAP_WIDTH][MAP_HEIGHT];
 
 typedef struct			s_data
 {
@@ -94,6 +83,8 @@ typedef struct			s_pm
 	int 				param;
 	int					countlines;
 	int 				flag_pos_pl;
+	int 				count_lines1;
+	int 				count_lines2;
 }						t_pm;
 
 typedef struct			s_engine
@@ -136,7 +127,6 @@ typedef struct			s_engine
 	int					draw_end;
 	double				perp_wall_dist;
 	int 				line_height;
-
 	int 				keycode_w;
 	int 				keycode_s;
 	int 				keycode_a;
@@ -159,6 +149,7 @@ typedef struct			s_engine
 	int 				sprite_num;
 	int 				*sprite_order;
 	double				*sprite_dist;
+	double				tmp_dist;
 	double				sprite_x;
 	double				sprite_y;
 	double				inv_det;
@@ -220,16 +211,16 @@ void 	ft_swap_sprites(t_engine *engine);
 t_sprite	*ft_get_sprites(t_engine *engine);
 int		ft_number_sprites(t_engine *engine);
 
-void 	ft_var_zero(t_engine *engine);
 void	ft_print_error(char *s);
 void	ft_get_resolution(t_engine *engine);
 int		ft_isdigit_pm(char *s);
-int		ft_get_texture_parse(t_engine *engine);
+int		ft_get_texture_parse(t_engine *engine, char *line);
 int		ft_checker_space_tx(char *str);
 int		ft_check_fd_texture(char *tmp2);
-int		ft_get_rgb_color(t_engine *engine);
+int		ft_get_rgb_color(t_engine *engine, char *line);
 int		ft_check_rgb(char *s);
 int		ft_arr_string_len(char **map);
 int 	ft_start_parse(char **argv, t_engine *engine);
+void	ft_free_array(char ***arr);
 
 #endif

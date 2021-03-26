@@ -118,8 +118,8 @@ int		ft_keycode_used(int keycode, t_engine *engine)
 
 int		ft_exit(t_engine *engine)
 {
-	engine->data.mlx = engine->data.mlx;
-	exit(1);
+	mlx_destroy_window(engine->data.mlx, engine->data.win);
+	exit(-1);
 }
 
 int		ft_keycode_unused(int keycode, t_engine *engine)
@@ -138,8 +138,9 @@ int		ft_keycode_unused(int keycode, t_engine *engine)
 		engine->keycode_right = 0;
 	if (keycode == ESC)
 	{
+		ft_free_array(&engine->world_map);
 		mlx_destroy_window(engine->data.mlx, engine->data.win);
-		exit(1);
+		exit(-1);
 	}
 	return (0);
 }

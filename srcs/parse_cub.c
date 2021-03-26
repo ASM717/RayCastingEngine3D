@@ -2,7 +2,28 @@
 
 #include "../cub3d.h"
 
-char	*ft_strjoin_pars(char *s1, char *s2)
+
+
+
+
+void	ft_free_array(char ***arr)
+{
+	int	i;
+
+	i = 0;
+	if (*arr == NULL)
+		return ;
+	while ((*arr)[i])
+	{
+		free((*arr)[i]);
+		(*arr)[i] = NULL;
+		i++;
+	}
+	free(*arr);
+	*arr = NULL;
+}
+
+char	*ft_strjoin_pm(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
@@ -19,7 +40,6 @@ char	*ft_strjoin_pars(char *s1, char *s2)
 		str[i] = s1[i];
 		++i;
 	}
-	free(s1);
 	str[i++] = '+';
 	while (s2[j] != '\0')
 	{
@@ -27,6 +47,7 @@ char	*ft_strjoin_pars(char *s1, char *s2)
 		++i;
 		++j;
 	}
+	free(s2);
 	str[i] = '\0';
 	return (str);
 }
@@ -37,34 +58,25 @@ void	ft_print_error(char *s)
 	exit(-1);
 }
 
-void 	ft_var_zero(t_engine *engine)
-{
-	engine->scr_width = 0;
-	engine->scr_height = 0;
-	engine->tex_north = NULL;
-	engine->tex_south = NULL;
-	engine->tex_west = NULL;
-	engine->tex_east = NULL;
-	engine->tex_sprite = NULL;
-	engine->rgb_ceiling.col_r = -1;
-	engine->rgb_ceiling.col_g = -1;
-	engine->rgb_ceiling.col_b = -1;
-	engine->rgb_floor.col_r = -1;
-	engine->rgb_floor.col_g = -1;
-	engine->rgb_floor.col_b = -1;
-}
-
-int		ft_arr_string_len(char **map)
+int		ft_arr_string_len(char **arr)
 {
 	int i;
 
 	i = 0;
-	while (!map)
+	while (!arr)
 		return (0);
-	while (map[i])
+	while (arr[i])
 		i++;
 	return (i);
 }
+
+//void	*ft_freee(char **arr, size_t i)
+//{
+//	while (i--)
+//		free(arr[i]);
+//	free(arr);
+//	return (NULL);
+//}
 
 void	ft_check_player_position1(t_engine *engine, int i, int j)
 {
@@ -163,57 +175,63 @@ void	ft_parse_world_map(t_engine *engine)
 		i++;
 	}
 	if (engine->pm.flag_pos_pl == 0)
-		ft_print_error("Error! Map without player position!\n");
+		ft_print_error("Map Error!\n");
+	free(engine->pm.tmp);
 }
 
 int 	ft_start_parse(char **argv, t_engine *engine)
 {
 	int		fd;
+	char	*line;
 
 	engine->pm.param = 0;
 	engine->pm.tmp = NULL;
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		ft_print_error("Error open file!\n");
-	while (get_next_line(fd, &engine->pm.line))
+	while (get_next_line(fd, &line))
 	{
-		engine->pm.tmp2 = ft_split(engine->pm.line, ' ');
-		if (*engine->pm.line == 'R' && *(engine->pm.line + 1) == ' ')
+		engine->pm.tmp2 = ft_split(line, ' ');
+		if (*line == 'R' && *(line + 1) == ' ')
 		{
 			ft_get_resolution(engine);
 			engine->pm.param++;
 		}
-		else if ((*engine->pm.line == 'F' && *(engine->pm.line + 1) == ' ')
-		|| (*engine->pm.line == 'C' && *(engine->pm.line + 1) == ' '))
+		if ((*line == 'F' && *(line + 1) == ' ')
+		|| (*line == 'C' && *(line + 1) == ' '))
 		{
-			if (ft_get_rgb_color(engine))
+			if (ft_get_rgb_color(engine, line))
 				ft_print_error("Error map!\n");
 			engine->pm.param++;
 		}
-		else if ((*engine->pm.line == 'N' && *(engine->pm.line + 1) == 'O'
-		&& *(engine->pm.line + 2) == ' ') ||
-		(*engine->pm.line == 'S' && *(engine->pm.line + 1) == 'O'
-		&& *(engine->pm.line + 2) == ' ') ||
-		(*engine->pm.line == 'W' && *(engine->pm.line + 1) == 'E'
-		&& *(engine->pm.line + 2) == ' ') ||
-		(*engine->pm.line == 'E' && *(engine->pm.line + 1) == 'A'
-		&& *(engine->pm.line + 2) == ' ') ||
-		(*engine->pm.line == 'S' && *(engine->pm.line + 1) == ' '))
+		else if ((*line == 'N' && *(line + 1) == 'O'
+		&& *(line + 2) == ' ') ||
+		(*line == 'S' && *(line + 1) == 'O'
+		&& *(line + 2) == ' ') ||
+		(*line == 'W' && *(line + 1) == 'E'
+		&& *(line + 2) == ' ') ||
+		(*line == 'E' && *(line + 1) == 'A'
+		&& *(line + 2) == ' ') ||
+		(*line == 'S' && *(line + 1) == ' '))
 		{
-			if (ft_get_texture_parse(engine))
+			if (ft_get_texture_parse(engine, line))
 				ft_print_error("Error parse texture!\n");
 			engine->pm.param++;
 		}
 		else
 		{
-			if (engine->pm.tmp && (*engine->pm.line == ' ' ||
-			*engine->pm.line == '1'))
-				engine->pm.line = ft_strjoin_pars(engine->pm.tmp,
-									  engine->pm.line);
+			if (engine->pm.tmp && (*line == ' ' || *line == '1'))
+				line = ft_strjoin_pm(engine->pm.tmp, line);
 		}
 		if (engine->pm.param == 8)
-			engine->pm.tmp = engine->pm.line;
+		{
+			free(engine->pm.tmp);
+			engine->pm.tmp = ft_strdup(line);
+		}
+		ft_free_array(&engine->pm.tmp2);
+		free(line);
 	}
+	free(line);
 	engine->world_map = ft_split(engine->pm.tmp, '+');
 	ft_parse_world_map(engine);
 	close(fd);

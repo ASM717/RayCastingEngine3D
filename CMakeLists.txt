@@ -94,11 +94,6 @@ add_executable(cub3D
         minilibx-linux/mlx_set_font.c
         minilibx-linux/mlx_string_put.c
         minilibx-linux/mlx_xpm.c
-#        srcccccccccccc/cub3dold.h
-#        srcccccccccccc/facture.c
-#        srcccccccccccc/main.c
-#        srcccccccccccc/parser.c
-#        srcccccccccccc/screen.c
         gnl/get_next_line.c
         gnl/get_next_line.h
         gnl/get_next_line_utils.c
