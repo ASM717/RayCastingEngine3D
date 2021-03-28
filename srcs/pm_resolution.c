@@ -27,6 +27,10 @@ void	ft_get_resolution(t_engine *engine)
 			engine->scr_width = 1920;
 		if (engine->scr_height > 1080 || ft_strlen(engine->pm.tmp2[2]) > 4)
 			engine->scr_height = 1080;
+		if (engine->scr_width < 800)
+			engine->scr_width = 800;
+		if (engine->scr_height < 600)
+			engine->scr_height = 600;
 		printf("%d\n", engine->scr_width);
 		printf("%d\n", engine->scr_height);
 	}

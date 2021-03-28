@@ -1,10 +1,5 @@
 
-
 #include "../cub3d.h"
-
-
-
-
 
 void	ft_free_array(char ***arr)
 {
@@ -69,14 +64,6 @@ int		ft_arr_string_len(char **arr)
 		i++;
 	return (i);
 }
-
-//void	*ft_freee(char **arr, size_t i)
-//{
-//	while (i--)
-//		free(arr[i]);
-//	free(arr);
-//	return (NULL);
-//}
 
 void	ft_check_player_position1(t_engine *engine, int i, int j)
 {
@@ -175,8 +162,35 @@ void	ft_parse_world_map(t_engine *engine)
 		i++;
 	}
 	if (engine->pm.flag_pos_pl == 0)
-		ft_print_error("Map Error!\n");
-	free(engine->pm.tmp);
+		ft_print_error("Map Error!!!\n");
+}
+
+void	ft_correct_permission(t_engine *engine, char *line)
+{
+	if (*line == 'R' && *(line + 1) == ' ')
+	{
+		ft_get_resolution(engine);
+		engine->pm.param++;
+	}
+}
+
+int		ft_check_scr_col_tex(t_engine *engine)
+{
+	if (engine->scr_height == -1 ||
+		engine->scr_width == -1 ||
+		engine->tex_north == NULL ||
+	engine->tex_south == NULL ||
+	engine->tex_west == NULL ||
+	engine->tex_east == NULL ||
+	engine->tex_sprite == NULL ||
+	engine->rgb_ceiling.col_r == -1 ||
+	engine->rgb_ceiling.col_g == -1 ||
+	engine->rgb_ceiling.col_b == -1 ||
+	engine->rgb_floor.col_r == -1 ||
+	engine->rgb_floor.col_g == -1 ||
+	engine->rgb_floor.col_b == -1)
+		return (1);
+	return (0);
 }
 
 int 	ft_start_parse(char **argv, t_engine *engine)
@@ -192,11 +206,7 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 	while (get_next_line(fd, &line))
 	{
 		engine->pm.tmp2 = ft_split(line, ' ');
-		if (*line == 'R' && *(line + 1) == ' ')
-		{
-			ft_get_resolution(engine);
-			engine->pm.param++;
-		}
+		ft_correct_permission(engine, line);
 		if ((*line == 'F' && *(line + 1) == ' ')
 		|| (*line == 'C' && *(line + 1) == ' '))
 		{
@@ -231,6 +241,11 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 		ft_free_array(&engine->pm.tmp2);
 		free(line);
 	}
+	if (ft_check_scr_col_tex(engine))
+		ft_print_error("Error map! Something is missing!\n");
+	line = ft_strjoin_pm(engine->pm.tmp, line);
+	free(engine->pm.tmp);
+	engine->pm.tmp = ft_strdup(line);
 	free(line);
 	engine->world_map = ft_split(engine->pm.tmp, '+');
 	ft_parse_world_map(engine);

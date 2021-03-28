@@ -17,16 +17,14 @@ int		ft_number_sprites(t_engine *engine)
 	int	count;
 	int	x;
 	int	y;
-	int	i;
 
-	i = 0;
 	x = 0;
 	count = 0;
 	engine->pm.count_lines2 = ft_arr_string_len(engine->world_map);
 	while (x < engine->pm.count_lines2)
 	{
 		y = 0;
-		while (y < (int)ft_strlen(engine->world_map[i]))
+		while (y < (int)ft_strlen(engine->world_map[x]))
 		{
 			if (engine->world_map[x][y] == '2')
 				count++;
@@ -53,7 +51,7 @@ t_sprite	*ft_get_sprites(t_engine *engine)
 	while (x < engine->pm.count_lines1)
 	{
 		y = 0;
-		while (y < (int)ft_strlen(engine->world_map[i]))
+		while (y < (int)ft_strlen(engine->world_map[x]))
 		{
 			if (engine->world_map[x][y] == '2')
 			{

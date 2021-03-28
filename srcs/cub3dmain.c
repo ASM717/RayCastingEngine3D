@@ -34,8 +34,11 @@ void 	ft_init_texture2(t_engine *engine, int width, int height)
 
 void 	ft_init_texture(t_engine *engine)
 {
-	int		width = TEX_WIDTH;
-	int 	height = TEX_HEIGHT;
+	int		width;
+	int 	height;
+
+	width = TEX_WIDTH;
+	height = TEX_HEIGHT;
 	engine->data_no.img = mlx_xpm_file_to_image(engine->data.mlx,
 											 engine->tex_north, &width, &height);
 	engine->data_no.addr = mlx_get_data_addr(engine->data_no.img,
@@ -56,11 +59,11 @@ void 	ft_init_texture(t_engine *engine)
 										  &engine->data_we.endian);
 	ft_init_texture2(engine, width, height);
 
-//	free(engine->tex_sprite);
-//	free(engine->tex_east);
-//	free(engine->tex_south);
-//	free(engine->tex_north);
-//	free(engine->tex_west);
+	free(engine->tex_sprite);
+	free(engine->tex_east);
+	free(engine->tex_south);
+	free(engine->tex_north);
+	free(engine->tex_west);
 }
 
 void	ft_init_keycode(t_engine *engine)
@@ -305,6 +308,7 @@ int 	main(int argc, char **argv)
 	{
 		engine.screen_flag = 0;
 		ft_start_parse(argv, &engine);
+
 		ft_mlx_data_start(&engine);
 		ft_mlx_data_continue(&engine);
 	}

@@ -52,7 +52,7 @@ typedef struct			s_rgb
 	int 				col_r;
 	int 				col_g;
 	int 				col_b;
-	unsigned int 		rgb_color;
+	int					rgb_color;
 }						t_rgb;
 
 typedef struct			s_headshot
@@ -85,6 +85,8 @@ typedef struct			s_pm
 	int 				flag_pos_pl;
 	int 				count_lines1;
 	int 				count_lines2;
+	int 				flag_perm;
+	int 				flag_text;
 }						t_pm;
 
 typedef struct			s_engine

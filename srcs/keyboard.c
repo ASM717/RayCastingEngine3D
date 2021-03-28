@@ -118,6 +118,7 @@ int		ft_keycode_used(int keycode, t_engine *engine)
 
 int		ft_exit(t_engine *engine)
 {
+	ft_free_array(&engine->world_map);
 	mlx_destroy_window(engine->data.mlx, engine->data.win);
 	exit(-1);
 }

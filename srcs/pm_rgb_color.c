@@ -7,10 +7,7 @@ int		ft_check_rgb(char *s)
 
 	color = ft_atoi(s);
 	if (color < 0 || color > 255)
-	{
-		printf("Error rgb number\n");
-		exit(0);
-	}
+		ft_print_error("Error RGB number!\n");
 	return (color);
 }
 
