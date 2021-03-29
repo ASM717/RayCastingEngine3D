@@ -65,14 +65,20 @@ int		ft_arr_string_len(char **arr)
 	return (i);
 }
 
+int 	ft_check_more_players(t_engine *engine)
+{
+	if (engine->pos_x ||
+	engine->pos_y)
+		return (1);
+	return (0);
+}
+
 void	ft_check_player_position1(t_engine *engine, int i, int j)
 {
 	if (ft_strchr("NSWE", engine->world_map[i][j]))
 	{
 		engine->pos_x = i + 0.5;
-		printf("posx - %f\n", engine->pos_x);
 		engine->pos_y = j + 0.5;
-		printf("posy - %f\n", engine->pos_y);
 	}
 	if (ft_strchr("N", engine->world_map[i][j]))
 	{
@@ -150,11 +156,15 @@ void	ft_parse_world_map(t_engine *engine)
 		j = 0;
 		while (j < (int)ft_strlen(engine->world_map[i]))
 		{
-			if ((engine->world_map[i][j] != '1') &&
-			(engine->world_map[i][j] != ' '))
+			if ((ft_strchr("NSWE012 ", engine->world_map[i][j]) == 0))
+				ft_print_error("Error maaaaap!\n");
+			if ((engine->world_map[i][j] != '1') && (engine->world_map[i][j] != ' '))
 			{
 				ft_check_closed_map1(engine, i, j);
 				ft_check_closed_map2(engine, i, j);
+				if (ft_strchr("NSWE", engine->world_map[i][j])
+				&& engine->pm.flag_pos_pl)
+					ft_print_error("Error! More than one player on the map!\n");
 				ft_check_player_position1(engine, i, j);
 			}
 			j++;
@@ -162,13 +172,15 @@ void	ft_parse_world_map(t_engine *engine)
 		i++;
 	}
 	if (engine->pm.flag_pos_pl == 0)
-		ft_print_error("Map Error!!!\n");
+		ft_print_error("Error!\nInvalid map!\n");
 }
 
 void	ft_correct_permission(t_engine *engine, char *line)
 {
 	if (*line == 'R' && *(line + 1) == ' ')
 	{
+		if (ft_check_perm_double(engine) && engine->pm.flag_perm)
+			ft_print_error("Error! Resolution repeats!\n");
 		ft_get_resolution(engine);
 		engine->pm.param++;
 	}
@@ -179,18 +191,41 @@ int		ft_check_scr_col_tex(t_engine *engine)
 	if (engine->scr_height == -1 ||
 		engine->scr_width == -1 ||
 		engine->tex_north == NULL ||
-	engine->tex_south == NULL ||
-	engine->tex_west == NULL ||
-	engine->tex_east == NULL ||
-	engine->tex_sprite == NULL ||
-	engine->rgb_ceiling.col_r == -1 ||
-	engine->rgb_ceiling.col_g == -1 ||
-	engine->rgb_ceiling.col_b == -1 ||
-	engine->rgb_floor.col_r == -1 ||
-	engine->rgb_floor.col_g == -1 ||
-	engine->rgb_floor.col_b == -1)
+		engine->tex_south == NULL ||
+		engine->tex_west == NULL ||
+		engine->tex_east == NULL ||
+		engine->tex_sprite == NULL ||
+		engine->rgb_ceiling.col_r == -1 ||
+		engine->rgb_ceiling.col_g == -1 ||
+		engine->rgb_ceiling.col_b == -1 ||
+		engine->rgb_floor.col_r == -1 ||
+		engine->rgb_floor.col_g == -1 ||
+		engine->rgb_floor.col_b == -1)
 		return (1);
 	return (0);
+}
+
+int 	ft_check_texture_double(t_engine *engine)
+{
+	if (engine->tex_north == NULL &&
+		engine->tex_south == NULL &&
+		engine->tex_west == NULL &&
+		engine->tex_east == NULL &&
+		engine->tex_sprite == NULL)
+		return (0);
+	return (1);
+}
+
+int 	ft_check_color_double(t_engine *engine)
+{
+	if (engine->rgb_ceiling.col_r == -1 &&
+		engine->rgb_ceiling.col_g == -1 &&
+		engine->rgb_ceiling.col_b == -1 &&
+		engine->rgb_floor.col_r == -1 &&
+		engine->rgb_floor.col_g == -1 &&
+		engine->rgb_floor.col_b == -1)
+		return (0);
+	return (1);
 }
 
 int 	ft_start_parse(char **argv, t_engine *engine)
@@ -198,6 +233,8 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 	int		fd;
 	char	*line;
 
+	engine->pm.flag_color = 0;
+	engine->pm.flag_text = 0;
 	engine->pm.param = 0;
 	engine->pm.tmp = NULL;
 	fd = open(argv[1], O_RDONLY);
@@ -210,6 +247,8 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 		if ((*line == 'F' && *(line + 1) == ' ')
 		|| (*line == 'C' && *(line + 1) == ' '))
 		{
+			if (ft_check_color_double(engine) && engine->pm.flag_color == 2)
+				ft_print_error("Error! Double colors!\n");
 			if (ft_get_rgb_color(engine, line))
 				ft_print_error("Error map!\n");
 			engine->pm.param++;
@@ -224,16 +263,21 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 		&& *(line + 2) == ' ') ||
 		(*line == 'S' && *(line + 1) == ' '))
 		{
+			if (ft_check_texture_double(engine) && engine->pm.flag_text == 5)
+				ft_print_error("Error! Double textures!\n");
 			if (ft_get_texture_parse(engine, line))
 				ft_print_error("Error parse texture!\n");
 			engine->pm.param++;
 		}
 		else
 		{
-			if (engine->pm.tmp && (*line == ' ' || *line == '1'))
+			if (engine->pm.tmp && ft_strlen(line) == 0 && engine->pm.param == 8)
+				ft_print_error("Error!\nInvalid Map!\n");
+			if (engine->pm.tmp && (*line == ' ' || *line == '1' || *line == '0'))
 				line = ft_strjoin_pm(engine->pm.tmp, line);
+
 		}
-		if (engine->pm.param == 8)
+		if (engine->pm.param == 8 && (*line == ' ' || *line == '1' || *line == '0'))
 		{
 			free(engine->pm.tmp);
 			engine->pm.tmp = ft_strdup(line);
@@ -248,6 +292,13 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 	engine->pm.tmp = ft_strdup(line);
 	free(line);
 	engine->world_map = ft_split(engine->pm.tmp, '+');
+//	int x = 0;
+//	engine->pm.countlines = ft_arr_string_len(engine->world_map);
+//	while (x < engine->pm.countlines)
+//	{
+//		printf("%s\n", engine->world_map[x]);
+//		x++;
+//	}
 	ft_parse_world_map(engine);
 	close(fd);
 	return (0);

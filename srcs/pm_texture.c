@@ -41,33 +41,19 @@ int		ft_get_texture_parse(t_engine *engine, char *line)
 	ft_check_fd_texture(var[1]);
 	if (*line == 'N' && *(line + 1) == 'O'
 	&& *(line + 2) == ' ')
-	{
 		engine->tex_north = ft_strdup(var[1]);
-		printf("%s\n", engine->tex_north);
-	}
 	else if (*line == 'S' && *(line + 1) == 'O'
 	&& *(line + 2) == ' ')
-	{
 		engine->tex_south = ft_strdup(var[1]);
-		printf("%s\n", engine->tex_south);
-	}
 	else if (*line == 'W' && *(line + 1) == 'E'
 	&& *(line + 2) == ' ')
-	{
 		engine->tex_west = ft_strdup(var[1]);
-		printf("%s\n", engine->tex_west);
-	}
 	else if (*line == 'E' && *(line + 1) == 'A'
 	&& *(line + 2) == ' ')
-	{
 		engine->tex_east = ft_strdup(var[1]);
-		printf("%s\n", engine->tex_east);
-	}
 	else if (*line == 'S' && *(line + 1) == ' ')
-	{
 		engine->tex_sprite = ft_strdup(var[1]);
-		printf("%s\n", engine->tex_sprite);
-	}
+	engine->pm.flag_text++;
 	ft_free_array(&var);
 	return (0);
 }

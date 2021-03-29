@@ -15,8 +15,17 @@ int		ft_isdigit_pm(char *s)
 	return (1);
 }
 
+int 	ft_check_perm_double(t_engine *engine)
+{
+	if (engine->scr_height == -1 ||
+	engine->scr_width == -1)
+		return (0);
+	return (1);
+}
+
 void	ft_get_resolution(t_engine *engine)
 {
+	engine->pm.flag_perm = 0;
 	if ((ft_isdigit_pm(engine->pm.tmp2[1]) &&
 	ft_isdigit_pm(engine->pm.tmp2[2])) && !engine->pm.tmp2[3])
 	{
@@ -27,12 +36,11 @@ void	ft_get_resolution(t_engine *engine)
 			engine->scr_width = 1920;
 		if (engine->scr_height > 1080 || ft_strlen(engine->pm.tmp2[2]) > 4)
 			engine->scr_height = 1080;
-		if (engine->scr_width < 800)
-			engine->scr_width = 800;
-		if (engine->scr_height < 600)
-			engine->scr_height = 600;
-		printf("%d\n", engine->scr_width);
-		printf("%d\n", engine->scr_height);
+		if (engine->scr_width < 640)
+			engine->scr_width = 640;
+		if (engine->scr_height < 480)
+			engine->scr_height = 480;
+		engine->pm.flag_perm = 1;
 	}
 	else
 		ft_print_error("Error permission symbol's\n");

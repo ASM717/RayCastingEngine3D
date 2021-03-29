@@ -262,12 +262,26 @@ int 	ft_restart(t_engine *engine)
 	ft_keycode_movement(engine);
 	engine->zBuff = malloc(sizeof(double) * engine->scr_width);
 	ft_raycast(engine);
-	mlx_put_image_to_window(engine->data.mlx, engine->data.win,
+	if (engine->screen_flag == 0)
+		mlx_put_image_to_window(engine->data.mlx, engine->data.win,
 							engine->data.img, 0, 0);
 	free(engine->zBuff);
 	if (engine->screen_flag == 1)
 		ft_screenshot_make(engine);
 	return (0);
+}
+
+void 	ft_screenshot_start(t_engine *engine)
+{
+	engine->data.mlx = mlx_init();
+	ft_init_texture(engine);
+	engine->data.img = mlx_new_image(engine->data.mlx,
+									 engine->scr_width, engine->scr_height);
+	engine->data.addr = mlx_get_data_addr(engine->data.img,
+										  &engine->data.bits_per_pixel,
+										  &engine->data.size_line,
+										  &engine->data.endian);
+	ft_restart(engine);
 }
 
 void 	ft_mlx_data_continue(t_engine *engine)
@@ -284,6 +298,7 @@ void 	ft_mlx_data_continue(t_engine *engine)
 
 void 	ft_mlx_data_start(t_engine *engine)
 {
+
 	ft_init_keycode(engine);
 	engine->data.mlx = mlx_init();
 	engine->data.win = mlx_new_window(engine->data.mlx,
@@ -316,8 +331,7 @@ int 	main(int argc, char **argv)
 	{
 		engine.screen_flag = 1;
 		ft_start_parse(argv, &engine);
-		ft_mlx_data_start(&engine);
-		ft_mlx_data_continue(&engine);
+		ft_screenshot_start(&engine);
 	}
 	else
 		ft_print_error("Write correct arguments!\n");

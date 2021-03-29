@@ -87,6 +87,7 @@ typedef struct			s_pm
 	int 				count_lines2;
 	int 				flag_perm;
 	int 				flag_text;
+	int 				flag_color;
 }						t_pm;
 
 typedef struct			s_engine
@@ -225,4 +226,6 @@ int		ft_arr_string_len(char **map);
 int 	ft_start_parse(char **argv, t_engine *engine);
 void	ft_free_array(char ***arr);
 
+int 	ft_check_perm_double(t_engine *engine);
+int 	ft_check_color_double(t_engine *engine);
 #endif
