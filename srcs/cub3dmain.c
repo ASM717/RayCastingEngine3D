@@ -32,6 +32,15 @@ void 	ft_init_texture2(t_engine *engine, int width, int height)
 										   &engine->data_spr.endian);
 }
 
+void 	ft_free_texture(t_engine *engine)
+{
+	free(engine->tex_sprite);
+	free(engine->tex_east);
+	free(engine->tex_south);
+	free(engine->tex_north);
+	free(engine->tex_west);
+}
+
 void 	ft_init_texture(t_engine *engine)
 {
 	int		width;
@@ -58,12 +67,7 @@ void 	ft_init_texture(t_engine *engine)
 										  &engine->data_we.size_line,
 										  &engine->data_we.endian);
 	ft_init_texture2(engine, width, height);
-
-	free(engine->tex_sprite);
-	free(engine->tex_east);
-	free(engine->tex_south);
-	free(engine->tex_north);
-	free(engine->tex_west);
+	ft_free_texture(engine);
 }
 
 void	ft_init_keycode(t_engine *engine)
@@ -323,16 +327,16 @@ int 	main(int argc, char **argv)
 	{
 		engine.screen_flag = 0;
 		ft_start_parse(argv, &engine);
-
 		ft_mlx_data_start(&engine);
 		ft_mlx_data_continue(&engine);
 	}
-	else if (argc == 3 && argv[2])
+	else if (argc == 3 && ft_strncmp(argv[2], "--save",
+								  ft_strlen("--save")) == 0)
 	{
 		engine.screen_flag = 1;
 		ft_start_parse(argv, &engine);
 		ft_screenshot_start(&engine);
 	}
 	else
-		ft_print_error("Write correct arguments!\n");
+		ft_print_error("Error!\nWrite correct arguments!\n");
 }

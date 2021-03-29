@@ -50,7 +50,7 @@ void	ft_screenshot_make(t_engine *engine)
 {
 	if (!(engine->shot.fd = open("cub3D.bmp", O_CREAT |
 	O_WRONLY | O_TRUNC, S_IRWXU)))
-		write(1, "Error ", 11);
+		ft_print_error("Error!\nProblem with file!\n");
 	write(engine->shot.fd, "BM", 2);
 	engine->shot.scr_size = 4 * engine->scr_width * engine->scr_height +
 			engine->shot.bmp_off_bits;
@@ -58,5 +58,6 @@ void	ft_screenshot_make(t_engine *engine)
 	ft_init_shot_header(engine);
 	ft_screen_pack(engine);
 	close(engine->shot.fd);
-	exit(0);
+	write(1, "Screenshot cub3D completed!\n", 28);
+	exit(-1);
 }

@@ -43,5 +43,5 @@ void	ft_get_resolution(t_engine *engine)
 		engine->pm.flag_perm = 1;
 	}
 	else
-		ft_print_error("Error permission symbol's\n");
+		ft_print_error("Error!\nInvalid permission symbol's\n");
 }

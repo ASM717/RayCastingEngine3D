@@ -73,6 +73,26 @@ int 	ft_check_more_players(t_engine *engine)
 	return (0);
 }
 
+void 	ft_check_player_position2(t_engine *engine, int i, int j)
+{
+	if (ft_strchr("W", engine->world_map[i][j]))
+	{
+		engine->pm.flag_pos_pl = 1;
+		engine->dir_x = 0;
+		engine->dir_y = -1;
+		engine->plane_x = -0.66;
+		engine->plane_y = 0;
+	}
+	else if (ft_strchr("E", engine->world_map[i][j]))
+	{
+		engine->pm.flag_pos_pl = 1;
+		engine->dir_x = 0;
+		engine->dir_y = 1;
+		engine->plane_x = 0.66;
+		engine->plane_y = 0;
+	}
+}
+
 void	ft_check_player_position1(t_engine *engine, int i, int j)
 {
 	if (ft_strchr("NSWE", engine->world_map[i][j]))
@@ -96,51 +116,36 @@ void	ft_check_player_position1(t_engine *engine, int i, int j)
 		engine->plane_x = 0;
 		engine->plane_y = -0.66;
 	}
-	else if (ft_strchr("W", engine->world_map[i][j]))
-	{
-		engine->pm.flag_pos_pl = 1;
-		engine->dir_x = 0;
-		engine->dir_y = -1;
-		engine->plane_x = -0.66;
-		engine->plane_y = 0;
-	}
-	else if (ft_strchr("E", engine->world_map[i][j]))
-	{
-		engine->pm.flag_pos_pl = 1;
-		engine->dir_x = 0;
-		engine->dir_y = 1;
-		engine->plane_x = 0.66;
-		engine->plane_y = 0;
-	}
+	ft_check_player_position2(engine, i, j);
 }
 
 void	ft_check_closed_map2(t_engine *engine, int i, int j)
 {
 	if (engine->world_map[i - 1][j - 1] == ' ')
-		ft_print_error("Map error_6!\n");
+		ft_print_error("Error!\nMap error_6!\n");
 	if (engine->world_map[i + 1][j + 1] == ' ')
-		ft_print_error("Map error_7!\n");
+		ft_print_error("Error!\nMap error_7!\n");
 	if (engine->world_map[i - 1][j + 1] == ' ')
-		ft_print_error("Map error_8!\n");
+		ft_print_error("Error\nMap error_8!\n");
 	if (engine->world_map[i + 1][j - 1] == ' ')
-		ft_print_error("Map error_9!\n");
+		ft_print_error("Error\nMap error_9!\n");
 }
 
 void	ft_check_closed_map1(t_engine *engine, int i, int j)
 {
 	if (i == 0 || i == engine->pm.countlines - 1)
-		ft_print_error("Map error_1!\n");
+		ft_print_error("Error\nMap error_1!\n");
 	if (j == 0 || j == (int)ft_strlen(engine->world_map[i]) - 1)
-		ft_print_error("Map error_2!\n");
+		ft_print_error("Error\nMap error_2!\n");
 	if (engine->world_map[i][j - 1] == ' ' ||
 	engine->world_map[i][j + 1] == ' ')
-		ft_print_error("Map error_3!\n");
+		ft_print_error("Error\nMap error_3!\n");
 	if (j >= ((int)ft_strlen(engine->world_map[i + 1]) - 1) ||
 	j > ((int)ft_strlen(engine->world_map[i - 1]) - 1))
-		ft_print_error("Map error_4!\n");
+		ft_print_error("Error\nMap error_4!\n");
 	if ((engine->world_map[i + 1][j]) == ' ' ||
 	(engine->world_map[i - 1][j]) == ' ')
-		ft_print_error("Map error_5!\n");
+		ft_print_error("Error\nMap error_5!\n");
 }
 
 void	ft_parse_world_map(t_engine *engine)
@@ -157,14 +162,14 @@ void	ft_parse_world_map(t_engine *engine)
 		while (j < (int)ft_strlen(engine->world_map[i]))
 		{
 			if ((ft_strchr("NSWE012 ", engine->world_map[i][j]) == 0))
-				ft_print_error("Error maaaaap!\n");
+				ft_print_error("Error!\nInvalid map!\n");
 			if ((engine->world_map[i][j] != '1') && (engine->world_map[i][j] != ' '))
 			{
 				ft_check_closed_map1(engine, i, j);
 				ft_check_closed_map2(engine, i, j);
 				if (ft_strchr("NSWE", engine->world_map[i][j])
 				&& engine->pm.flag_pos_pl)
-					ft_print_error("Error! More than one player on the map!\n");
+					ft_print_error("Error!\nMore than one player on the map!\n");
 				ft_check_player_position1(engine, i, j);
 			}
 			j++;
@@ -180,7 +185,7 @@ void	ft_correct_permission(t_engine *engine, char *line)
 	if (*line == 'R' && *(line + 1) == ' ')
 	{
 		if (ft_check_perm_double(engine) && engine->pm.flag_perm)
-			ft_print_error("Error! Resolution repeats!\n");
+			ft_print_error("Error!\nResolution repeats!\n");
 		ft_get_resolution(engine);
 		engine->pm.param++;
 	}
@@ -228,70 +233,116 @@ int 	ft_check_color_double(t_engine *engine)
 	return (1);
 }
 
-int 	ft_start_parse(char **argv, t_engine *engine)
+void 	ft_correct_colors(t_engine *engine, char *line)
 {
-	int		fd;
-	char	*line;
-
-	engine->pm.flag_color = 0;
-	engine->pm.flag_text = 0;
-	engine->pm.param = 0;
-	engine->pm.tmp = NULL;
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		ft_print_error("Error open file!\n");
-	while (get_next_line(fd, &line))
-	{
-		engine->pm.tmp2 = ft_split(line, ' ');
-		ft_correct_permission(engine, line);
-		if ((*line == 'F' && *(line + 1) == ' ')
+	if ((*line == 'F' && *(line + 1) == ' ')
 		|| (*line == 'C' && *(line + 1) == ' '))
-		{
-			if (ft_check_color_double(engine) && engine->pm.flag_color == 2)
-				ft_print_error("Error! Double colors!\n");
-			if (ft_get_rgb_color(engine, line))
-				ft_print_error("Error map!\n");
-			engine->pm.param++;
-		}
-		else if ((*line == 'N' && *(line + 1) == 'O'
-		&& *(line + 2) == ' ') ||
-		(*line == 'S' && *(line + 1) == 'O'
-		&& *(line + 2) == ' ') ||
-		(*line == 'W' && *(line + 1) == 'E'
-		&& *(line + 2) == ' ') ||
-		(*line == 'E' && *(line + 1) == 'A'
-		&& *(line + 2) == ' ') ||
-		(*line == 'S' && *(line + 1) == ' '))
-		{
-			if (ft_check_texture_double(engine) && engine->pm.flag_text == 5)
-				ft_print_error("Error! Double textures!\n");
-			if (ft_get_texture_parse(engine, line))
-				ft_print_error("Error parse texture!\n");
-			engine->pm.param++;
-		}
-		else
-		{
-			if (engine->pm.tmp && ft_strlen(line) == 0 && engine->pm.param == 8)
-				ft_print_error("Error!\nInvalid Map!\n");
-			if (engine->pm.tmp && (*line == ' ' || *line == '1' || *line == '0'))
-				line = ft_strjoin_pm(engine->pm.tmp, line);
-
-		}
-		if (engine->pm.param == 8 && (*line == ' ' || *line == '1' || *line == '0'))
-		{
-			free(engine->pm.tmp);
-			engine->pm.tmp = ft_strdup(line);
-		}
-		ft_free_array(&engine->pm.tmp2);
-		free(line);
+	{
+		if (ft_check_color_double(engine) && engine->pm.flag_color == 2)
+			ft_print_error("Error!\nDouble colors!\n");
+		if (ft_get_rgb_color(engine, line))
+			ft_print_error("Error!\nInvalid map!\n");
+		engine->pm.param++;
 	}
+}
+
+void 	ft_norm_pm2(t_engine *engine, char *line)
+{
+	free(engine->pm.tmp);
+	engine->pm.tmp = ft_strdup(line);
+}
+
+void 	ft_correct_texture2(t_engine *engine, char *line)
+{
+	if (ft_check_texture_double(engine) && engine->pm.flag_text == 5)
+		ft_print_error("Error!\nDouble textures!\n");
+	if (ft_get_texture_parse(engine, line))
+		ft_print_error("Error!\nInvalid parse texture!\n");
+	engine->pm.param++;
+}
+
+int		ft_correct_texture(char *line)
+{
+	if ((*line == 'N' && *(line + 1) == 'O'
+		 && *(line + 2) == ' ') ||
+		(*line == 'S' && *(line + 1) == 'O'
+		 && *(line + 2) == ' ') ||
+		(*line == 'W' && *(line + 1) == 'E'
+		 && *(line + 2) == ' ') ||
+		(*line == 'E' && *(line + 1) == 'A'
+		 && *(line + 2) == ' ') ||
+		(*line == 'S' && *(line + 1) == ' '))
+		return (1);
+	return (0);
+}
+
+void	ft_norm_pm3(t_engine *engine, char *line)
+{
 	if (ft_check_scr_col_tex(engine))
-		ft_print_error("Error map! Something is missing!\n");
+		ft_print_error("Error map!\nSomething is missing!\n");
 	line = ft_strjoin_pm(engine->pm.tmp, line);
 	free(engine->pm.tmp);
 	engine->pm.tmp = ft_strdup(line);
 	free(line);
 	engine->world_map = ft_split(engine->pm.tmp, '+');
+	ft_parse_world_map(engine);
+	close(engine->pm.fd);
+}
+
+void 	ft_norm_pm1(t_engine *engine, char *line)
+{
+	if (engine->pm.tmp && ft_strlen(line) == 0
+	&& engine->pm.param == 8)
+		ft_print_error("Error!\nInvalid map!\n");
+}
+
+void 	ft_init_pm_start(t_engine *engine)
+{
+	engine->pm.flag_color = 0;
+	engine->pm.flag_text = 0;
+	engine->pm.param = 0;
+	engine->pm.tmp = NULL;
+}
+
+void 	ft_valid_open_map(t_engine *engine, char **argv)
+{
+	if (ft_strncmp(".cub", argv[1] + ft_strlen(argv[1]) - 4, 4))
+		ft_print_error("Error!\nThe name of the map must end with .cub\n");
+	if ((engine->pm.fd = open(argv[1], O_DIRECTORY)) != -1)
+		ft_print_error("Error\nInvalid directory!\n");
+	close(engine->pm.fd);
+	if ((engine->pm.fd = open(argv[1], O_RDONLY)) < 0)
+		ft_print_error("Error\nSome problem with open file!\n");
+}
+
+int 	ft_start_parse(char **argv, t_engine *engine)
+{
+	char	*line;
+
+	ft_init_pm_start(engine);
+	ft_valid_open_map(engine, argv);
+	while (get_next_line(engine->pm.fd, &line))
+	{
+		engine->pm.tmp2 = ft_split(line, ' ');
+		ft_correct_permission(engine, line);
+		ft_correct_colors(engine, line);
+		if (ft_correct_texture(line))
+			ft_correct_texture2(engine, line);
+		else
+		{
+			ft_norm_pm1(engine, line);
+			if (engine->pm.tmp && (*line == ' ' || *line == '1' || *line == '0'))
+				line = ft_strjoin_pm(engine->pm.tmp, line);
+		}
+		if (engine->pm.param == 8 && (*line == ' ' || *line == '1' || *line == '0'))
+			ft_norm_pm2(engine, line);
+		ft_free_array(&engine->pm.tmp2);
+		free(line);
+	}
+	ft_norm_pm3(engine, line);
+	return (0);
+}
+
 //	int x = 0;
 //	engine->pm.countlines = ft_arr_string_len(engine->world_map);
 //	while (x < engine->pm.countlines)
@@ -299,7 +350,3 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 //		printf("%s\n", engine->world_map[x]);
 //		x++;
 //	}
-	ft_parse_world_map(engine);
-	close(fd);
-	return (0);
-}

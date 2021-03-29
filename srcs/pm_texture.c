@@ -4,13 +4,13 @@
 int		ft_check_fd_texture(char *tmp2)
 {
 	int fd;
-	int	x;
 
-	fd = open(tmp2, O_RDONLY);
-	x = fd;
+	if ((fd = open(tmp2, O_DIRECTORY)) != -1)
+		ft_print_error("Error\nInvalid directory for texture's!\n");
 	close(fd);
-	if (x  < 0)
-		ft_print_error("Error texture fd!\n");
+	if ((fd = open(tmp2, O_RDONLY)) < 0)
+		ft_print_error("Error!\nProblem with texture file's!\n");
+	close(fd);
 	return (0);
 }
 

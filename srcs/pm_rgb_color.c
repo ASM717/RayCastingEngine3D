@@ -35,7 +35,7 @@ int		ft_get_rgb_color(t_engine *engine, char *line)
 		}
 	}
 	else
-		ft_print_error("Error input color!\n");
+		ft_print_error("Error!\nInvalid input color!\n");
 	engine->pm.flag_color++;
 	ft_free_array(&var);
 	return (0);
