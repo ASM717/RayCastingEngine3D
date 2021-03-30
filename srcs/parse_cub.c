@@ -286,7 +286,6 @@ void	ft_norm_pm3(t_engine *engine, char *line)
 	free(line);
 	engine->world_map = ft_split(engine->pm.tmp, '+');
 	ft_parse_world_map(engine);
-	close(engine->pm.fd);
 }
 
 void 	ft_norm_pm1(t_engine *engine, char *line)
@@ -310,7 +309,6 @@ void 	ft_valid_open_map(t_engine *engine, char **argv)
 		ft_print_error("Error!\nThe name of the map must end with .cub\n");
 	if ((engine->pm.fd = open(argv[1], O_DIRECTORY)) != -1)
 		ft_print_error("Error\nInvalid directory!\n");
-	close(engine->pm.fd);
 	if ((engine->pm.fd = open(argv[1], O_RDONLY)) < 0)
 		ft_print_error("Error\nSome problem with open file!\n");
 }
@@ -340,6 +338,7 @@ int 	ft_start_parse(char **argv, t_engine *engine)
 		free(line);
 	}
 	ft_norm_pm3(engine, line);
+	close(engine->pm.fd);
 	return (0);
 }
 

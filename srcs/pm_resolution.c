@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pm_resolution.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/30 14:24:49 by amuriel           #+#    #+#             */
+/*   Updated: 2021/03/30 14:25:39 by amuriel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../cub3d.h"
 
@@ -15,10 +26,9 @@ int		ft_isdigit_pm(char *s)
 	return (1);
 }
 
-int 	ft_check_perm_double(t_engine *engine)
+int		ft_check_perm_double(t_engine *engine)
 {
-	if (engine->scr_height == -1 ||
-	engine->scr_width == -1)
+	if (engine->scr_height == -1 || engine->scr_width == -1)
 		return (0);
 	return (1);
 }
@@ -31,7 +41,6 @@ void	ft_get_resolution(t_engine *engine)
 	{
 		engine->scr_width = ft_atoi(engine->pm.tmp2[1]);
 		engine->scr_height = ft_atoi(engine->pm.tmp2[2]);
-
 		if (engine->scr_width > 1920 || ft_strlen(engine->pm.tmp2[2]) > 4)
 			engine->scr_width = 1920;
 		if (engine->scr_height > 1080 || ft_strlen(engine->pm.tmp2[2]) > 4)

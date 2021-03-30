@@ -109,7 +109,7 @@ void	ft_sort_swap(t_engine *engine)
 void 	ft_sprite_calculation3(t_engine *engine)
 {
 	if (engine->transform_y > 0 && engine->stripe > 0 && engine->stripe <
-	engine->scr_width && engine->transform_y < engine->zBuff[engine->stripe])
+	engine->scr_width && engine->transform_y < engine->z_buff[engine->stripe])
 	{
 		engine->tmp_spr_y= engine->draw_start_y;
 		while (engine->tmp_spr_y < engine->draw_end_y)

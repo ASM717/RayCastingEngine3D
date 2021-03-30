@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 17:31:29 by amuriel           #+#    #+#             */
-/*   Updated: 2021/03/16 18:26:17 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/03/30 14:35:25 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 void 	ft_init_texture2(t_engine *engine, int width, int height)
 {
 	engine->data_ea.img = mlx_xpm_file_to_image(engine->data.mlx,
-											 engine->tex_east,
-											 &width,
-											 &height);
+		engine->tex_east, &width, &height);
 	engine->data_ea.addr = mlx_get_data_addr(engine->data_ea.img,
-										  &engine->data_ea.bits_per_pixel,
-										  &engine->data_ea.size_line,
-										  &engine->data_ea.endian);
+		&engine->data_ea.bits_per_pixel, &engine->data_ea.size_line,
+		&engine->data_ea.endian);
 	engine->data_spr.img = mlx_xpm_file_to_image(engine->data.mlx,
 											  engine->tex_sprite,
 											  &width,
@@ -49,9 +46,9 @@ void 	ft_init_texture(t_engine *engine)
 	width = TEX_WIDTH;
 	height = TEX_HEIGHT;
 	engine->data_no.img = mlx_xpm_file_to_image(engine->data.mlx,
-											 engine->tex_north, &width, &height);
+		engine->tex_north, &width, &height);
 	engine->data_no.addr = mlx_get_data_addr(engine->data_no.img,
-										  &engine->data_no.bits_per_pixel,
+		&engine->data_no.bits_per_pixel,
 										  &engine->data_no.size_line,
 										  &engine->data_no.endian);
 	engine->data_so.img = mlx_xpm_file_to_image(engine->data.mlx,
@@ -254,7 +251,7 @@ int		ft_raycast(t_engine *engine)
 					 ft_get_rgb_color_floor(engine));
 			engine->y++;
 		}
-		engine->zBuff[engine->x] = engine->perp_wall_dist;
+		engine->z_buff[engine->x] = engine->perp_wall_dist;
 		engine->x++;
 	}
 	ft_main_sprites(engine);
@@ -264,12 +261,12 @@ int		ft_raycast(t_engine *engine)
 int 	ft_restart(t_engine *engine)
 {
 	ft_keycode_movement(engine);
-	engine->zBuff = malloc(sizeof(double) * engine->scr_width);
+	engine->z_buff = malloc(sizeof(double) * engine->scr_width);
 	ft_raycast(engine);
 	if (engine->screen_flag == 0)
 		mlx_put_image_to_window(engine->data.mlx, engine->data.win,
 							engine->data.img, 0, 0);
-	free(engine->zBuff);
+	free(engine->z_buff);
 	if (engine->screen_flag == 1)
 		ft_screenshot_make(engine);
 	return (0);
