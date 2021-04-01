@@ -1,15 +1,27 @@
 NAME		= cub3D
 
-SRC		    = cub3dmain.c \
-              	keyboard.c \
-              	sprite.c \
-              	ceiling_floor.c \
-              	screenshot_bmp.c \
-              	texture_wall.c \
-              	parse_cub.c \
-              	pm_resolution.c \
-              	pm_rgb_color.c \
-              	pm_texture.c
+SRC			= cub3dmain.c \
+				mlx_func.c \
+				raycast_func_1.c \
+				raycast_func_2.c \
+				keyboard.c \
+				keyboard_2.c \
+				sprite.c \
+				sprite_func_1.c \
+				sprite_func_2.c \
+				ceiling_floor.c \
+				screenshot_bmp.c \
+				texture_wall.c \
+				texture_init.c \
+				parse_cub.c \
+				parse_cub_2.c \
+				parse_cub_3.c \
+				parse_cub_4.c \
+				parse_cub_5.c \
+				parse_cub_6.c \
+				pm_resolution.c \
+				pm_rgb_color.c \
+				pm_texture.c
 SRCS		= $(addprefix srcs/, $(SRC))
 
 OBJS		= $(SRCS:.c=.o)
@@ -50,10 +62,6 @@ fclean: clean
 re: fclean all
 
 norm :
-	norminette *.c *.h ./libft/*.c ./libft/*.h
+	norminette *.h ./libft/*.c ./libft/*.h ./srcs/*.c
 
-screen : $(NAME)
-	./$(NAME) cub3d.cub --save
-	open screen.bmp
-
-.PHONY: all clean fclean re norm run screen
+.PHONY: all clean fclean re norm

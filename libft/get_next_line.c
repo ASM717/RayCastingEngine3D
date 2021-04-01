@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 11:55:04 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/24 11:54:29 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/04/01 17:27:25 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,27 @@ char	*ft_strchr_gnl(const char *s, int c)
 	return (NULL);
 }
 
+void	line_checker_gnl_norm(char **str, char **line, int *read_end,
+		char *point_ent)
+{
+	if ((point_ent = ft_strchr_gnl(*str, '\n')))
+	{
+		*point_ent++ = '\0';
+		if (!(*line = ft_strdup_gnl(*str)))
+			*read_end = 2;
+		if (*point_ent)
+			ft_strcpy_gnl(*str, point_ent);
+		else
+			ft_strclr_gnl(&(*str));
+	}
+	else
+	{
+		if (!(*line = ft_strdup_gnl(*str)))
+			*read_end = 2;
+		ft_strclr_gnl(&(*str));
+	}
+}
+
 char	*line_checker_gnl(char **str, char **line, int *read_end)
 {
 	char	*point_ent;
@@ -44,24 +65,7 @@ char	*line_checker_gnl(char **str, char **line, int *read_end)
 	point_ent = 0;
 	*read_end = 1;
 	if (*str)
-	{
-		if ((point_ent = ft_strchr_gnl(*str, '\n')))
-		{
-			*point_ent++ = '\0';
-			if (!(*line = ft_strdup_gnl(*str)))
-				*read_end = 2;
-			if (*point_ent)
-				ft_strcpy_gnl(*str, point_ent);
-			else
-				ft_strclr_gnl(&(*str));
-		}
-		else
-		{
-			if (!(*line = ft_strdup_gnl(*str)))
-				*read_end = 2;
-			ft_strclr_gnl(&(*str));
-		}
-	}
+		line_checker_gnl_norm(str, line, read_end, point_ent);
 	else
 		*line = ft_strnew_gnl(0);
 	return (point_ent);

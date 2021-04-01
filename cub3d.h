@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:45 by amuriel           #+#    #+#             */
-/*   Updated: 2021/03/30 14:37:06 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/04/01 17:50:05 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-#include <sys/stat.h>
+# include <sys/stat.h>
 # include <math.h>
 # include <stdint.h>
 
@@ -177,6 +177,7 @@ typedef struct			s_engine
 
 void					ft_mlx_data_start(t_engine *engine);
 void					ft_mlx_data_continue(t_engine *engine);
+void					ft_screenshot_start(t_engine *engine);
 int						ft_restart(t_engine *engine);
 int						ft_raycast(t_engine *engine);
 void					ft_all_calculation(t_engine *engine);
@@ -187,46 +188,74 @@ void					ft_ray_walldist_calculation(t_engine *engine);
 void					ft_ray_walldist_calculation2(t_engine *engine);
 unsigned	int			ft_get_pixel(t_data *data, int x, int y);
 void					my_mlx_pixel_put(t_data *data, int x, int y, int color);
-
-int						ft_get_rgb_color_floor(t_engine *engine);
-int						ft_get_rgb_color_ceiling(t_engine *engine);
-
-int						ft_keycode_unused(int keycode, t_engine *engine);
-int						ft_exit(t_engine *engine);
-int						ft_keycode_used(int keycode, t_engine *engine);
-void					ft_keycode_movement(t_engine *engine);
-void					ft_keycode_movement_ws(t_engine *engine);
-void					ft_keycode_movement_rot(t_engine *engine);
-void					ft_keycode_movement_ad(t_engine *engine);
+int						ft_init_engine(t_engine *engine);
+void					ft_init_texture(t_engine *engine);
+void					ft_init_texture2(t_engine *engine, int width,
+						int height);
+void					ft_free_texture(t_engine *engine);
+void					ft_init_keycode(t_engine *engine);
 int						check_movement(t_engine *engine, int x, int y);
+int						ft_exit(t_engine *engine);
+int						ft_keycode_unused(int keycode, t_engine *engine);
+int						ft_keycode_used(int keycode, t_engine *engine);
+void					ft_keycode_movement_ad(t_engine *engine);
+void					ft_keycode_movement_rot_right(t_engine *engine);
+void					ft_keycode_movement_rot_left(t_engine *engine);
+void					ft_keycode_movement_ws(t_engine *engine);
+void					ft_keycode_movement(t_engine *engine);
+void					ft_main_sprites(t_engine *engine);
+void					ft_swap_sprites(t_engine *engine);
+void					ft_sort_swap(t_engine *engine);
+void					ft_sprite_calculation3(t_engine *engine);
+void					ft_sprite_calculation2(t_engine *engine);
+void					ft_sprite_calculation1(t_engine *engine);
+t_sprite				*ft_get_sprites(t_engine *engine);
+void					ft_correct_sprite(t_engine *engine);
+int						ft_number_sprites(t_engine *engine);
+void					ft_print_wall(t_engine *engine);
+int						ft_get_rgb_color_ceiling(t_engine *engine);
+int						ft_get_rgb_color_floor(t_engine *engine);
+int						ft_start_parse(char **argv, t_engine *engine);
+int						ft_correct_texture(char *line);
+void					ft_norm_pm3(t_engine *engine, char *line);
+void					ft_norm_pm1(t_engine *engine, char *line);
+void					ft_init_pm_start(t_engine *engine);
+void					ft_valid_open_map(t_engine *engine, char **argv);
+void					ft_correct_texture2(t_engine *engine, char *line);
+void					ft_norm_pm2(t_engine *engine, char *line);
+void					ft_correct_colors(t_engine *engine, char *line);
+int						ft_check_color_double(t_engine *engine);
+int						ft_check_texture_double(t_engine *engine);
+int						ft_check_scr_col_tex(t_engine *engine);
+void					ft_correct_permission(t_engine *engine, char *line);
+void					ft_parse_world_map(t_engine *engine);
+void					ft_check_map_player(t_engine *engine, int i, int j);
+void					ft_check_closed_map1(t_engine *engine, int i, int j);
+void					ft_check_closed_map2(t_engine *engine, int i, int j);
+void					ft_check_player_position1(t_engine *engine,
+						int i, int j);
+void					ft_check_player_position2(t_engine *engine,
+						int i, int j);
+int						ft_check_more_players(t_engine *engine);
+int						ft_arr_string_len(char **arr);
+char					*ft_strjoin_pm(char *s1, char *s2);
+void					ft_free_array(char ***arr);
+void					ft_print_error(char *s);
+void					ft_get_resolution(t_engine *engine);
+int						ft_check_perm_double(t_engine *engine);
+int						ft_isdigit_pm(char *s);
+int						ft_check_rgb(char *s);
+void					ft_get_rgb_color_c(t_engine *engine, char **var);
+void					ft_get_rgb_color_f(t_engine *engine, char **var);
+int						ft_get_rgb_color(t_engine *engine, char *line);
+int						ft_check_fd_texture(char *tmp2);
+int						ft_checker_space_tx(char *str);
+int						ft_get_texture_parse(t_engine *engine, char *line);
 void					ft_screenshot_make(t_engine *engine);
 void					ft_init_shot_header(t_engine *engine);
 void					ft_screen_pack(t_engine *engine);
+void					ft_pm_start_valid_open_map(t_engine *engine,
+						char **argv);
+void					ft_correct_perm_color(t_engine *engine, char *line);
 
-void					ft_print_wall(t_engine *engine);
-
-void					ft_main_sprites(t_engine *engine);
-void					ft_sprite_calculation1(t_engine *engine);
-void					ft_sprite_calculation2(t_engine *engine);
-void					ft_sprite_calculation3(t_engine *engine);
-void					ft_sort_swap(t_engine *engine);
-void					ft_swap_sprites(t_engine *engine);
-
-t_sprite				*ft_get_sprites(t_engine *engine);
-int						ft_number_sprites(t_engine *engine);
-
-void					ft_print_error(char *s);
-void					ft_get_resolution(t_engine *engine);
-int						ft_isdigit_pm(char *s);
-int						ft_get_texture_parse(t_engine *engine, char *line);
-int						ft_checker_space_tx(char *str);
-int						ft_check_fd_texture(char *tmp2);
-int						ft_get_rgb_color(t_engine *engine, char *line);
-int						ft_check_rgb(char *s);
-int						ft_arr_string_len(char **map);
-int						ft_start_parse(char **argv, t_engine *engine);
-void					ft_free_array(char ***arr);
-
-int						ft_check_perm_double(t_engine *engine);
-int						ft_check_color_double(t_engine *engine);
 #endif

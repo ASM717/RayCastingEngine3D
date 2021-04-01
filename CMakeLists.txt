@@ -99,7 +99,12 @@ add_executable(cub3D
         gnl/get_next_line_utils.c
         srcs/ceiling_floor.c
         srcs/cub3dmain.c
+        srcs/mlx_func.c
+        srcs/raycast_func_1.c
+        srcs/raycast_func_2.c
+        srcs/texture_init.c
         srcs/keyboard.c
+        srcs/keyboard_2.c
         srcs/sprite.c
         srcs/screenshot_bmp.c
         srcs/texture_wall.c

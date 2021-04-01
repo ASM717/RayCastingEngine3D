@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 11:58:24 by amuriel           #+#    #+#             */
-/*   Updated: 2021/02/24 11:55:07 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/04/01 17:20:15 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_strnew_gnl(unsigned int buf_size)
 char	*ft_strdup_gnl(const char *s1)
 {
 	char	*str;
-	int 	i;
+	int		i;
 
 	str = malloc(ft_strlen_gnl(s1) + 1);
 	i = 0;
