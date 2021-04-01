@@ -12,12 +12,11 @@
 
 #include "../cub3d.h"
 
-int 	ft_check_save_argv(char **argv)
+int		ft_check_save_argv(char **argv)
 {
 	if (ft_strlen(argv[2]) > ft_strlen("--save"))
 		return (ft_strlen(argv[2]));
 	return (ft_strlen("--save"));
-
 }
 
 int		main(int argc, char **argv)
