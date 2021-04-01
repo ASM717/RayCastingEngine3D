@@ -12,6 +12,15 @@
 
 #include "../cub3d.h"
 
+//int 	ft_check_save_argv(char **argv)
+//{
+//	if (argv[2] > ft_strlen(argv[2]))
+//		return (0);
+//	else
+//		return (1);
+//
+//}
+
 int		main(int argc, char **argv)
 {
 	t_engine	engine;

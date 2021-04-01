@@ -106,9 +106,16 @@ add_executable(cub3D
         srcs/keyboard.c
         srcs/keyboard_2.c
         srcs/sprite.c
+        srcs/sprite_func_1.c
+        srcs/sprite_func_2.c
         srcs/screenshot_bmp.c
         srcs/texture_wall.c
         srcs/parse_cub.c
+        srcs/parse_cub_2.c
+        srcs/parse_cub_3.c
+        srcs/parse_cub_4.c
+        srcs/parse_cub_5.c
+        srcs/parse_cub_6.c
         srcs/pm_resolution.c
         srcs/pm_texture.c
         srcs/pm_rgb_color.c
