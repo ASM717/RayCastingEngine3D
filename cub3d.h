@@ -257,5 +257,6 @@ void					ft_screen_pack(t_engine *engine);
 void					ft_pm_start_valid_open_map(t_engine *engine,
 						char **argv);
 void					ft_correct_perm_color(t_engine *engine, char *line);
+int 					ft_check_save_argv(char **argv);
 
 #endif

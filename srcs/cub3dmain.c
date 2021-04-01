@@ -12,14 +12,13 @@
 
 #include "../cub3d.h"
 
-//int 	ft_check_save_argv(char **argv)
-//{
-//	if (argv[2] > ft_strlen(argv[2]))
-//		return (0);
-//	else
-//		return (1);
-//
-//}
+int 	ft_check_save_argv(char **argv)
+{
+	if (ft_strlen(argv[2]) > ft_strlen("--save"))
+		return (ft_strlen(argv[2]));
+	return (ft_strlen("--save"));
+
+}
 
 int		main(int argc, char **argv)
 {
@@ -35,7 +34,7 @@ int		main(int argc, char **argv)
 		ft_mlx_data_continue(&engine);
 	}
 	else if (argc == 3 && ft_strncmp(argv[2], "--save",
-		ft_strlen("--save")) == 0)
+		ft_check_save_argv(argv)) == 0)
 	{
 		engine.screen_flag = 1;
 		ft_start_parse(argv, &engine);

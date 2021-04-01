@@ -17,6 +17,8 @@ int		ft_isdigit_pm(char *s)
 	int i;
 
 	i = 0;
+	if (!s)
+		return (-1);
 	while (s[i])
 	{
 		if (s[i] < 48 || s[i] > 57)

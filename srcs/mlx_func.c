@@ -57,7 +57,7 @@ void	ft_mlx_data_start(t_engine *engine)
 	if (!(engine->data.mlx = mlx_init()))
 		ft_print_error("Error!\nProblem with mlx_init!\n");
 	if (!(engine->data.win = mlx_new_window(engine->data.mlx,
-		engine->scr_width, engine->scr_height, "Cub3D")))
+		engine->scr_width, engine->scr_height, "cub3D")))
 		ft_print_error("Error!\nProblem with mlx_new_window!\n");
 	ft_init_texture(engine);
 	engine->data.img = mlx_new_image(engine->data.mlx,
