@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 16:28:54 by amuriel           #+#    #+#             */
-/*   Updated: 2021/03/15 16:50:59 by amuriel          ###   ########.fr       */
+/*   Created: 2021/03/31 12:49:12 by amuriel           #+#    #+#             */
+/*   Updated: 2021/03/31 12:49:25 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_sprite	*ft_get_sprites(t_engine *engine)
 	return (str_spr);
 }
 
-void 	ft_swap_sprites(t_engine *engine)
+void	ft_swap_sprites(t_engine *engine)
 {
 	int i;
 	int var;
@@ -98,37 +98,37 @@ void	ft_sort_swap(t_engine *engine)
 	{
 		engine->sprite_order[i] = i;
 		engine->sprite_dist[i] = ((engine->pos_x - engine->str_spr[i].x_str)
-				* (engine->pos_x - engine->str_spr[i].x_str)
-				+ (engine->pos_y - engine->str_spr[i].y_str)
-				* (engine->pos_y - engine->str_spr[i].y_str));
+		* (engine->pos_x - engine->str_spr[i].x_str)
+		+ (engine->pos_y - engine->str_spr[i].y_str)
+		* (engine->pos_y - engine->str_spr[i].y_str));
 		i++;
 	}
 	ft_swap_sprites(engine);
 }
 
-void 	ft_sprite_calculation3(t_engine *engine)
+void	ft_sprite_calculation3(t_engine *engine)
 {
 	if (engine->transform_y > 0 && engine->stripe > 0 && engine->stripe <
 	engine->scr_width && engine->transform_y < engine->z_buff[engine->stripe])
 	{
-		engine->tmp_spr_y= engine->draw_start_y;
+		engine->tmp_spr_y = engine->draw_start_y;
 		while (engine->tmp_spr_y < engine->draw_end_y)
 		{
 			engine->tmp_spr_d = (engine->tmp_spr_y) * 256 - engine->scr_height *
-					128 + engine->sprite_h * 128;
+			128 + engine->sprite_h * 128;
 			engine->spr_text_y = ((engine->tmp_spr_d * TEX_HEIGHT) /
-								engine->sprite_h) / 256;
-			engine->spr_col = ft_get_pixel(&engine->data_spr, engine->spr_text_x,
-								 engine->spr_text_y);
+			engine->sprite_h) / 256;
+			engine->spr_col = ft_get_pixel(&engine->data_spr,
+			engine->spr_text_x, engine->spr_text_y);
 			if (engine->spr_col != 0)
 				my_mlx_pixel_put(&engine->data, engine->stripe,
-					 engine->tmp_spr_y, engine->spr_col);
+				engine->tmp_spr_y, engine->spr_col);
 			engine->tmp_spr_y++;
 		}
 	}
 }
 
-void 	ft_sprite_calculation2(t_engine *engine)
+void	ft_sprite_calculation2(t_engine *engine)
 {
 	engine->sprite_h = abs((int)(engine->scr_height / (engine->transform_y)));
 	engine->draw_start_y = -engine->sprite_h / 2 + engine->scr_height / 2;
@@ -146,7 +146,7 @@ void 	ft_sprite_calculation2(t_engine *engine)
 		engine->draw_end_x = engine->scr_width - 1;
 }
 
-void 	ft_sprite_calculation1(t_engine *engine)
+void	ft_sprite_calculation1(t_engine *engine)
 {
 	engine->sprite_x = engine->str_spr[engine->sprite_order[engine->s]].x_str -
 			engine->pos_x;
@@ -162,7 +162,7 @@ void 	ft_sprite_calculation1(t_engine *engine)
 			* (1 + engine->transform_x / engine->transform_y));
 }
 
-void 	ft_main_sprites(t_engine *engine)
+void	ft_main_sprites(t_engine *engine)
 {
 	engine->s = 0;
 	ft_sort_swap(engine);
@@ -173,9 +173,9 @@ void 	ft_main_sprites(t_engine *engine)
 		engine->stripe = engine->draw_start_x;
 		while (engine->stripe < engine->draw_end_x)
 		{
-			engine->spr_text_x = (int)(256 * (engine->stripe - (engine->sprite_w /
-					2 + engine->sprite_scr_x)) *
-							TEX_WIDTH / engine->sprite_w) / 256;
+			engine->spr_text_x = (int)(256 * (engine->stripe -
+			(engine->sprite_w / 2 + engine->sprite_scr_x)) *
+			TEX_WIDTH / engine->sprite_w) / 256;
 			ft_sprite_calculation3(engine);
 			engine->stripe++;
 		}

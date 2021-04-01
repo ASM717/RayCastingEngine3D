@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 02:55:01 by amuriel           #+#    #+#             */
-/*   Updated: 2021/03/22 02:55:06 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/03/31 12:50:43 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	ft_screen_pack(t_engine *engine)
 		while (engine->shot.col < engine->scr_width)
 		{
 			engine->shot.color_table = ft_get_pixel(&engine->data,
-									   engine->shot.col,
-									   engine->shot.range);
+			engine->shot.col, engine->shot.range);
 			write(engine->shot.fd, &engine->shot.color_table, 4);
 			engine->shot.col++;
 		}
@@ -53,7 +52,7 @@ void	ft_screenshot_make(t_engine *engine)
 		ft_print_error("Error!\nProblem with file!\n");
 	write(engine->shot.fd, "BM", 2);
 	engine->shot.scr_size = 4 * engine->scr_width * engine->scr_height +
-			engine->shot.bmp_off_bits;
+		engine->shot.bmp_off_bits;
 	write(engine->shot.fd, &engine->shot.scr_size, 4);
 	ft_init_shot_header(engine);
 	ft_screen_pack(engine);
