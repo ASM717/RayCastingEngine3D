@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:29:22 by amuriel           #+#    #+#             */
-/*   Updated: 2021/04/01 16:30:11 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/04/03 14:05:40 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_norm_pm3(t_engine *engine, char *line)
 	else
 		ft_print_error("Error!\nInvalid map!\n");
 	ft_parse_world_map(engine);
+	close(engine->pm.fd);
 }
 
 void	ft_norm_pm1(t_engine *engine, char *line)

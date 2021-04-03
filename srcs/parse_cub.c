@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:04:22 by amuriel           #+#    #+#             */
-/*   Updated: 2021/04/01 17:38:44 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/04/03 14:05:24 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,29 @@ void	ft_correct_perm_color(t_engine *engine, char *line)
 	ft_correct_colors(engine, line);
 }
 
+void	ft_check_impossible_symbol(t_engine *engine, char *line)
+{
+	int i;
+
+	if (ft_strlen(line) && engine->pm.param < 8 && *line != 'R'
+	&& (*line != 'N' && *(line + 1) != 'O')
+	&& (*line != 'S' && *(line + 1) != 'O')
+	&& (*line != 'W' && *(line + 1) != 'E')
+	&& (*line != 'E' && *(line + 1) != 'A')
+	&& (*line != 'S')
+	&& (*line != 'F')
+	&& (*line != 'C'))
+	{
+		i = 0;
+		while (line[i])
+		{
+			if (line[i] != ' ')
+				ft_print_error("Error!\nInvalid map\n");
+			i++;
+		}
+	}
+}
+
 int		ft_start_parse(char **argv, t_engine *engine)
 {
 	char	*line;
@@ -48,6 +71,7 @@ int		ft_start_parse(char **argv, t_engine *engine)
 			*line == '1' || *line == '0'))
 				line = ft_strjoin_pm(engine->pm.tmp, line);
 		}
+		ft_check_impossible_symbol(engine, line);
 		if (engine->pm.param == 8 && (*line == ' ' ||
 		*line == '1' || *line == '0'))
 			ft_norm_pm2(engine, line);
@@ -55,6 +79,5 @@ int		ft_start_parse(char **argv, t_engine *engine)
 		free(line);
 	}
 	ft_norm_pm3(engine, line);
-	close(engine->pm.fd);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:45 by amuriel           #+#    #+#             */
-/*   Updated: 2021/04/01 17:50:05 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/04/03 12:27:32 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -258,5 +258,6 @@ void					ft_pm_start_valid_open_map(t_engine *engine,
 						char **argv);
 void					ft_correct_perm_color(t_engine *engine, char *line);
 int						ft_check_save_argv(char **argv);
-
+void					ft_check_impossible_symbol(t_engine *engine,
+						char *line);
 #endif
