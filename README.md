@@ -1,4 +1,4 @@
-# MyOwnWolfenstein3D-Raycasting Engine in "C" language
+# MyOwnWolfenstein3D-Raycasting Engine in "C" Language
 
 ### 1. Prerequisites
 
@@ -21,5 +21,5 @@ Key comands to move on map
 * ESC to quit
 
 ___________________________________________________________
-![alt text](https://github.com/ASM717/MyOwnWolfenstein3D/tree/main/image/cub3Dshot.png)
+![alt text](https://github.com/ASM717/MyOwnWolfenstein3D/blob/main/image/cub3Dshot.png)
 _________________________________________________________________
