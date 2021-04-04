@@ -20,5 +20,6 @@ Key comands to move on map
 * Left/Right (←/→) directional keys to rotate the camera
 * ESC to quit
 
-\
+___________________________________________________________
 ![alt text](https://github.com/ASM717/MyOwnWolfenstein3D/tree/main/image/cub3Dshot.png)
+_________________________________________________________________
