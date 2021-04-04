@@ -21,5 +21,4 @@ Key comands to move on map
 * ESC to quit
 
 \
-\
-![Image alt](https://github.com/ASM717/MyOwnWolfenstein3D/tree/main/image/cub3Dshot.png)
+![alt text](https://github.com/ASM717/MyOwnWolfenstein3D/tree/main/image/cub3Dshot.png)
