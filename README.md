@@ -22,4 +22,4 @@ Key comands to move on map
 
 \
 \
-![Image alt](https://github.com/ASM717/https://github.com/ASM717/MyOwnWolfenstein3D/image/cub3Dshot.bmp)
+![Image alt](https://github.com/ASM717/https://github.com/ASM717/MyOwnWolfenstein3D/image/cub3Dshot.png)
