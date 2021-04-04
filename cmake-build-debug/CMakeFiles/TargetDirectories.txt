@@ -1,3 +1,0 @@
-/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/stepan/Desktop/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir

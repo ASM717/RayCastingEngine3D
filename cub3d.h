@@ -6,7 +6,7 @@
 /*   By: amuriel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:57:45 by amuriel           #+#    #+#             */
-/*   Updated: 2021/04/03 12:27:32 by amuriel          ###   ########.fr       */
+/*   Updated: 2021/04/04 09:13:26 by amuriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@
 # include <sys/stat.h>
 # include <math.h>
 # include <stdint.h>
-
-# include <stdio.h>
 
 # define ESC			65307
 # define W				119
