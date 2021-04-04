@@ -9,8 +9,8 @@ As the project uses minilibx-linux library.
 
 	git clone this project
 	'make' to compile the programm
-	$ ./cub3d <map_path/file.cub> to run the program
-	$ ./cub3d <map_path/file.cub> --save to save the first rendered image as a bitmap
+	$ ./cub3d <maps/map1.cub> to run the program
+	$ ./cub3d <maps/map1.cub> --save (to save the first rendered image as a bitmap)
 
 ### 3.  The Game
 
@@ -22,4 +22,4 @@ Key comands to move on map
 
 \
 \
-![im2-re](https://github.com/ASM717/https://github.com/ASM717/MyOwnWolfenstein3D/cub3Dshot.bmp)
+![alt text](https://github.com/ASM717/https://github.com/ASM717/MyOwnWolfenstein3D/cub3Dshot.bmp)
