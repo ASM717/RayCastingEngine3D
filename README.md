@@ -9,8 +9,8 @@ As the project uses minilibx-linux library.
 
 	git clone this project
 	'make' to compile the programm
-	$ ./cub3d <maps/map1.cub> to run the program
-	$ ./cub3d <maps/map1.cub> --save (to save the first rendered image as a bitmap)
+	$ ./cub3D <maps/map1.cub> to run the program
+	$ ./cub3D <maps/map1.cub> --save (to save the first rendered image as a bitmap)
 
 ### 3.  The Game
 
